@@ -40,8 +40,8 @@ export default {
   ],
   tabBar: {
     custom: true,
-    // "color": "#000000",
-    // "selectedColor": "#000000",
+    // "color": "#ff0000",
+    // "selectedColor": "#ff0000",
     // "backgroundColor": "#000000",
     list: [
       {
@@ -89,7 +89,8 @@ export default {
   },
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
+    // navigationBarBackgroundColor: '#fff',
+    navigationBarBackgroundColor: '#f00',
     navigationBarTitleText: miniTitle,
     navigationBarTextStyle: 'black',
     navigationStyle: 'custom',

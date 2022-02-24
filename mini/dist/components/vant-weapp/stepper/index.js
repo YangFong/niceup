@@ -1,1 +1,231 @@
-(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[83],{208:function(t,e,a){"use strict";a.r(e);var i=a(5),s=a(10),n=600,r=200;function l(t,e){var a=Math.pow(10,10);return Math.round((t+e)*a)/a}function u(t,e){return String(t)===String(e)}Object(i["a"])({field:!0,classes:["input-class","plus-class","minus-class"],props:{value:{type:null,observer:function(t){u(t,this.data.currentValue)||this.setData({currentValue:this.format(t)})}},integer:{type:Boolean,observer:"check"},disabled:Boolean,inputWidth:null,buttonSize:null,asyncChange:Boolean,disableInput:Boolean,decimalLength:{type:Number,value:null,observer:"check"},min:{type:null,value:1,observer:"check"},max:{type:null,value:Number.MAX_SAFE_INTEGER,observer:"check"},step:{type:null,value:1},showPlus:{type:Boolean,value:!0},showMinus:{type:Boolean,value:!0},disablePlus:Boolean,disableMinus:Boolean,longPress:{type:Boolean,value:!0}},data:{currentValue:""},created:function(){this.setData({currentValue:this.format(this.data.value)})},methods:{check:function(){var t=this.format(this.data.currentValue);u(t,this.data.currentValue)||this.setData({currentValue:t})},isDisabled:function(t){return"plus"===t?this.data.disabled||this.data.disablePlus||this.data.currentValue>=this.data.max:this.data.disabled||this.data.disableMinus||this.data.currentValue<=this.data.min},onFocus:function(t){this.$emit("focus",t.detail)},onBlur:function(t){var e=this.format(t.detail.value);this.emitChange(e),this.$emit("blur",Object.assign(Object.assign({},t.detail),{value:e}))},filter:function(t){return t=String(t).replace(/[^0-9.-]/g,""),this.data.integer&&-1!==t.indexOf(".")&&(t=t.split(".")[0]),t},format:function(t){return t=this.filter(t),t=""===t?0:+t,t=Math.max(Math.min(this.data.max,t),this.data.min),Object(s["e"])(this.data.decimalLength)&&(t=t.toFixed(this.data.decimalLength)),t},onInput:function(t){var e=t.detail||{},a=e.value,i=void 0===a?"":a;if(""!==i){var n=this.filter(i);if(Object(s["e"])(this.data.decimalLength)&&-1!==n.indexOf(".")){var r=n.split(".");n="".concat(r[0],".").concat(r[1].slice(0,this.data.decimalLength))}this.emitChange(n)}},emitChange:function(t){this.data.asyncChange||this.setData({currentValue:t}),this.$emit("change",t)},onChange:function(){var t=this.type;if(this.isDisabled(t))this.$emit("overlimit",t);else{var e="minus"===t?-this.data.step:+this.data.step,a=this.format(l(+this.data.currentValue,e));this.emitChange(a),this.$emit(t)}},longPressStep:function(){var t=this;this.longPressTimer=setTimeout((function(){t.onChange(),t.longPressStep()}),r)},onTap:function(t){var e=t.currentTarget.dataset.type;this.type=e,this.onChange()},onTouchStart:function(t){var e=this;if(this.data.longPress){clearTimeout(this.longPressTimer);var a=t.currentTarget.dataset.type;this.type=a,this.isLongPress=!1,this.longPressTimer=setTimeout((function(){e.isLongPress=!0,e.onChange(),e.longPressStep()}),n)}},onTouchEnd:function(){this.data.longPress&&clearTimeout(this.longPressTimer)}}})}},[[208,0,1,2]]]);
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["components/vant-weapp/stepper/index"],{
+
+/***/ "./src/components/vant-weapp/stepper/index.js":
+/*!****************************************************!*\
+  !*** ./src/components/vant-weapp/stepper/index.js ***!
+  \****************************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/component */ "./src/components/vant-weapp/common/component.js");
+/* harmony import */ var _common_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/utils */ "./src/components/vant-weapp/common/utils.js");
+
+
+var LONG_PRESS_START_TIME = 600;
+var LONG_PRESS_INTERVAL = 200; // add num and avoid float number
+
+function add(num1, num2) {
+  var cardinal = Math.pow(10, 10);
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+
+function equal(value1, value2) {
+  return String(value1) === String(value2);
+}
+
+Object(_common_component__WEBPACK_IMPORTED_MODULE_0__[/* VantComponent */ "a"])({
+  field: true,
+  classes: ['input-class', 'plus-class', 'minus-class'],
+  props: {
+    value: {
+      type: null,
+      observer: function observer(value) {
+        if (!equal(value, this.data.currentValue)) {
+          this.setData({
+            currentValue: this.format(value)
+          });
+        }
+      }
+    },
+    integer: {
+      type: Boolean,
+      observer: 'check'
+    },
+    disabled: Boolean,
+    inputWidth: null,
+    buttonSize: null,
+    asyncChange: Boolean,
+    disableInput: Boolean,
+    decimalLength: {
+      type: Number,
+      value: null,
+      observer: 'check'
+    },
+    min: {
+      type: null,
+      value: 1,
+      observer: 'check'
+    },
+    max: {
+      type: null,
+      value: Number.MAX_SAFE_INTEGER,
+      observer: 'check'
+    },
+    step: {
+      type: null,
+      value: 1
+    },
+    showPlus: {
+      type: Boolean,
+      value: true
+    },
+    showMinus: {
+      type: Boolean,
+      value: true
+    },
+    disablePlus: Boolean,
+    disableMinus: Boolean,
+    longPress: {
+      type: Boolean,
+      value: true
+    }
+  },
+  data: {
+    currentValue: ''
+  },
+  created: function created() {
+    this.setData({
+      currentValue: this.format(this.data.value)
+    });
+  },
+  methods: {
+    check: function check() {
+      var val = this.format(this.data.currentValue);
+
+      if (!equal(val, this.data.currentValue)) {
+        this.setData({
+          currentValue: val
+        });
+      }
+    },
+    isDisabled: function isDisabled(type) {
+      if (type === 'plus') {
+        return this.data.disabled || this.data.disablePlus || this.data.currentValue >= this.data.max;
+      }
+
+      return this.data.disabled || this.data.disableMinus || this.data.currentValue <= this.data.min;
+    },
+    onFocus: function onFocus(event) {
+      this.$emit('focus', event.detail);
+    },
+    onBlur: function onBlur(event) {
+      var value = this.format(event.detail.value);
+      this.emitChange(value);
+      this.$emit('blur', Object.assign(Object.assign({}, event.detail), {
+        value: value
+      }));
+    },
+    // filter illegal characters
+    filter: function filter(value) {
+      value = String(value).replace(/[^0-9.-]/g, '');
+
+      if (this.data.integer && value.indexOf('.') !== -1) {
+        value = value.split('.')[0];
+      }
+
+      return value;
+    },
+    // limit value range
+    format: function format(value) {
+      value = this.filter(value); // format range
+
+      value = value === '' ? 0 : +value;
+      value = Math.max(Math.min(this.data.max, value), this.data.min); // format decimal
+
+      if (Object(_common_utils__WEBPACK_IMPORTED_MODULE_1__[/* isDef */ "e"])(this.data.decimalLength)) {
+        value = value.toFixed(this.data.decimalLength);
+      }
+
+      return value;
+    },
+    onInput: function onInput(event) {
+      var _ref = event.detail || {},
+          _ref$value = _ref.value,
+          value = _ref$value === void 0 ? '' : _ref$value; // allow input to be empty
+
+
+      if (value === '') {
+        return;
+      }
+
+      var formatted = this.filter(value); // limit max decimal length
+
+      if (Object(_common_utils__WEBPACK_IMPORTED_MODULE_1__[/* isDef */ "e"])(this.data.decimalLength) && formatted.indexOf('.') !== -1) {
+        var pair = formatted.split('.');
+        formatted = "".concat(pair[0], ".").concat(pair[1].slice(0, this.data.decimalLength));
+      }
+
+      this.emitChange(formatted);
+    },
+    emitChange: function emitChange(value) {
+      if (!this.data.asyncChange) {
+        this.setData({
+          currentValue: value
+        });
+      }
+
+      this.$emit('change', value);
+    },
+    onChange: function onChange() {
+      var type = this.type;
+
+      if (this.isDisabled(type)) {
+        this.$emit('overlimit', type);
+        return;
+      }
+
+      var diff = type === 'minus' ? -this.data.step : +this.data.step;
+      var value = this.format(add(+this.data.currentValue, diff));
+      this.emitChange(value);
+      this.$emit(type);
+    },
+    longPressStep: function longPressStep() {
+      var _this = this;
+
+      this.longPressTimer = setTimeout(function () {
+        _this.onChange();
+
+        _this.longPressStep();
+      }, LONG_PRESS_INTERVAL);
+    },
+    onTap: function onTap(event) {
+      var type = event.currentTarget.dataset.type;
+      this.type = type;
+      this.onChange();
+    },
+    onTouchStart: function onTouchStart(event) {
+      var _this2 = this;
+
+      if (!this.data.longPress) {
+        return;
+      }
+
+      clearTimeout(this.longPressTimer);
+      var type = event.currentTarget.dataset.type;
+      this.type = type;
+      this.isLongPress = false;
+      this.longPressTimer = setTimeout(function () {
+        _this2.isLongPress = true;
+
+        _this2.onChange();
+
+        _this2.longPressStep();
+      }, LONG_PRESS_START_TIME);
+    },
+    onTouchEnd: function onTouchEnd() {
+      if (!this.data.longPress) {
+        return;
+      }
+
+      clearTimeout(this.longPressTimer);
+    }
+  }
+});
+
+/***/ })
+
+},[["./src/components/vant-weapp/stepper/index.js","runtime","vendors","common"]]]);
+//# sourceMappingURL=index.js.map

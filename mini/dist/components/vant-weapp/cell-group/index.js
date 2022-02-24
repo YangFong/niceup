@@ -1,1 +1,28 @@
-(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[19],{194:function(e,p,t){"use strict";t.r(p);var o=t(5);Object(o["a"])({props:{title:String,border:{type:Boolean,value:!0}}})}},[[194,0,1,2]]]);
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["components/vant-weapp/cell-group/index"],{
+
+/***/ "./src/components/vant-weapp/cell-group/index.js":
+/*!*******************************************************!*\
+  !*** ./src/components/vant-weapp/cell-group/index.js ***!
+  \*******************************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/component */ "./src/components/vant-weapp/common/component.js");
+
+Object(_common_component__WEBPACK_IMPORTED_MODULE_0__[/* VantComponent */ "a"])({
+  props: {
+    title: String,
+    border: {
+      type: Boolean,
+      value: true
+    }
+  }
+});
+
+/***/ })
+
+},[["./src/components/vant-weapp/cell-group/index.js","runtime","vendors","common"]]]);
+//# sourceMappingURL=index.js.map

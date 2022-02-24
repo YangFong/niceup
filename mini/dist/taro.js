@@ -1,1 +1,7493 @@
-(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[3],{1:function(e,t,n){"use strict";n.d(t,"f",(function(){return r})),n.d(t,"e",(function(){return i})),n.d(t,"c",(function(){return o})),n.d(t,"d",(function(){return a})),n.d(t,"a",(function(){return s})),n.d(t,"g",(function(){return l})),n.d(t,"b",(function(){return c}));var r="view",i="text",o="swiper",a="swiper-item",s="image",l="web-view",c="slot"},120:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=w;var r=a(n(67)),i=n(121),o=n(122);function a(e){return e&&e.__esModule?e:{default:e}}var s=r["default"].noPromiseApis,l=r["default"].onAndSyncApis,c=r["default"].otherApis,u=r["default"].initPxTransform,d=r["default"].Link,f={MAX_REQUEST:5,queue:[],request:function(e){return this.push(e),this.run()},push:function(e){this.queue.push(e)},run:function(){var e=this;if(this.queue.length&&this.queue.length<=this.MAX_REQUEST){var t=this.queue.shift(),n=t.complete;return t.complete=function(){for(var r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o];n&&n.apply(t,i),e.run()},wx.request(t)}}};function h(e){return g(e.requestParams)}var p=new d(h);function g(e){e=e||{},"string"===typeof e&&(e={url:e});var t,n=e.success,r=e.fail,i=e.complete,o=new Promise((function(o,a){e.success=function(e){n&&n(e),o(e)},e.fail=function(e){r&&r(e),a(e)},e.complete=function(e){i&&i(e)},t=f.request(e)}));return o.abort=function(e){return e&&e(),t&&t.abort(),o},o}function v(e){var t=Object.assign({},l,s,c),n={navigateTo:!0,redirectTo:!0,reLaunch:!0},r="__key_",a="__preload_",u="$preloadComponent";Object.keys(t).forEach((function(t){t in wx?l[t]||s[t]?e[t]=function(){for(var e=arguments.length,n=new Array(e),r=0;r<e;r++)n[r]=arguments[r];var i=n.length,o=n.concat(),a=o[i-1];return a&&a.isTaroComponent&&a.$scope&&o.splice(i-1,1,a.$scope),wx[t].apply(wx,o)}:e[t]=function(e){for(var s=arguments.length,l=new Array(s>1?s-1:0),c=1;c<s;c++)l[c-1]=arguments[c];e=e||{};var d,f=null,h=Object.assign({},e);if("string"===typeof e)return l.length?(d=wx)[t].apply(d,[e].concat(l)):wx[t](e);if("navigateTo"===t||"redirectTo"===t||"switchTab"===t){var p=h.url?h.url.replace(/^\//,""):"";p.indexOf("?")>-1&&(p=p.split("?")[0]);var g=(0,i.cacheDataGet)(p);if(g){var v=new g;if(v.componentWillPreload){var b=(0,o.getUniqueKey)(),m=h.url.indexOf("?"),y=m>-1,w=y?h.url.substring(m+1,h.url.length):"",k=(0,o.queryToJson)(w);h.url+=(y?"&":"?")+"".concat(a,"=").concat(b),(0,i.cacheDataSet)(b,v.componentWillPreload(k)),(0,i.cacheDataSet)(u,v)}}}if(n[t]){var S=h.url=h.url||"",C=S.indexOf("?"),x=C>-1,O=x?S.substring(C+1,S.length):"",T=(0,o.queryToJson)(O),j=(0,o.getUniqueKey)();h.url+=(x?"&":"?")+"".concat(r,"=").concat(j),(0,i.cacheDataSet)(j,T)}var E=new Promise((function(n,r){var i;(["fail","success","complete"].forEach((function(i){h[i]=function(o){e[i]&&e[i](o),"success"===i?n("connectSocket"===t?Promise.resolve().then((function(){return Object.assign(f,o)})):o):"fail"===i&&r(o)}})),l.length)?f=(i=wx)[t].apply(i,[h].concat(l)):f=wx[t](h)}));return"uploadFile"!==t&&"downloadFile"!==t||(E.progress=function(e){return f&&f.onProgressUpdate(e),E},E.abort=function(e){return e&&e(),f&&f.abort(),E}),E}:e[t]=function(){console.warn("\u5fae\u4fe1\u5c0f\u7a0b\u5e8f\u6682\u4e0d\u652f\u6301 ".concat(t))}}))}function b(e){var t=this.config||{},n=t.designWidth,r=void 0===n?750:n,i=t.deviceRatio,o=void 0===i?{640:1.17,750:1,828:.905}:i;if(!(r in o))throw new Error("deviceRatio \u914d\u7f6e\u4e2d\u4e0d\u5b58\u5728 ".concat(r," \u7684\u8bbe\u7f6e\uff01"));return parseInt(e,10)*o[r]+"rpx"}function m(){var e=wx.getSystemInfoSync(),t=e.platform,n=t.toLowerCase();return"android"===n||"devtools"===n}function y(e){var t=wx.cloud||{},n={},r=["init","database","uploadFile","downloadFile","getTempFileURL","deleteFile","callFunction","CloudID"];r.forEach((function(e){n[e]=t[e]})),e.cloud=n}function w(e){v(e),e.request=p.request.bind(p),e.addInterceptor=p.addInterceptor.bind(p),e.cleanInterceptors=p.cleanInterceptors.bind(p),e.getCurrentPages=getCurrentPages,e.getApp=getApp,e.requirePlugin=requirePlugin,e.initPxTransform=u.bind(e),e.pxTransform=b.bind(e),e.canIUseWebp=m,y(e)}},121:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.cacheDataSet=i,t.cacheDataGet=o,t.cacheDataHas=a;var r={};function i(e,t){r[e]=t}function o(e,t){var n=r[e];return t&&delete r[e],n}function a(e){return e in r}},122:function(e,t,n){"use strict";function r(e){for(var t,n,r,i=decodeURIComponent,o=e.split("&"),a={},s=0,l=o.length;s<l;++s)if(r=o[s],r.length){var c=r.indexOf("=");c<0?(t=i(r),n=""):(t=i(r.slice(0,c)),n=i(r.slice(c+1))),"string"===typeof a[t]&&(a[t]=[a[t]]),Array.isArray(a[t])?a[t].push(n):a[t]=n}return a}Object.defineProperty(t,"__esModule",{value:!0}),t.queryToJson=r,t.getUniqueKey=a;var i=1,o=(new Date).getTime().toString();function a(){return o+i++}},127:function(e,t,n){var r=function(){return this}()||Function("return this")(),i=r.regeneratorRuntime&&Object.getOwnPropertyNames(r).indexOf("regeneratorRuntime")>=0,o=i&&r.regeneratorRuntime;if(r.regeneratorRuntime=void 0,e.exports=n(128),i)r.regeneratorRuntime=o;else try{delete r.regeneratorRuntime}catch(e){r.regeneratorRuntime=void 0}},128:function(e,t,n){(function(e){var t=n(70);!function(n){"use strict";var r,i=Object.prototype,o=i.hasOwnProperty,a="function"===typeof Symbol?Symbol:{},s=a.iterator||"@@iterator",l=a.asyncIterator||"@@asyncIterator",c=a.toStringTag||"@@toStringTag",u="object"===t(e),d=n.regeneratorRuntime;if(d)u&&(e.exports=d);else{d=n.regeneratorRuntime=u?e.exports:{},d.wrap=k;var f="suspendedStart",h="suspendedYield",p="executing",g="completed",v={},b={};b[s]=function(){return this};var m=Object.getPrototypeOf,y=m&&m(m(B([])));y&&y!==i&&o.call(y,s)&&(b=y);var w=O.prototype=C.prototype=Object.create(b);x.prototype=w.constructor=O,O.constructor=x,O[c]=x.displayName="GeneratorFunction",d.isGeneratorFunction=function(e){var t="function"===typeof e&&e.constructor;return!!t&&(t===x||"GeneratorFunction"===(t.displayName||t.name))},d.mark=function(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,O):(e.__proto__=O,c in e||(e[c]="GeneratorFunction")),e.prototype=Object.create(w),e},d.awrap=function(e){return{__await:e}},T(j.prototype),j.prototype[l]=function(){return this},d.AsyncIterator=j,d.async=function(e,t,n,r){var i=new j(k(e,t,n,r));return d.isGeneratorFunction(t)?i:i.next().then((function(e){return e.done?e.value:i.next()}))},T(w),w[c]="Generator",w[s]=function(){return this},w.toString=function(){return"[object Generator]"},d.keys=function(e){var t=[];for(var n in e)t.push(n);return t.reverse(),function n(){while(t.length){var r=t.pop();if(r in e)return n.value=r,n.done=!1,n}return n.done=!0,n}},d.values=B,I.prototype={constructor:I,reset:function(e){if(this.prev=0,this.next=0,this.sent=this._sent=r,this.done=!1,this.delegate=null,this.method="next",this.arg=r,this.tryEntries.forEach(_),!e)for(var t in this)"t"===t.charAt(0)&&o.call(this,t)&&!isNaN(+t.slice(1))&&(this[t]=r)},stop:function(){this.done=!0;var e=this.tryEntries[0],t=e.completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(e){if(this.done)throw e;var t=this;function n(n,i){return s.type="throw",s.arg=e,t.next=n,i&&(t.method="next",t.arg=r),!!i}for(var i=this.tryEntries.length-1;i>=0;--i){var a=this.tryEntries[i],s=a.completion;if("root"===a.tryLoc)return n("end");if(a.tryLoc<=this.prev){var l=o.call(a,"catchLoc"),c=o.call(a,"finallyLoc");if(l&&c){if(this.prev<a.catchLoc)return n(a.catchLoc,!0);if(this.prev<a.finallyLoc)return n(a.finallyLoc)}else if(l){if(this.prev<a.catchLoc)return n(a.catchLoc,!0)}else{if(!c)throw new Error("try statement without catch or finally");if(this.prev<a.finallyLoc)return n(a.finallyLoc)}}}},abrupt:function(e,t){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.tryLoc<=this.prev&&o.call(r,"finallyLoc")&&this.prev<r.finallyLoc){var i=r;break}}i&&("break"===e||"continue"===e)&&i.tryLoc<=t&&t<=i.finallyLoc&&(i=null);var a=i?i.completion:{};return a.type=e,a.arg=t,i?(this.method="next",this.next=i.finallyLoc,v):this.complete(a)},complete:function(e,t){if("throw"===e.type)throw e.arg;return"break"===e.type||"continue"===e.type?this.next=e.arg:"return"===e.type?(this.rval=this.arg=e.arg,this.method="return",this.next="end"):"normal"===e.type&&t&&(this.next=t),v},finish:function(e){for(var t=this.tryEntries.length-1;t>=0;--t){var n=this.tryEntries[t];if(n.finallyLoc===e)return this.complete(n.completion,n.afterLoc),_(n),v}},catch:function(e){for(var t=this.tryEntries.length-1;t>=0;--t){var n=this.tryEntries[t];if(n.tryLoc===e){var r=n.completion;if("throw"===r.type){var i=r.arg;_(n)}return i}}throw new Error("illegal catch attempt")},delegateYield:function(e,t,n){return this.delegate={iterator:B(e),resultName:t,nextLoc:n},"next"===this.method&&(this.arg=r),v}}}function k(e,t,n,r){var i=t&&t.prototype instanceof C?t:C,o=Object.create(i.prototype),a=new I(r||[]);return o._invoke=E(e,n,a),o}function S(e,t,n){try{return{type:"normal",arg:e.call(t,n)}}catch(e){return{type:"throw",arg:e}}}function C(){}function x(){}function O(){}function T(e){["next","throw","return"].forEach((function(t){e[t]=function(e){return this._invoke(t,e)}}))}function j(e){function n(r,i,a,s){var l=S(e[r],e,i);if("throw"!==l.type){var c=l.arg,u=c.value;return u&&"object"===t(u)&&o.call(u,"__await")?Promise.resolve(u.__await).then((function(e){n("next",e,a,s)}),(function(e){n("throw",e,a,s)})):Promise.resolve(u).then((function(e){c.value=e,a(c)}),s)}s(l.arg)}var r;function i(e,t){function i(){return new Promise((function(r,i){n(e,t,r,i)}))}return r=r?r.then(i,i):i()}this._invoke=i}function E(e,t,n){var r=f;return function(i,o){if(r===p)throw new Error("Generator is already running");if(r===g){if("throw"===i)throw o;return L()}n.method=i,n.arg=o;while(1){var a=n.delegate;if(a){var s=P(a,n);if(s){if(s===v)continue;return s}}if("next"===n.method)n.sent=n._sent=n.arg;else if("throw"===n.method){if(r===f)throw r=g,n.arg;n.dispatchException(n.arg)}else"return"===n.method&&n.abrupt("return",n.arg);r=p;var l=S(e,t,n);if("normal"===l.type){if(r=n.done?g:h,l.arg===v)continue;return{value:l.arg,done:n.done}}"throw"===l.type&&(r=g,n.method="throw",n.arg=l.arg)}}}function P(e,t){var n=e.iterator[t.method];if(n===r){if(t.delegate=null,"throw"===t.method){if(e.iterator.return&&(t.method="return",t.arg=r,P(e,t),"throw"===t.method))return v;t.method="throw",t.arg=new TypeError("The iterator does not provide a 'throw' method")}return v}var i=S(n,e.iterator,t.arg);if("throw"===i.type)return t.method="throw",t.arg=i.arg,t.delegate=null,v;var o=i.arg;return o?o.done?(t[e.resultName]=o.value,t.next=e.nextLoc,"return"!==t.method&&(t.method="next",t.arg=r),t.delegate=null,v):o:(t.method="throw",t.arg=new TypeError("iterator result is not an object"),t.delegate=null,v)}function A(e){var t={tryLoc:e[0]};1 in e&&(t.catchLoc=e[1]),2 in e&&(t.finallyLoc=e[2],t.afterLoc=e[3]),this.tryEntries.push(t)}function _(e){var t=e.completion||{};t.type="normal",delete t.arg,e.completion=t}function I(e){this.tryEntries=[{tryLoc:"root"}],e.forEach(A,this),this.reset(!0)}function B(e){if(e){var t=e[s];if(t)return t.call(e);if("function"===typeof e.next)return e;if(!isNaN(e.length)){var n=-1,i=function t(){while(++n<e.length)if(o.call(e,n))return t.value=e[n],t.done=!1,t;return t.value=r,t.done=!0,t};return i.next=i}}return{next:L}}function L(){return{value:r,done:!0}}}(function(){return this}()||Function("return this")())}).call(this,n(40)(e))},2:function(e,t,n){var r,i=n(67).default;r=n(120);var o=r&&r.default?r.default:r;"function"===typeof o&&o(i),e.exports=i,e.exports.default=e.exports},250:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(3);Component(r.createRecursiveComponentConfig())},251:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(3);Component(r.createRecursiveComponentConfig())},3:function(e,t,n){"use strict";n.r(t),function(e,r,i,o,a){n.d(t,"Current",(function(){return ti})),n.d(t,"CurrentReconciler",(function(){return Fe})),n.d(t,"Events",(function(){return Nr})),n.d(t,"FormElement",(function(){return Vt})),n.d(t,"HOOKS_APP_ID",(function(){return bi})),n.d(t,"Style",(function(){return Mt})),n.d(t,"TaroElement",(function(){return qt})),n.d(t,"TaroEvent",(function(){return ze})),n.d(t,"TaroNode",(function(){return At})),n.d(t,"TaroRootElement",(function(){return Dr})),n.d(t,"TaroText",(function(){return _t})),n.d(t,"cancelAnimationFrame",(function(){return Yr})),n.d(t,"connectReactPage",(function(){return Ni})),n.d(t,"connectVuePage",(function(){return Vi})),n.d(t,"createComponentConfig",(function(){return gi})),n.d(t,"createDocument",(function(){return Ur})),n.d(t,"createEvent",(function(){return Ue})),n.d(t,"createPageConfig",(function(){return pi})),n.d(t,"createReactApp",(function(){return qi})),n.d(t,"createRecursiveComponentConfig",(function(){return vi})),n.d(t,"createVue3App",(function(){return Ji})),n.d(t,"createVueApp",(function(){return $i})),n.d(t,"document",(function(){return Vr})),n.d(t,"eventCenter",(function(){return Br})),n.d(t,"getComputedStyle",(function(){return Xr})),n.d(t,"getCurrentInstance",(function(){return ni})),n.d(t,"hydrate",(function(){return Ve})),n.d(t,"injectPageInstance",(function(){return ii})),n.d(t,"navigator",(function(){return Kr})),n.d(t,"nextTick",(function(){return Yi})),n.d(t,"now",(function(){return qr})),n.d(t,"options",(function(){return He})),n.d(t,"requestAnimationFrame",(function(){return Qr})),n.d(t,"stringify",(function(){return ci})),n.d(t,"useAddToFavorites",(function(){return _i})),n.d(t,"useDidHide",(function(){return wi})),n.d(t,"useDidShow",(function(){return yi})),n.d(t,"useOptionMenuClick",(function(){return Ei})),n.d(t,"usePageScroll",(function(){return Ci})),n.d(t,"usePullDownRefresh",(function(){return ki})),n.d(t,"usePullIntercept",(function(){return Pi})),n.d(t,"useReachBottom",(function(){return Si})),n.d(t,"useReady",(function(){return Ii})),n.d(t,"useResize",(function(){return xi})),n.d(t,"useRouter",(function(){return Bi})),n.d(t,"useScope",(function(){return Li})),n.d(t,"useShareAppMessage",(function(){return Oi})),n.d(t,"useShareTimeline",(function(){return Ai})),n.d(t,"useTabItemTap",(function(){return Ti})),n.d(t,"useTitleClick",(function(){return ji})),n.d(t,"window",(function(){return Zr}));var s=n(71),l=n(21),c=n(28),u=n(16),d=n(79),f=n(72),h=n(39),p=n(25),g=n(26),v=n(6),b=n(23),m=n(14),y=n(15),w=n(17);function k(e){return"string"===typeof e}function S(e){return"undefined"===typeof e}function C(e){return null!==e&&"object"===Object(w["a"])(e)}function x(e){return"function"===typeof e}function O(e){return"true"===e||"false"===e}var T=Array.isArray;function j(e){var t;return t=e.weapp,t||e.default||Object.create(null)}var E={bindTouchStart:"",bindTouchMove:"",bindTouchEnd:"",bindTouchCancel:"",bindLongTap:""};function P(e){return"'".concat(e,"'")}var A=Object.assign({"hover-class":P("none"),"hover-stop-propagation":"false","hover-start-time":"50","hover-stay-time":"400",animation:"",bindAnimationStart:"",bindAnimationIteration:"",bindAnimationEnd:"",bindTransitionEnd:""},E),_={type:"",size:"23",color:""},I=Object.assign(Object.assign({longitude:"",latitude:"",scale:"16",markers:"[]",covers:"",polyline:"[]",circles:"[]",controls:"","include-points":"[]","show-location":"",polygons:"",subkey:"","layer-style":"1",rotate:"0",skew:"skew","enable-3D":"false","show-compass":"false","show-scale":"false","enable-overlooking":"false","enable-zoom":"true","enable-scroll":"true","enable-rotate":"false","enable-satellite":"false","enable-traffic":"false",bindMarkerTap:"",bindLabelTap:"",bindControlTap:"",bindCalloutTap:"",bindUpdated:"",bindRegionChange:"",bindPoiTap:""},E),j({alipay:{setting:"{}"},default:{setting:"[]"}})),B={percent:"","show-info":"false","border-radius":"0","font-size":"16","stroke-width":"6",color:P("#09BB07"),activeColor:P("#09BB07"),backgroundColor:P("#EBEBEB"),active:"false","active-mode":P("backwards"),duration:"30",bindActiveEnd:""},L={nodes:"[]",space:""},R={selectable:"false",space:"",decode:"false"},N=Object.assign({size:P("default"),type:"",plain:"false",disabled:"",loading:"false","form-type":"","open-type":"","hover-class":P("button-hover"),"hover-stop-propagation":"false","hover-start-time":"20","hover-stay-time":"70",lang:"en","session-from":"","send-message-title":"","send-message-path":"","send-message-img":"","app-parameter":"","show-message-card":"false",bindGetUserInfo:"",bindGetAuthorize:"",bindContact:"",bindGetPhoneNumber:"",bindError:"",bindOpenSetting:"",bindLaunchApp:"",scope:"",name:""},j({qq:{"app-packagename":"","app-bundleid":"","app-connect-id":"","group-id":"","public-id":"","share-type":"27","share-mode":"['qq', 'qzone']","aria-label":"","open-id":"","share-message-friend-info":"",bindAddFriend:"",bindAddGroupApp:""}})),D={value:"",disabled:"",checked:"false",color:P("#09BB07"),name:""},M={bindChange:"",name:""},F={"read-only":"false",placeholder:"","show-img-size":"false","show-img-toolbar":"false","show-img-resize":"false",focus:"false",bindReady:"",bindFocus:"",bindBlur:"",bindInput:"",bindStatusChange:"",name:""},W={"report-submit":"false","report-submit-timeout":"0",bindSubmit:"",bindReset:"",name:""},z=Object.assign({value:"",type:P(""),password:"false",placeholder:"","placeholder-style":"","placeholder-class":P("input-placeholder"),disabled:"",maxlength:"140","cursor-spacing":"0","auto-focus":"false",focus:"false","confirm-type":P("done"),"confirm-hold":"false",cursor:"i.value.length","selection-start":"-1","selection-end":"-1","adjust-position":"true","hold-keyboard":"false",bindInput:"",bindFocus:"",bindBlur:"",bindConfirm:"",bindKeyboardHeightChange:"",name:""},j({alipay:{"random-number":"false",controlled:"false"},weapp:{"always-embed":"false"}})),U={for:"",name:""},q={mode:P("selector"),disabled:"",bindCancel:"",range:"","range-key":"",value:"",bindChange:"",bindColumnChange:"",start:"",end:"",fields:P("day"),"custom-item":"",name:""},V={value:"","indicator-style":"","indicator-class":"","mask-style":"","mask-class":"",bindChange:"",bindPickStart:"",bindPickEnd:"",name:""},H={name:""},$={value:"",checked:"false",disabled:"",color:P("#09BB07"),name:""},G={bindChange:"",name:""},K={min:"0",max:"100",step:"1",disabled:"",value:"0",color:P("#e9e9e9"),"selected-color":P("#1aad19"),activeColor:P("#1aad19"),backgroundColor:P("#e9e9e9"),"block-size":"28","block-color":P("#ffffff"),"show-value":"false",bindChange:"",bindChanging:"",name:""},J={checked:"false",disabled:"",type:P("switch"),color:P("#04BE02"),bindChange:"",name:""},Q={src:"",bindLoad:"eh",bindError:"eh"},Y={value:"",placeholder:"","placeholder-style":"","placeholder-class":P("textarea-placeholder"),disabled:"",maxlength:"140","auto-focus":"false",focus:"false","auto-height":"false",fixed:"false","cursor-spacing":"0",cursor:"-1","show-confirm-bar":"true","selection-start":"-1","selection-end":"-1","adjust-position":"true","hold-keyboard":"false",enableNative:"false",bindFocus:"",bindBlur:"",bindLineChange:"",bindInput:"",bindConfirm:"",bindKeyboardHeightChange:"",name:""},X=Object.assign({"scroll-top":"false"},E),Z={"min-width":"","max-width":"",width:"","min-height":"","max-height":"",height:"",orientation:""},ee={"scale-area":"false"},te=Object.assign({direction:"none",inertia:"false","out-of-bounds":"false",x:"",y:"",damping:"20",friction:"2",disabled:"",scale:"false","scale-min":"0.5","scale-max":"10","scale-value":"1",animation:"true",bindAnimationEnd:"",bindChange:"",bindScale:"",htouchmove:"",vtouchmove:"",width:P("10px"),height:P("10px")},E),ne=Object.assign(Object.assign({"scroll-x":"false","scroll-y":"false","upper-threshold":"50","lower-threshold":"50","scroll-top":"","scroll-left":"","scroll-into-view":"","scroll-with-animation":"false","enable-back-to-top":"false","enable-flex":"false","scroll-anchoring":"false","refresher-enabled":"false","refresher-threshold":"45","refresher-default-style":P("black"),"refresher-background":P("#FFF"),"refresher-triggered":"false",enhanced:"false",bounces:"true","show-scrollbar":"true","paging-enabled":"false","fast-deceleration":"false",bindRefresherPulling:"",bindRefresherRefresh:"",bindRefresherRestore:"",bindRefresherAbort:"",bindScrollToUpper:"",bindScrollToLower:"",bindScroll:"",animation:"",bindTransitionEnd:"",bindAnimationStart:"",bindAnimationIteration:"",bindAnimationEnd:"",bindDragStart:"",bindDragging:"",bindDragEnd:""},E),j({alipay:{"scroll-animation-duration":"","trap-scroll":"false"}})),re=Object.assign(Object.assign({"indicator-dots":"false","indicator-color":P("rgba(0, 0, 0, .3)"),"indicator-active-color":P("#000000"),autoplay:"false",current:"0",interval:"5000",duration:"500",circular:"false",vertical:"false","previous-margin":"'0px'","next-margin":"'0px'","snap-to-edge":"false","display-multiple-items":"1","skip-hidden-item-layout":"false","easing-function":P("default"),bindChange:"",bindTransition:"",bindAnimationFinish:""},E),j({alipay:{acceleration:"false","disable-touch":"false"}})),ie={"item-id":""},oe={version:P("release"),name:"",args:"",bindSuccess:"",bindFail:"",bindCancel:""},ae={target:P("self"),url:"","open-type":P("navigate"),delta:"1","app-id":"",path:"","extra-data":"",version:P("version"),"hover-class":P("navigator-hover"),"hover-stop-propagation":"false","hover-start-time":"50","hover-stay-time":"600",bindSuccess:"",bindFail:"",bindComplete:""},se={id:"",src:"",loop:"false",controls:"false",poster:"",name:"",author:"",bindError:"",bindPlay:"",bindPause:"",bindTimeUpdate:"",bindEnded:""},le={mode:P("normal"),"device-position":P("back"),flash:P("auto"),"frame-size":P("medium"),bindStop:"",bindError:"",bindInitDone:"",bindScanCode:""},ce=Object.assign({src:"",mode:P("scaleToFill"),webp:"false","lazy-load":"false","show-menu-by-longpress":"false",bindError:"",bindLoad:""},E),ue={src:"",mode:P("live"),autoplay:"false",muted:"false",orientation:P("vertical"),"object-fit":P("contain"),"background-mute":"false","min-cache":"1","max-cache":"3","sound-mode":P("speaker"),"auto-pause-if-navigate":"true","auto-pause-if-open-native":"true","picture-in-picture-mode":"[]",animation:"",bindStateChange:"",bindFullScreenChange:"",bindNetStatus:"",bindAudioVolumeNotify:"",bindEnterPictureInPicture:"",bindLeavePictureInPicture:""},de={url:"",mode:P("RTC"),autopush:"false",muted:"false","enable-camera":"true","auto-focus":"true",orientation:P("vertical"),beauty:"0",whiteness:"0",aspect:P("9:16"),"min-bitrate":"200","max-bitrate":"1000","audio-quality":P("high"),"waiting-image":"","waiting-image-hash":"",zoom:"false","device-position":P("front"),"background-mute":"false",mirror:"false","remote-mirror":"false","local-mirror":"false","audio-reverb-type":"0","enable-mic":"true","enable-agc":"false","enable-ans":"false","audio-volume-type":P("voicecall"),"video-width":"360","video-height":"640",animation:"",bindStateChange:"",bindNetStatus:"",bindBgmStart:"",bindBgmProgress:"",bindBgmComplete:""},fe={src:"",duration:"",controls:"true","danmu-list":"","danmu-btn":"","enable-danmu":"",autoplay:"false",loop:"false",muted:"false","initial-time":"0","page-gesture":"false",direction:"","show-progress":"true","show-fullscreen-btn":"true","show-play-btn":"true","show-center-play-btn":"true","enable-progress-gesture":"true","object-fit":P("contain"),poster:"","show-mute-btn":"false",title:"","play-btn-position":P("bottom"),"enable-play-gesture":"false","auto-pause-if-navigate":"true","auto-pause-if-open-native":"true","vslide-gesture":"false","vslide-gesture-in-fullscreen":"true","ad-unit-id":"","poster-for-crawler":"","show-casting-button":"false","picture-in-picture-mode":"[]","enable-auto-rotation":"false","show-screen-lock-button":"false",animation:"",bindPlay:"",bindPause:"",bindEnded:"",bindTimeUpdate:"",bindFullScreenChange:"",bindWaiting:"",bindError:"",bindProgress:"",bindLoadedMetadata:"",bindControlsToggle:"",bindEnterPictureInPicture:"",bindLeavePictureInPicture:"",bindSeekComplete:""},he={type:"","canvas-id":"","disable-scroll":"false",bindTouchStart:"",bindTouchMove:"",bindTouchEnd:"",bindTouchCancel:"",bindLongtap:"",bindError:""},pe=Object.assign({"ad-intervals":"","ad-type":P("banner"),"ad-theme":P("white"),bindLoad:"",bindError:"",bindClose:""},j({swan:{appid:"",apid:"",type:P("feed"),updatetime:"",bindStatus:""},default:{"unit-id":""}})),ge={bindLoad:"",bindError:""},ve={type:"","open-gid":"",lang:P("en"),"default-text":"","default-avatar":"",bindError:""},be={src:"",bindMessage:"",bindLoad:""},me={title:"",loading:"false","front-color":"","background-color":"","color-animation-duration":"0","color-animation-timing-func":P("linear")},ye={"background-text-style":"","background-color":"","background-color-top":"","background-color-bottom":"","scroll-top":P(""),"scroll-duration":"300","page-style":P(""),"root-font-size":P(""),bindResize:"",bindScroll:"",bindScrollDone:""},we={},ke={name:""},Se={name:""},Ce={View:A,Icon:_,Progress:B,RichText:L,Text:R,Button:N,Checkbox:D,CheckboxGroup:M,Editor:F,Form:W,Input:z,Label:U,Picker:q,PickerView:V,PickerViewColumn:H,Radio:$,RadioGroup:G,Slider:K,Switch:J,CoverImage:Q,Textarea:Y,CoverView:X,MatchMedia:Z,MovableArea:ee,MovableView:te,ScrollView:ne,Swiper:re,SwiperItem:ie,FunctionalPageNavigator:oe,Navigator:ae,Audio:se,Camera:le,Image:ce,LivePlayer:ue,LivePusher:de,Video:fe,Canvas:he,Ad:pe,OfficialAccount:ge,OpenData:ve,WebView:be,NavigationBar:me,PageMeta:ye,Block:we,Map:I,Slot:Se,SlotView:ke},xe=new Set(["input","checkbox","picker","picker-view","radio","slider","switch","textarea"]),Oe={},Te=function(){};function je(e){return e.replace(/([a-z0-9])([A-Z])/g,"$1-$2").toLowerCase()}function Ee(e){for(var t="",n=!1,r=0;r<e.length;r++)"-"!==e[r]?(t+=n?e[r].toUpperCase():e[r],n=!1):n=!0;return t}function Pe(e){return e.charAt(0).toUpperCase()+e.slice(1)}var Ae=Object.prototype.hasOwnProperty,_e=function(e,t){return Ae.call(e,t)},Ie="\u5982\u6709\u7591\u95ee\uff0c\u8bf7\u63d0\u4ea4 issue \u81f3\uff1ahttps://github.com/nervjs/taro/issues";function Be(e,t){if(!e)throw new Error(t+"\n"+Ie)}function Le(e,t){0}var Re=function(){var e=0;return function(){return(e++).toString()}};function Ne(e){return 1===e.nodeType}function De(e){return 3===e.nodeType}var Me=function(){function e(){Object(m["a"])(this,e),this.__handlers={}}return Object(y["a"])(e,[{key:"addEventListener",value:function(e,t,n){if("regionchange"===e)return this.addEventListener("begin",t,n),void this.addEventListener("end",t,n);e=e.toLowerCase();var r=this.__handlers[e],i=Boolean(n),o=!1;if(C(n)&&(i=Boolean(n.capture),o=Boolean(n.once)),o){var a=function n(){t.apply(this,arguments),this.removeEventListener(e,n)};this.addEventListener(e,a,Object.assign(Object.assign({},n),{once:!1}))}else Le(i,"The event capture feature is unimplemented."),T(r)?r.push(t):this.__handlers[e]=[t]}},{key:"removeEventListener",value:function(e,t){if(e=e.toLowerCase(),null!=t){var n=this.__handlers[e];if(T(n)){var r=n.indexOf(t);Le(-1===r,"\u4e8b\u4ef6: '".concat(e,"' \u6ca1\u6709\u6ce8\u518c\u5728 DOM \u4e2d\uff0c\u56e0\u6b64\u4e0d\u4f1a\u88ab\u79fb\u9664\u3002")),n.splice(r,1)}}}},{key:"isAnyEventBinded",value:function(){var e=this,t=Object.keys(this.__handlers).find((function(t){var n=e.__handlers[t];return n.length}));return t}}]),e}(),Fe={getLifecyle:function(e,t){return e[t]}},We=new Map,ze=function(){function e(t,n,r){Object(m["a"])(this,e),this._stop=!1,this._end=!1,this.defaultPrevented=!1,this.timeStamp=Date.now(),this.type=t.toLowerCase(),this.mpEvent=r,this.bubbles=Boolean(n&&n.bubbles),this.cancelable=Boolean(n&&n.cancelable)}return Object(y["a"])(e,[{key:"stopPropagation",value:function(){this._stop=!0}},{key:"stopImmediatePropagation",value:function(){this._end=this._stop=!0}},{key:"preventDefault",value:function(){this.defaultPrevented=!0}},{key:"target",get:function(){var e,t,n,r=Vr.getElementById(null===(e=this.mpEvent)||void 0===e?void 0:e.target.id);return Object.assign(Object.assign(Object.assign({},null===(t=this.mpEvent)||void 0===t?void 0:t.target),null===(n=this.mpEvent)||void 0===n?void 0:n.detail),{dataset:null!==r?r.dataset:Oe})}},{key:"currentTarget",get:function(){var e,t,n,r=Vr.getElementById(null===(e=this.mpEvent)||void 0===e?void 0:e.currentTarget.id);return null===r?this.target:Object.assign(Object.assign(Object.assign({},null===(t=this.mpEvent)||void 0===t?void 0:t.currentTarget),null===(n=this.mpEvent)||void 0===n?void 0:n.detail),{dataset:r.dataset})}}]),e}();function Ue(e,t){if("string"===typeof e)return new ze(e,{bubbles:!0,cancelable:!0});var n=new ze(e.type,{bubbles:!0,cancelable:!0},e);for(var r in e)"currentTarget"!==r&&"target"!==r&&"type"!==r&&"timeStamp"!==r&&(n[r]=e[r]);return n}function qe(e){var t;null===(t=Fe.modifyEventType)||void 0===t||t.call(Fe,e),null==e.currentTarget&&(e.currentTarget=e.target);var n=Vr.getElementById(e.currentTarget.id);null!=n&&n.dispatchEvent(Ue(e))}function Ve(e){var t,n;if(De(e))return n={},Object(b["a"])(n,"v",e.nodeValue),Object(b["a"])(n,"nn",e.nodeName),n;var r=(t={},Object(b["a"])(t,"nn",e.nodeName),Object(b["a"])(t,"uid",e.uid),t),i=e.props,o=e.childNodes;if(!e.isAnyEventBinded()){if("view"===e.nodeName){var a=Object.keys(i).find((function(e){return!(/class|style|id/.test(e)||e.startsWith("data-"))}));r["nn"]=a?"static-view":"pure-view"}"text"===e.nodeName&&(r["nn"]="static-text"),"image"===e.nodeName&&(r["nn"]="static-image")}for(var s in i){var l=Ee(s);s.startsWith("data-")||"class"===s||"style"===s||"id"===s||"catchMove"===l||(r[l]=i[s]),"view"===e.nodeName&&"catchMove"===l&&"false"!==i[s]&&(r["nn"]="catch-view")}return o.length>0&&(r["cn"]=o.map(Ve)),""!==e.className&&(r["cl"]=e.className),""!==e.cssText&&"swiper-item"!==e.nodeName&&(r["st"]=e.cssText),r}var He={prerender:!0,debug:!1,html:{skipElements:new Set(["style","script"]),voidElements:new Set(["!doctype","area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"]),closingElements:new Set(["html","head","body","p","dt","dd","li","option","thead","th","tbody","tr","td","tfoot","colgroup"]),renderHTMLTag:!1},reconciler:function(e){Object.assign(Fe,e)}};function $e(){return{index:0,column:0,line:0}}function Ge(e,t,n){for(var r=e.index,i=e.index=r+n,o=r;o<i;o++){var a=t.charAt(o);"\n"===a?(e.line++,e.column=0):e.column++}}function Ke(e,t,n){var r=n-e.index;return Ge(e,t,r)}function Je(e){return{index:e.index,line:e.line,column:e.column}}var Qe=/\s/;function Ye(e){return Qe.test(e)}var Xe=/=/;function Ze(e){return Xe.test(e)}function et(e){var t=e.toLowerCase();return!!He.html.skipElements.has(t)}var tt=/[A-Za-z0-9]/;function nt(e,t){while(1){var n=e.indexOf("<",t);if(-1===n)return n;var r=e.charAt(n+1);if("/"===r||"!"===r||tt.test(r))return n;t=n+1}}function rt(e,t,n){if(!Ye(n.charAt(e)))return!1;for(var r=n.length,i=e-1;i>t;i--){var o=n.charAt(i);if(!Ye(o)){if(Ze(o))return!1;break}}for(var a=e+1;a<r;a++){var s=n.charAt(a);if(!Ye(s))return!Ze(s)}}var it=function(){function e(t){Object(m["a"])(this,e),this.tokens=[],this.position=$e(),this.html=t}return Object(y["a"])(e,[{key:"scan",value:function(){var e=this.html,t=this.position,n=e.length;while(t.index<n){var r=t.index;if(this.scanText(),t.index===r){var i=e.startsWith("!--",r+1);if(i)this.scanComment();else{var o=this.scanTag();et(o)&&this.scanSkipTag(o)}}}return this.tokens}},{key:"scanText",value:function(){var e="text",t=this.html,n=this.position,r=nt(t,n.index);if(r!==n.index){-1===r&&(r=t.length);var i=Je(n),o=t.slice(n.index,r);Ke(n,t,r);var a=Je(n);this.tokens.push({type:e,content:o,position:{start:i,end:a}})}}},{key:"scanComment",value:function(){var e="comment",t=this.html,n=this.position,r=Je(n);Ge(n,t,4);var i=t.indexOf("--\x3e",n.index),o=i+3;-1===i&&(i=o=t.length);var a=t.slice(n.index,i);Ke(n,t,o),this.tokens.push({type:e,content:a,position:{start:r,end:Je(n)}})}},{key:"scanTag",value:function(){this.scanTagStart();var e=this.scanTagName();return this.scanAttrs(),this.scanTagEnd(),e}},{key:"scanTagStart",value:function(){var e="tag-start",t=this.html,n=this.position,r=t.charAt(n.index+1),i="/"===r,o=Je(n);Ge(n,t,i?2:1),this.tokens.push({type:e,close:i,position:{start:o}})}},{key:"scanTagEnd",value:function(){var e="tag-end",t=this.html,n=this.position,r=t.charAt(n.index),i="/"===r;Ge(n,t,i?2:1);var o=Je(n);this.tokens.push({type:e,close:i,position:{end:o}})}},{key:"scanTagName",value:function(){var e="tag",t=this.html,n=this.position,r=t.length,i=n.index;while(i<r){var o=t.charAt(i),a=!(Ye(o)||"/"===o||">"===o);if(a)break;i++}var s=i+1;while(s<r){var l=t.charAt(s),c=!(Ye(l)||"/"===l||">"===l);if(!c)break;s++}Ke(n,t,s);var u=t.slice(i,s);return this.tokens.push({type:e,content:u}),u}},{key:"scanAttrs",value:function(){var e=this.html,t=this.position,n=this.tokens,r=t.index,i=null,o=r,a=[],s=e.length;while(r<s){var l=e.charAt(r);if(i){var c=l===i;c&&(i=null),r++}else{var u="/"===l||">"===l;if(u){r!==o&&a.push(e.slice(o,r));break}if(rt(r,o,e))r!==o&&a.push(e.slice(o,r)),o=r+1,r++;else{var d="'"===l||'"'===l;d?(i=l,r++):r++}}}Ke(t,e,r);for(var f=a.length,h="attribute",p=0;p<f;p++){var g=a[p],v=g.includes("=");if(v){var b=a[p+1];if(b&&b.startsWith("=")){if(b.length>1){var m=g+b;n.push({type:h,content:m}),p+=1;continue}var y=a[p+2];if(p+=1,y){var w=g+"="+y;n.push({type:h,content:w}),p+=1;continue}}}if(g.endsWith("=")){var k=a[p+1];if(k&&!k.includes("=")){var S=g+k;n.push({type:h,content:S}),p+=1;continue}var C=g.slice(0,-1);n.push({type:h,content:C})}else n.push({type:h,content:g})}}},{key:"scanSkipTag",value:function(e){var t=this.html,n=this.position,r=this.tokens,i=e.toLowerCase(),o=t.length,a=n.index;while(a<o){var s=t.indexOf("</",a);if(-1===s){this.scanText();break}var l=Je(n);Ke(l,t,s);var c={html:t,position:l,tokens:[]},u=this.scanTag();if(i===u.toLowerCase()){if(s!==n.index){var d=Je(n);Ke(n,t,s),r.push({type:"text",content:t.slice(d.index,s),position:{start:d,end:Je(n)}})}r.push.apply(r,c.tokens),Ke(n,t,c.position.index);break}a=c.position.index}}}]),e}();function ot(e,t){for(var n=Object.create(null),r=e.split(","),i=0;i<r.length;i++)n[r[i]]=!0;return t?function(e){return!!n[e.toLowerCase()]}:function(e){return!!n[e]}}var at={img:"image",iframe:"web-view"},st=Object.keys(Ce).map((function(e){return e.toLowerCase()})).join(","),lt=ot(st,!0),ct=ot("a,i,abbr,iframe,select,acronym,slot,small,span,bdi,kbd,strong,big,map,sub,sup,br,mark,mark,meter,template,canvas,textarea,cite,object,time,code,output,u,data,picture,tt,datalist,var,dfn,del,q,em,s,embed,samp,b",!0),ut=ot("address,fieldset,li,article,figcaption,main,aside,figure,nav,blockquote,footer,ol,details,form,p,dialog,h1,h2,h3,h4,h5,h6,pre,dd,header,section,div,hgroup,table,dl,hr,ul,dt",!0),dt="{",ft="}",ht=".",pt="#",gt=">",vt="~",bt="+",mt=function(){function e(){Object(m["a"])(this,e),this.styles=[]}return Object(y["a"])(e,[{key:"extractStyle",value:function(e){var t=this,n=/<style>(.+?)<\/style>/g,r=e.replace(/\n/g,"");return r=r.replace(n,(function(e,n){var r=n.trim();return t.stringToSelector(r),""})),r.trim()}},{key:"stringToSelector",value:function(e){var t=this,n=e.indexOf(dt),r=function(){var r=e.indexOf(ft),i=e.slice(0,n).trim(),o=e.slice(n+1,r).replace(/ /g,"");/;$/.test(o)||(o+=";"),i.split(",").forEach((function(e){var n=t.parseSelector(e);t.styles.push({content:o,selectorList:n})})),e=e.slice(r+1),n=e.indexOf(dt)};while(n>-1)r()}},{key:"parseSelector",value:function(e){var t=e.trim().replace(/ *([>~+]) */g," $1").replace(/ +/g," ").split(" "),n=t.map((function(e){var t=e.charAt(0),n={isChild:t===gt,isGeneralSibling:t===vt,isAdjacentSibling:t===bt,tag:null,id:null,class:[],attrs:[]};return e=e.replace(/^[>~+]/,""),e=e.replace(/\[(.+?)\]/g,(function(e,t){var r=t.split("="),i=Object(v["a"])(r,2),o=i[0],a=i[1],s=-1===t.indexOf("="),l={all:s,key:o,value:s?null:a};return n.attrs.push(l),""})),e=e.replace(/([.#][A-Za-z0-9-_]+)/g,(function(e,t){return t[0]===pt?n.id=t.substr(1):t[0]===ht&&n.class.push(t.substr(1)),""})),""!==e&&(n.tag=e),n}));return n}},{key:"matchStyle",value:function(e,t,n){var r=this,i=this.styles.reduce((function(i,o,a){var s=o.content,l=o.selectorList,c=n[a],u=l[c],d=l[c+1];((null===d||void 0===d?void 0:d.isGeneralSibling)||(null===d||void 0===d?void 0:d.isAdjacentSibling))&&(u=d,c+=1,n[a]+=1);var f=r.matchCurrent(e,t,u);if(f&&u.isGeneralSibling){var h=yt(t);while(h){if(h.h5tagName&&r.matchCurrent(h.h5tagName,h,l[c-1])){f=!0;break}h=yt(h),f=!1}}if(f&&u.isAdjacentSibling){var p=yt(t);if(p&&p.h5tagName){var g=r.matchCurrent(p.h5tagName,p,l[c-1]);g||(f=!1)}else f=!1}if(f){if(c===l.length-1)return i+s;c<l.length-1&&(n[a]+=1)}else u.isChild&&c>0&&(n[a]-=1,r.matchCurrent(e,t,l[n[a]])&&(n[a]+=1));return i}),"");return i}},{key:"matchCurrent",value:function(e,t,n){if(n.tag&&n.tag!==e)return!1;if(n.id&&n.id!==t.id)return!1;if(n.class.length)for(var r=t.className.split(" "),i=0;i<n.class.length;i++){var o=n.class[i];if(-1===r.indexOf(o))return!1}if(n.attrs.length)for(var a=0;a<n.attrs.length;a++){var s=n.attrs[a],l=s.all,c=s.key,u=s.value;if(l&&!t.hasAttribute(c))return!1;var d=t.getAttribute(c);if(d!==St(u||""))return!1}return!0}}]),e}();function yt(e){var t=e.parentElement;if(!t)return null;var n=e.previousSibling;return n?1===n.nodeType?n:yt(n):null}var wt={li:["ul","ol","menu"],dt:["dl"],dd:["dl"],tbody:["table"],thead:["table"],tfoot:["table"],tr:["table"],td:["table"]};function kt(e,t){var n=wt[e];if(n){var r=t.length-1;while(r>=0){var i=t[r].tagName;if(i===e)break;if(n&&n.includes(i))return!0;r--}}return!1}function St(e){var t=e.charAt(0),n=e.length-1,r='"'===t||"'"===t;return r&&t===e.charAt(n)?e.slice(1,n):e}function Ct(e){return He.html.renderHTMLTag?e:at[e]?at[e]:lt(e)?e:ut(e)?"view":ct(e)?"text":"view"}function xt(e){var t="=",n=e.indexOf(t);if(-1===n)return[e];var r=e.slice(0,n).trim(),i=e.slice(n+t.length).trim();return[r,i]}function Ot(e,t,n){return e.filter((function(e){return"comment"!==e.type&&("text"!==e.type||""!==e.content)})).map((function(e){if("text"===e.type){var r=Vr.createTextNode(e.content);return x(He.html.transformText)?He.html.transformText(r,e):(null===n||void 0===n||n.appendChild(r),r)}var i=Vr.createElement(Ct(e.tagName));i.h5tagName=e.tagName,null===n||void 0===n||n.appendChild(i),He.html.renderHTMLTag||(i.className=e.tagName);for(var o=0;o<e.attributes.length;o++){var a=e.attributes[o],s=xt(a),l=Object(v["a"])(s,2),c=l[0],u=l[1];if("class"===c)i.className+=" "+St(u);else{if("o"===c[0]&&"n"===c[1])continue;i.setAttribute(c,null==u||St(u))}}var d=t.styleTagParser,f=t.descendantList,h=f.slice(),p=d.matchStyle(e.tagName,i,h);return i.setAttribute("style",p+i.style.cssText),Ot(e.children,{styleTagParser:d,descendantList:h},i),x(He.html.transformElement)?He.html.transformElement(i,e):i}))}function Tt(e){var t=new mt;e=t.extractStyle(e);var n=new it(e).scan(),r={tagName:"",children:[],type:"element",attributes:[]},i={tokens:n,options:He,cursor:0,stack:[r]};return jt(i),Ot(r.children,{styleTagParser:t,descendantList:Array(t.styles.length).fill(0)})}function jt(e){var t=e.tokens,n=e.stack,r=e.cursor,i=t.length,o=n[n.length-1].children;while(r<i){var a=t[r];if("tag-start"===a.type){var s=t[++r];r++;var l=s.content.toLowerCase();if(a.close){var c=n.length,u=!1;while(--c>-1)if(n[c].tagName===l){u=!0;break}while(r<i){var d=t[r];if("tag-end"!==d.type)break;r++}if(u){n.splice(c);break}}else{var f=He.html.closingElements.has(l),h=f;if(h&&(h=!kt(l,n)),h){var p=n.length-1;while(p>0){if(l===n[p].tagName){n.splice(p);var g=p-1;o=n[g].children;break}p-=1}}var v=[],b=void 0;while(r<i){if(b=t[r],"tag-end"===b.type)break;v.push(b.content),r++}r++;var m=[],y={type:"element",tagName:s.content,attributes:v,children:m};o.push(y);var w=!(b.close||He.html.voidElements.has(l));if(w){n.push({tagName:l,children:m});var k={tokens:t,cursor:r,stack:n};jt(k),r=k.cursor}}}else o.push(a),r++}e.cursor=r}function Et(e,t){e.childNodes.forEach((function(t){e.removeChild(t)}));for(var n=Tt(t),r=0;r<n.length;r++)e.appendChild(n[r])}var Pt=Re(),At=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(e,r){var i;return Object(m["a"])(this,n),i=t.call(this),i.parentNode=null,i.childNodes=[],i.hydrate=function(e){return function(){return Ve(e)}},i.nodeType=e,i.nodeName=r,i.uid="_n_".concat(Pt()),We.set(i.uid,Object(h["a"])(i)),i}return Object(y["a"])(n,[{key:"insertBefore",value:function(e,t,n){var r,i,o=this;if(e.remove(),e.parentNode=this,t){var a=this.findIndex(this.childNodes,t);this.childNodes.splice(a,0,e),i=!0===n?{path:e._path,value:this.hydrate(e)}:{path:"".concat(this._path,".","cn"),value:function(){return o.childNodes.map(Ve)}}}else this.childNodes.push(e),i={path:e._path,value:this.hydrate(e)};return null===(r=Fe.insertBefore)||void 0===r||r.call(Fe,this,e,t),this.enqueueUpdate(i),We.has(e.uid)||We.set(e.uid,e),e}},{key:"appendChild",value:function(e){var t;this.insertBefore(e),null===(t=Fe.appendChild)||void 0===t||t.call(Fe,this,e)}},{key:"replaceChild",value:function(e,t){var n;if(t.parentNode===this)return this.insertBefore(e,t,!0),t.remove(!0),t;null===(n=Fe.removeChild)||void 0===n||n.call(Fe,this,e,t)}},{key:"removeChild",value:function(e,t){var n=this,r=this.findIndex(this.childNodes,e);return this.childNodes.splice(r,1),!0!==t&&this.enqueueUpdate({path:"".concat(this._path,".","cn"),value:function(){return n.childNodes.map(Ve)}}),e.parentNode=null,We.delete(e.uid),e}},{key:"remove",value:function(e){this.parentNode&&this.parentNode.removeChild(this,e)}},{key:"hasChildNodes",value:function(){return this.childNodes.length>0}},{key:"enqueueUpdate",value:function(e){null!==this._root&&this._root.enqueueUpdate(e)}},{key:"_empty",value:function(){while(this.childNodes.length>0){var e=this.childNodes[0];e.parentNode=null,We.delete(e.uid),this.childNodes.shift()}}},{key:"findIndex",value:function(e,t){var n=e.indexOf(t);return Be(-1!==n,"The node to be replaced is not a child of this node."),n}},{key:"cloneNode",value:function(){var e,t=arguments.length>0&&void 0!==arguments[0]&&arguments[0],n=this.constructor;for(var r in 1===this.nodeType?e=new n(this.nodeType,this.nodeName):3===this.nodeType&&(e=new n("")),this){var i=this[r];["props","dataset"].includes(r)&&"object"===Object(w["a"])(i)?e[r]=Object.assign({},i):"_value"===r?e[r]=i:"style"===r&&(e.style._value=Object.assign({},i._value),e.style._usedStyleProp=new Set(Array.from(i._usedStyleProp)))}return t&&(e.childNodes=this.childNodes.map((function(e){return e.cloneNode(!0)}))),e}},{key:"_path",get:function(){if(null!==this.parentNode){var e="["+this.parentNode.childNodes.indexOf(this)+"]";return"".concat(this.parentNode._path,".","cn",".").concat(e)}return""}},{key:"_root",get:function(){return null!==this.parentNode?this.parentNode._root:null}},{key:"parentElement",get:function(){var e=this.parentNode;return null!=e&&1===e.nodeType?e:null}},{key:"nextSibling",get:function(){var e=this.parentNode;return e&&e.childNodes[this.findIndex(e.childNodes,this)+1]||null}},{key:"previousSibling",get:function(){var e=this.parentNode;return e&&e.childNodes[this.findIndex(e.childNodes,this)-1]||null}},{key:"firstChild",get:function(){return this.childNodes[0]||null}},{key:"lastChild",get:function(){var e=this.childNodes;return e[e.length-1]||null}},{key:"textContent",set:function(e){this._empty(),""===e?this.enqueueUpdate({path:"".concat(this._path,".","cn"),value:function(){return[]}}):this.appendChild(Vr.createTextNode(e))}},{key:"innerHTML",set:function(e){Et(this,e)},get:function(){return""}}]),n}(Me),_t=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(e){var r;return Object(m["a"])(this,n),r=t.call(this,3,"#text"),r._value=e,r}return Object(y["a"])(n,[{key:"textContent",set:function(e){this._value=e,this.enqueueUpdate({path:"".concat(this._path,".","v"),value:e})},get:function(){return this._value}},{key:"nodeValue",set:function(e){this.textContent=e},get:function(){return this._value}}]),n}(At),It=["alignContent","alignItems","alignSelf","alignmentAdjust","alignmentBaseline","all","animation","animationDelay","animationDirection","animationDuration","animationFillMode","animationIterationCount","animationName","animationPlayState","animationTimingFunction","appearance","azimuth","backfaceVisibility","background","backgroundAttachment","backgroundBlendMode","backgroundClip","backgroundColor","backgroundImage","backgroundOrigin","backgroundPosition","backgroundRepeat","backgroundSize","baselineShift","blockOverflow","blockSize","bookmarkLabel","bookmarkLevel","bookmarkState","border","borderBlock","borderBlockColor","borderBlockEnd","borderBlockEndColor","borderBlockEndStyle","borderBlockEndWidth","borderBlockStart","borderBlockStartColor","borderBlockStartStyle","borderBlockStartWidth","borderBlockStyle","borderBlockWidth","borderBottom","borderBottomColor","borderBottomFitLength","borderBottomFitWidth","borderBottomImage","borderBottomLeftFitWidth","borderBottomLeftImage","borderBottomLeftRadius","borderBottomRightFitLength","borderBottomRightFitWidth","borderBottomRightImage","borderBottomRightRadius","borderBottomStyle","borderBottomWidth","borderBottomlEftFitLength","borderBoundary","borderBreak","borderCollapse","borderColor","borderCornerFit","borderCornerImage","borderCornerImageTransform","borderEndEndRadius","borderEndStartRadius","borderFit","borderFitLength","borderFitWidth","borderImage","borderImageOutset","borderImageRepeat","borderImageSlice","borderImageSource","borderImageTransform","borderImageWidth","borderInline","borderInlineColor","borderInlineEnd","borderInlineEndColor","borderInlineEndStyle","borderInlineEndWidth","borderInlineStart","borderInlineStartColor","borderInlineStartStyle","borderInlineStartWidth","borderInlineStyle","borderInlineWidth","borderLeft","borderLeftColor","borderLeftFitLength","borderLeftFitWidth","borderLeftImage","borderLeftStyle","borderLeftWidth","borderRadius","borderRight","borderRightColor","borderRightFitLength","borderRightFitWidth","borderRightImage","borderRightStyle","borderRightWidth","borderSpacing","borderStartEndRadius","borderStartStartRadius","borderStyle","borderTop","borderTopColor","borderTopFitLength","borderTopFitWidth","borderTopImage","borderTopLeftFitLength","borderTopLeftFitWidth","borderTopLeftImage","borderTopLeftRadius","borderTopRightFitLength","borderTopRightFitWidth","borderTopRightImage","borderTopRightRadius","borderTopStyle","borderTopWidth","borderWidth","bottom","boxDecorationBreak","boxShadow","boxSizing","boxSnap","breakAfter","breakBefore","breakInside","captionSide","caret","caretColor","caretShape","chains","clear","clip","clipPath","clipRule","color","colorAdjust","colorInterpolationFilters","colorScheme","columnCount","columnFill","columnGap","columnRule","columnRuleColor","columnRuleStyle","columnRuleWidth","columnSpan","columnWidth","columns","contain","content","continue","counterIncrement","counterReset","counterSet","cue","cueAfter","cueBefore","cursor","direction","display","dominantBaseline","dropInitialAfterAdjust","dropInitialAfterAlign","dropInitialBeforeAdjust","dropInitialBeforeAlign","dropInitialSize","dropInitialValue","elevation","emptyCells","filter","flex","flexBasis","flexDirection","flexFlow","flexGrow","flexShrink","flexWrap","float","floodColor","floodOpacity","flow","flowFrom","flowInto","font","fontFamily","fontFeatureSettings","fontKerning","fontLanguageOverride","fontMaxSize","fontMinSize","fontOpticalSizing","fontPalette","fontSize","fontSizeAdjust","fontStretch","fontStyle","fontSynthesis","fontSynthesisSmallCaps","fontSynthesisStyle","fontSynthesisWeight","fontVariant","fontVariantAlternates","fontVariantCaps","fontVariantEastAsian","fontVariantEmoji","fontVariantLigatures","fontVariantNumeric","fontVariantPosition","fontVariationSettings","fontWeight","footnoteDisplay","footnotePolicy","forcedColorAdjust","gap","glyphOrientationVertical","grid","gridArea","gridAutoColumns","gridAutoFlow","gridAutoRows","gridColumn","gridColumnEnd","gridColumnStart","gridRow","gridRowEnd","gridRowStart","gridTemplate","gridTemplateAreas","gridTemplateColumns","gridTemplateRows","hangingPunctuation","height","hyphenateCharacter","hyphenateLimitChars","hyphenateLimitLast","hyphenateLimitLines","hyphenateLimitZone","hyphens","imageOrientation","imageResolution","initialLetters","initialLettersAlign","initialLettersWrap","inlineBoxAlign","inlineSize","inlineSizing","inset","insetBlock","insetBlockEnd","insetBlockStart","insetInline","insetInlineEnd","insetInlineStart","isolation","justifyContent","justifyItems","justifySelf","left","letterSpacing","lightingColor","lineBreak","lineClamp","lineGrid","lineHeight","linePadding","lineSnap","lineStacking","lineStackingRuby","lineStackingShift","lineStackingStrategy","listStyle","listStyleImage","listStylePosition","listStyleType","margin","marginBlock","marginBlockEnd","marginBlockStart","marginBottom","marginInline","marginInlineEnd","marginInlineStart","marginLeft","marginRight","marginTop","marginTrim","markerSide","mask","maskBorder","maskBorderMode","maskBorderOutset","maskBorderRepeat","maskBorderSlice","maskBorderSource","maskBorderWidth","maskClip","maskComposite","maskImage","maskMode","maskOrigin","maskPosition","maskRepeat","maskSize","maskType","maxBlockSize","maxHeight","maxInlineSize","maxLines","maxWidth","minBlockSize","minHeight","minInlineSize","minWidth","mixBlendMode","navDown","navLeft","navRight","navUp","objectFit","objectPosition","offset","offsetAfter","offsetAnchor","offsetBefore","offsetDistance","offsetEnd","offsetPath","offsetPosition","offsetRotate","offsetStart","opacity","order","orphans","outline","outlineColor","outlineOffset","outlineStyle","outlineWidth","overflow","overflowBlock","overflowInline","overflowWrap","overflowX","overflowY","padding","paddingBlock","paddingBlockEnd","paddingBlockStart","paddingBottom","paddingInline","paddingInlineEnd","paddingInlineStart","paddingLeft","paddingRight","paddingTop","page","pageBreakAfter","pageBreakBefore","pageBreakInside","pause","pauseAfter","pauseBefore","perspective","perspectiveOrigin","pitch","pitchRange","placeContent","placeItems","placeSelf","playDuring","pointerEvents","position","quotes","regionFragment","resize","richness","right","rowGap","rubyAlign","rubyMerge","rubyPosition","running","scrollBehavior","scrollMargin","scrollMarginBlock","scrollMarginBlockEnd","scrollMarginBlockStart","scrollMarginBottom","scrollMarginInline","scrollMarginInlineEnd","scrollMarginInlineStart","scrollMarginLeft","scrollMarginRight","scrollMarginTop","scrollPadding","scrollPaddingBlock","scrollPaddingBlockEnd","scrollPaddingBlockStart","scrollPaddingBottom","scrollPaddingInline","scrollPaddingInlineEnd","scrollPaddingInlineStart","scrollPaddingLeft","scrollPaddingRight","scrollPaddingTop","scrollSnapAlign","scrollSnapStop","scrollSnapType","shapeImageThreshold","shapeInside","shapeMargin","shapeOutside","speak","speakHeader","speakNumeral","speakPunctuation","speechRate","stress","stringSet","tabSize","tableLayout","textAlign","textAlignAll","textAlignLast","textCombineUpright","textDecoration","textDecorationColor","textDecorationLine","textDecorationStyle","textEmphasis","textEmphasisColor","textEmphasisPosition","textEmphasisStyle","textGroupAlign","textHeight","textIndent","textJustify","textOrientation","textOverflow","textShadow","textSpaceCollapse","textSpaceTrim","textSpacing","textTransform","textUnderlinePosition","textWrap","top","transform","transformBox","transformOrigin","transformStyle","transition","transitionDelay","transitionDuration","transitionProperty","transitionTimingFunction","unicodeBidi","userSelect","verticalAlign","visibility","voiceFamily","volume","whiteSpace","widows","width","willChange","wordBreak","wordSpacing","wordWrap","wrapAfter","wrapBefore","wrapFlow","wrapInside","wrapThrough","writingMode","zIndex"],Bt=2046,Lt="\u5c0f\u7a0b\u5e8f setData",Rt="\u9875\u9762\u521d\u59cb\u5316";function Nt(e,t){var n=this[t];e&&this._usedStyleProp.add(t),Le(k(e)&&e.length>Bt,"Style \u5c5e\u6027 ".concat(t," \u7684\u503c\u6570\u636e\u91cf\u8fc7\u5927\uff0c\u53ef\u80fd\u4f1a\u5f71\u54cd\u6e32\u67d3\u6027\u80fd\uff0c\u8003\u8651\u4f7f\u7528 CSS \u7c7b\u6216\u5176\u5b83\u65b9\u6848\u66ff\u4ee3\u3002")),n!==e&&(this._value[t]=e,this._element.enqueueUpdate({path:"".concat(this._element._path,".","st"),value:this.cssText}))}function Dt(e){for(var t={},n=function(e){var n=It[e];t[n]={get:function(){return this._value[n]||""},set:function(e){Nt.call(this,e,n)}}},r=0;r<It.length;r++)n(r);Object.defineProperties(e.prototype,t)}var Mt=function(){function e(t){Object(m["a"])(this,e),this._element=t,this._usedStyleProp=new Set,this._value={}}return Object(y["a"])(e,[{key:"setCssVariables",value:function(e){var t=this;this.hasOwnProperty(e)||Object.defineProperty(this,e,{enumerable:!0,configurable:!0,get:function(){return t._value[e]||""},set:function(n){Nt.call(t,n,e)}})}},{key:"setProperty",value:function(e,t){"-"===e[0]?this.setCssVariables(e):e=Ee(e),S(t)||(null===t||""===t?this.removeProperty(e):this[e]=t)}},{key:"removeProperty",value:function(e){if(e=Ee(e),!this._usedStyleProp.has(e))return"";var t=this[e];return this[e]="",this._usedStyleProp.delete(e),t}},{key:"getPropertyValue",value:function(e){e=Ee(e);var t=this[e];return t||""}},{key:"cssText",get:function(){var e=this,t="";return this._usedStyleProp.forEach((function(n){var r=e[n];r&&(t+="".concat(je(n),": ").concat(r,";"))})),t},set:function(e){var t=this;if(null==e&&(e=""),this._usedStyleProp.forEach((function(e){t.removeProperty(e)})),""!==e)for(var n=e.split(";"),r=0;r<n.length;r++){var i=n[r].trim();if(""!==i){var o=i.split(":"),a=Object(f["a"])(o),s=a[0],l=a.slice(1),c=l.join(":");S(c)||this.setProperty(s.trim(),c.trim())}}}}]),e}();function Ft(){return!0}function Wt(e,t){var n=[],r=null!==t&&void 0!==t?t:Ft,i=e;while(i)1===i.nodeType&&r(i)&&n.push(i),i=zt(i,e);return n}function zt(e,t){var n=e.firstChild;if(n)return n;var r=e;do{if(r===t)return null;var i=r.nextSibling;if(i)return i;r=r.parentElement}while(r);return null}Dt(Mt);var Ut=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(e,r){var i,o;return Object(m["a"])(this,n),o=t.call(this),e.trim().split(/\s+/).forEach(Object(c["a"])((i=Object(h["a"])(o),Object(u["a"])(n.prototype)),"add",i).bind(Object(h["a"])(o))),o.el=r,o}return Object(y["a"])(n,[{key:"add",value:function(e){return Object(c["a"])(Object(u["a"])(n.prototype),"add",this).call(this,e),this._update(),this}},{key:"remove",value:function(e){Object(c["a"])(Object(u["a"])(n.prototype),"delete",this).call(this,e),this._update()}},{key:"toggle",value:function(e){Object(c["a"])(Object(u["a"])(n.prototype),"has",this).call(this,e)?Object(c["a"])(Object(u["a"])(n.prototype),"delete",this).call(this,e):Object(c["a"])(Object(u["a"])(n.prototype),"add",this).call(this,e),this._update()}},{key:"replace",value:function(e,t){Object(c["a"])(Object(u["a"])(n.prototype),"delete",this).call(this,e),Object(c["a"])(Object(u["a"])(n.prototype),"add",this).call(this,t),this._update()}},{key:"contains",value:function(e){return Object(c["a"])(Object(u["a"])(n.prototype),"has",this).call(this,e)}},{key:"toString",value:function(){return this.value}},{key:"_update",value:function(){this.el.className=this.value}},{key:"value",get:function(){return Object(l["a"])(this).join(" ")}}]),n}(Object(d["a"])(Set)),qt=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(e,r){var i;return Object(m["a"])(this,n),i=t.call(this,e||1,r),i.props={},i.dataset=Oe,i.tagName=r.toUpperCase(),i.style=new Mt(Object(h["a"])(i)),Le("MAP"===i.tagName&&!0,"\u5fae\u4fe1\u5c0f\u7a0b\u5e8f map \u7ec4\u4ef6\u7684 `setting` \u5c5e\u6027\u9700\u8981\u4f20\u9012\u4e00\u4e2a\u9ed8\u8ba4\u503c\u3002\u8be6\u60c5\uff1a\n https://developers.weixin.qq.com/miniprogram/dev/component/map.html"),i}return Object(y["a"])(n,[{key:"hasAttribute",value:function(e){return!S(this.props[e])}},{key:"hasAttributes",value:function(){return this.attributes.length>0}},{key:"focus",value:function(){this.setAttribute("focus",!0)}},{key:"blur",value:function(){this.setAttribute("focus",!1)}},{key:"setAttribute",value:function(e,t){var n;Le(k(t)&&t.length>Bt,"\u5143\u7d20 ".concat(this.nodeName," \u7684 \u5c5e\u6027 ").concat(e," \u7684\u503c\u6570\u636e\u91cf\u8fc7\u5927\uff0c\u53ef\u80fd\u4f1a\u5f71\u54cd\u6e32\u67d3\u6027\u80fd\u3002\u8003\u8651\u964d\u4f4e\u56fe\u7247\u8f6c\u4e3a base64 \u7684\u9608\u503c\u6216\u5728 CSS \u4e2d\u4f7f\u7528 base64\u3002")),"style"===e?(this.style.cssText=t,e="st"):"id"===e?(We.delete(this.uid),this.props[e]=this.uid=t,We.set(t,this),e="uid"):(this.props[e]=t,"class"===e&&(e="cl"),e.startsWith("data-")&&(this.dataset===Oe&&(this.dataset=Object.create(null)),this.dataset[Ee(e.replace(/^data-/,""))]=t)),null===(n=Fe.setAttribute)||void 0===n||n.call(Fe,this,e,t),this.enqueueUpdate({path:"".concat(this._path,".").concat(Ee(e)),value:t})}},{key:"removeAttribute",value:function(e){var t;"style"===e?this.style.cssText="":delete this.props[e],null===(t=Fe.removeAttribute)||void 0===t||t.call(Fe,this,e),this.enqueueUpdate({path:"".concat(this._path,".").concat(Ee(e)),value:""})}},{key:"getAttribute",value:function(e){var t="style"===e?this.style.cssText:this.props[e];return null!==t&&void 0!==t?t:""}},{key:"getElementsByTagName",value:function(e){var t=this;return Wt(this,(function(n){return n.nodeName===e||"*"===e&&t!==n}))}},{key:"getElementsByClassName",value:function(e){return Wt(this,(function(t){var n=t.classList,r=e.trim().split(/\s+/);return r.every((function(e){return n.has(e)}))}))}},{key:"dispatchEvent",value:function(e){var t=e.cancelable,n=this.__handlers[e.type];if(T(n)){for(var r=n.length;r--;){var i=n[r],o=void 0;if(i._stop?i._stop=!1:o=i.call(this,e),(!1===o||e._end)&&t&&(e.defaultPrevented=!0),e._end&&e._stop)break}return e._stop?this._stopPropagation(e):e._stop=!0,null!=n}}},{key:"_stopPropagation",value:function(e){var t=this;while(t=t.parentNode){var n=t.__handlers[e.type];if(T(n))for(var r=n.length;r--;){var i=n[r];i._stop=!0}}}},{key:"id",get:function(){return this.getAttribute("id")},set:function(e){this.setAttribute("id",e)}},{key:"classList",get:function(){return new Ut(this.className,this)}},{key:"className",get:function(){return this.getAttribute("class")||""},set:function(e){this.setAttribute("class",e)}},{key:"cssText",get:function(){return this.getAttribute("style")||""}},{key:"children",get:function(){return this.childNodes.filter(Ne)}},{key:"attributes",get:function(){var e=this,t=Object.keys(this.props),n=this.style.cssText,r=t.map((function(t){return{name:t,value:e.props[t]}}));return r.concat(n?{name:"style",value:n}:[])}},{key:"textContent",get:function(){for(var e="",t=0;t<this.childNodes.length;t++){var n=this.childNodes[t];e+=n.textContent}return e},set:function(e){Object(s["a"])(Object(u["a"])(n.prototype),"textContent",e,this,!0)}}]),n}(At),Vt=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(){return Object(m["a"])(this,n),t.apply(this,arguments)}return Object(y["a"])(n,[{key:"dispatchEvent",value:function(e){if(("input"===e.type||"change"===e.type)&&e.mpEvent){var t=e.mpEvent.detail.value;this.props.value=t}return Object(c["a"])(Object(u["a"])(n.prototype),"dispatchEvent",this).call(this,e)}},{key:"value",get:function(){var e=this.props["value"];return null==e?"":e},set:function(e){this.setAttribute("value",e)}}]),n}(qt),Ht=Array.isArray,$t="object"==("undefined"===typeof e?"undefined":Object(w["a"])(e))&&e&&e.Object===Object&&e,Gt="object"==("undefined"===typeof self?"undefined":Object(w["a"])(self))&&self&&self.Object===Object&&self,Kt=$t||Gt||Function("return this")(),Jt=Kt.Symbol,Qt=Object.prototype,Yt=Qt.hasOwnProperty,Xt=Qt.toString,Zt=Jt?Jt.toStringTag:void 0;function en(e){var t=Yt.call(e,Zt),n=e[Zt];try{e[Zt]=void 0;var r=!0}catch(e){}var i=Xt.call(e);return r&&(t?e[Zt]=n:delete e[Zt]),i}var tn=Object.prototype,nn=tn.toString;function rn(e){return nn.call(e)}var on="[object Null]",an="[object Undefined]",sn=Jt?Jt.toStringTag:void 0;function ln(e){return null==e?void 0===e?an:on:sn&&sn in Object(e)?en(e):rn(e)}function cn(e){return null!=e&&"object"==Object(w["a"])(e)}var un="[object Symbol]";function dn(e){return"symbol"==Object(w["a"])(e)||cn(e)&&ln(e)==un}var fn=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,hn=/^\w*$/;function pn(e,t){if(Ht(e))return!1;var n=Object(w["a"])(e);return!("number"!=n&&"symbol"!=n&&"boolean"!=n&&null!=e&&!dn(e))||(hn.test(e)||!fn.test(e)||null!=t&&e in Object(t))}function gn(e){var t=Object(w["a"])(e);return null!=e&&("object"==t||"function"==t)}var vn="[object AsyncFunction]",bn="[object Function]",mn="[object GeneratorFunction]",yn="[object Proxy]";function wn(e){if(!gn(e))return!1;var t=ln(e);return t==bn||t==mn||t==vn||t==yn}var kn=Kt["__core-js_shared__"],Sn=function(){var e=/[^.]+$/.exec(kn&&kn.keys&&kn.keys.IE_PROTO||"");return e?"Symbol(src)_1."+e:""}();function Cn(e){return!!Sn&&Sn in e}var xn=Function.prototype,On=xn.toString;function Tn(e){if(null!=e){try{return On.call(e)}catch(e){}try{return e+""}catch(e){}}return""}var jn=/[\\^$.*+?()[\]{}|]/g,En=/^\[object .+?Constructor\]$/,Pn=Function.prototype,An=Object.prototype,_n=Pn.toString,In=An.hasOwnProperty,Bn=RegExp("^"+_n.call(In).replace(jn,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");function Ln(e){if(!gn(e)||Cn(e))return!1;var t=wn(e)?Bn:En;return t.test(Tn(e))}function Rn(e,t){return null==e?void 0:e[t]}function Nn(e,t){var n=Rn(e,t);return Ln(n)?n:void 0}var Dn=Nn(Object,"create");function Mn(){this.__data__=Dn?Dn(null):{},this.size=0}function Fn(e){var t=this.has(e)&&delete this.__data__[e];return this.size-=t?1:0,t}var Wn="__lodash_hash_undefined__",zn=Object.prototype,Un=zn.hasOwnProperty;function qn(e){var t=this.__data__;if(Dn){var n=t[e];return n===Wn?void 0:n}return Un.call(t,e)?t[e]:void 0}var Vn=Object.prototype,Hn=Vn.hasOwnProperty;function $n(e){var t=this.__data__;return Dn?void 0!==t[e]:Hn.call(t,e)}var Gn="__lodash_hash_undefined__";function Kn(e,t){var n=this.__data__;return this.size+=this.has(e)?0:1,n[e]=Dn&&void 0===t?Gn:t,this}function Jn(e){var t=-1,n=null==e?0:e.length;this.clear();while(++t<n){var r=e[t];this.set(r[0],r[1])}}function Qn(){this.__data__=[],this.size=0}function Yn(e,t){return e===t||e!==e&&t!==t}function Xn(e,t){var n=e.length;while(n--)if(Yn(e[n][0],t))return n;return-1}Jn.prototype.clear=Mn,Jn.prototype["delete"]=Fn,Jn.prototype.get=qn,Jn.prototype.has=$n,Jn.prototype.set=Kn;var Zn=Array.prototype,er=Zn.splice;function tr(e){var t=this.__data__,n=Xn(t,e);if(n<0)return!1;var r=t.length-1;return n==r?t.pop():er.call(t,n,1),--this.size,!0}function nr(e){var t=this.__data__,n=Xn(t,e);return n<0?void 0:t[n][1]}function rr(e){return Xn(this.__data__,e)>-1}function ir(e,t){var n=this.__data__,r=Xn(n,e);return r<0?(++this.size,n.push([e,t])):n[r][1]=t,this}function or(e){var t=-1,n=null==e?0:e.length;this.clear();while(++t<n){var r=e[t];this.set(r[0],r[1])}}or.prototype.clear=Qn,or.prototype["delete"]=tr,or.prototype.get=nr,or.prototype.has=rr,or.prototype.set=ir;var ar=Nn(Kt,"Map");function sr(){this.size=0,this.__data__={hash:new Jn,map:new(ar||or),string:new Jn}}function lr(e){var t=Object(w["a"])(e);return"string"==t||"number"==t||"symbol"==t||"boolean"==t?"__proto__"!==e:null===e}function cr(e,t){var n=e.__data__;return lr(t)?n["string"==typeof t?"string":"hash"]:n.map}function ur(e){var t=cr(this,e)["delete"](e);return this.size-=t?1:0,t}function dr(e){return cr(this,e).get(e)}function fr(e){return cr(this,e).has(e)}function hr(e,t){var n=cr(this,e),r=n.size;return n.set(e,t),this.size+=n.size==r?0:1,this}function pr(e){var t=-1,n=null==e?0:e.length;this.clear();while(++t<n){var r=e[t];this.set(r[0],r[1])}}pr.prototype.clear=sr,pr.prototype["delete"]=ur,pr.prototype.get=dr,pr.prototype.has=fr,pr.prototype.set=hr;var gr="Expected a function";function vr(e,t){if("function"!=typeof e||null!=t&&"function"!=typeof t)throw new TypeError(gr);var n=function n(){var r=arguments,i=t?t.apply(this,r):r[0],o=n.cache;if(o.has(i))return o.get(i);var a=e.apply(this,r);return n.cache=o.set(i,a)||o,a};return n.cache=new(vr.Cache||pr),n}vr.Cache=pr;var br=500;function mr(e){var t=vr(e,(function(e){return n.size===br&&n.clear(),e})),n=t.cache;return t}var yr=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,wr=/\\(\\)?/g,kr=mr((function(e){var t=[];return 46===e.charCodeAt(0)&&t.push(""),e.replace(yr,(function(e,n,r,i){t.push(r?i.replace(wr,"$1"):n||e)})),t}));function Sr(e,t){var n=-1,r=null==e?0:e.length,i=Array(r);while(++n<r)i[n]=t(e[n],n,e);return i}var Cr=1/0,xr=Jt?Jt.prototype:void 0,Or=xr?xr.toString:void 0;function Tr(e){if("string"==typeof e)return e;if(Ht(e))return Sr(e,Tr)+"";if(dn(e))return Or?Or.call(e):"";var t=e+"";return"0"==t&&1/e==-Cr?"-0":t}function jr(e){return null==e?"":Tr(e)}function Er(e,t){return Ht(e)?e:pn(e,t)?[e]:kr(jr(e))}var Pr=1/0;function Ar(e){if("string"==typeof e||dn(e))return e;var t=e+"";return"0"==t&&1/e==-Pr?"-0":t}function _r(e,t){t=Er(t,e);var n=0,r=t.length;while(null!=e&&n<r)e=e[Ar(t[n++])];return n&&n==r?e:void 0}function Ir(e,t,n){var r=null==e?void 0:_r(e,t);return void 0===r?n:r}var Br,Lr=function(){function e(){Object(m["a"])(this,e),this.recorder=new Map}return Object(y["a"])(e,[{key:"start",value:function(e){He.debug&&this.recorder.set(e,Date.now())}},{key:"stop",value:function(e){if(He.debug){var t=Date.now(),n=this.recorder.get(e),r=t-n;console.log("".concat(e," \u65f6\u957f\uff1a ").concat(r,"ms"))}}}]),e}(),Rr=new Lr,Nr=function(){function e(t){Object(m["a"])(this,e),"undefined"!==typeof t&&t.callbacks?this.callbacks=t.callbacks:this.callbacks={}}return Object(y["a"])(e,[{key:"on",value:function(t,n,r){var i,o,a,s;if(!n)return this;t=t.split(e.eventSplitter);var l=this.callbacks;while(i=t.shift())s=l[i],o=s?s.tail:{},o.next=a={},o.context=r,o.callback=n,l[i]={tail:a,next:s?s.next:o};return this}},{key:"once",value:function(e,t,n){var r=this,i=function i(){for(var o=arguments.length,a=new Array(o),s=0;s<o;s++)a[s]=arguments[s];t.apply(r,a),r.off(e,i,n)};return this.on(e,i,n),this}},{key:"off",value:function(t,n,r){var i,o,a,s,l,c;if(!(o=this.callbacks))return this;if(!(t||n||r))return delete this.callbacks,this;t=t?t.split(e.eventSplitter):Object.keys(o);while(i=t.shift())if(a=o[i],delete o[i],a&&(n||r)){s=a.tail;while((a=a.next)!==s)l=a.callback,c=a.context,(n&&l!==n||r&&c!==r)&&this.on(i,l,c)}return this}},{key:"trigger",value:function(t){var n,r,i,o;if(!(i=this.callbacks))return this;t=t.split(e.eventSplitter);var a=[].slice.call(arguments,1);while(n=t.shift())if(r=i[n]){o=r.tail;while((r=r.next)!==o)r.callback.apply(r.context||this,a)}return this}}]),e}();Nr.eventSplitter=/\s+/,Br=new Nr;var Dr=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(){var e;return Object(m["a"])(this,n),e=t.call(this,1,"root"),e.pendingUpdate=!1,e.updatePayloads=[],e.pendingFlush=!1,e.updateCallbacks=[],e.ctx=null,e}return Object(y["a"])(n,[{key:"enqueueUpdate",value:function(e){this.updatePayloads.push(e),this.pendingUpdate||null===this.ctx||this.performUpdate()}},{key:"performUpdate",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]&&arguments[0],n=arguments.length>1?arguments[1]:void 0;this.pendingUpdate=!0;var r=this.ctx;setTimeout((function(){var i,o;Rr.start(Lt);var a=Object.create(null),s=new Set(t?["root.cn.[0]","root.cn[0]"]:[]);while(e.updatePayloads.length>0){var l=e.updatePayloads.shift(),c=l.path,u=l.value;c.endsWith("cn")&&s.add(c),a[c]=u}var d=function(e){s.forEach((function(t){e.includes(t)&&e!==t&&delete a[e]}));var t=a[e];x(t)&&(a[e]=t())};for(var f in a)d(f);if(null===(i=Fe.prepareUpdateData)||void 0===i||i.call(Fe,a,e),t&&(null===(o=Fe.appendInitialPage)||void 0===o||o.call(Fe,a,e)),x(n))n(a);else{e.pendingUpdate=!1;var h=[],p={};if(!t)for(var g in a){for(var v=g.split("."),m=!1,y=v.length;y>0;y--){var w=v.slice(0,y).join("."),k=Ir(r.__data__||r.data,w);if(k&&k.nn&&"custom-wrapper"===k.nn){var S=k.uid,C=r.selectComponent("#".concat(S)),O=v.slice(y).join(".");C&&(m=!0,h.push({ctx:r.selectComponent("#".concat(S)),data:Object(b["a"])({},"i.".concat(O),a[g])}));break}}m||(p[g]=a[g])}var T=h.length;if(T){var j="".concat(e._path,"_update_").concat(Re()),E=0;Br.once(j,(function(){E++,E===T+1&&(Rr.stop(Lt),e.pendingFlush||e.flushUpdateCallback(),t&&Rr.stop(Rt))}),Br),h.forEach((function(e){e.ctx.setData(e.data,(function(){Br.trigger(j)}))})),r.setData(p,(function(){Br.trigger(j)}))}else r.setData(a,(function(){Rr.stop(Lt),e.pendingFlush||e.flushUpdateCallback(),t&&Rr.stop(Rt)}))}}),0)}},{key:"enqueueUpdateCallback",value:function(e,t){this.updateCallbacks.push((function(){t?e.call(t):e()}))}},{key:"flushUpdateCallback",value:function(){this.pendingFlush=!1;var e=this.updateCallbacks.slice(0);this.updateCallbacks.length=0;for(var t=0;t<e.length;t++)e[t]()}},{key:"_path",get:function(){return"root"}},{key:"_root",get:function(){return this}}]),n}(qt),Mr="undefined"!==typeof r&&!!r.scripts,Fr=Mr?r:Oe,Wr=Mr?i:Oe,zr=function(e){Object(p["a"])(n,e);var t=Object(g["a"])(n);function n(){return Object(m["a"])(this,n),t.call(this,9,"#document")}return Object(y["a"])(n,[{key:"createElement",value:function(e){return"root"===e?new Dr:xe.has(e)?new Vt(1,e):new qt(1,e)}},{key:"createTextNode",value:function(e){return new _t(e)}},{key:"getElementById",value:function(e){var t=We.get(e);return S(t)?null:t}},{key:"getElementsByTagName",value:function(e){var t=this,n=[];return We.forEach((function(r){1===r.nodeType&&(r.nodeName===e||"*"===e&&r!==t)&&n.push(r)})),n}},{key:"querySelector",value:function(e){return/^#/.test(e)?this.getElementById(e.slice(1)):null}},{key:"createComment",value:function(){return new _t("")}}]),n}(qt);function Ur(){var e=new zr;e.appendChild(e.documentElement=e.createElement("html")),e.documentElement.appendChild(e.head=e.createElement("head"));var t=e.createElement("body");e.documentElement.appendChild(t),e.body=t;var n=e.createElement("app");n.id="app";var r=e.createElement("container");return r.appendChild(n),e.documentElement.lastChild.appendChild(r),e.createEvent=Ue,e}var qr,Vr=Mr?Fr:Ur(),Hr="Macintosh",$r="Intel Mac OS X 10_14_5",Gr="AppleWebKit/534.36 (KHTML, like Gecko) NodeJS/v4.1.0 Chrome/76.0.3809.132 Safari/534.36",Kr=Mr?Wr.navigator:{appCodeName:"Mozilla",appName:"Netscape",appVersion:"5.0 ("+Hr+"; "+$r+") "+Gr,cookieEnabled:!0,mimeTypes:[],onLine:!0,platform:"MacIntel",plugins:[],product:"Taro",productSub:"20030107",userAgent:"Mozilla/5.0 ("+Hr+"; "+$r+") "+Gr,vendor:"Joyent",vendorSub:""};(function(){var e;"undefined"!==typeof performance&&null!==performance&&performance.now?qr=function(){return performance.now()}:Date.now?(qr=function(){return Date.now()-e},e=Date.now()):(qr=function(){return(new Date).getTime()-e},e=(new Date).getTime())})();var Jr=0,Qr="undefined"!==typeof o&&null!==o?o:function(e){var t=qr(),n=Math.max(Jr+16,t);return setTimeout((function(){e(Jr=n)}),n-t)},Yr="undefined"!==typeof a&&null!==a?a:clearTimeout;function Xr(e){return new Mt(e)}e&&(Qr=Qr.bind(e),Yr=Yr.bind(e));var Zr=Mr?Wr:{navigator:Kr,document:Vr};if(!Mr){var ei=[].concat(Object(l["a"])(Object.getOwnPropertyNames(e||Wr)),Object(l["a"])(Object.getOwnPropertySymbols(e||Wr)));ei.forEach((function(t){Object.prototype.hasOwnProperty.call(Zr,t)||(Zr[t]=e[t])}))}Zr.requestAnimationFrame=Qr,Zr.cancelAnimationFrame=Yr,Zr.getComputedStyle=Xr,"Date"in Zr||(Zr.Date=Date),"setTimeout"in Zr||(Zr.setTimeout=setTimeout);var ti={app:null,router:null,page:null},ni=function(){return ti},ri=new Map;function ii(e,t){var n;null===(n=Fe.mergePageInstance)||void 0===n||n.call(Fe,ri.get(t),e),ri.set(t,e)}function oi(e){return ri.get(e)}function ai(e){return null==e?"":"/"===e.charAt(0)?e:"/"+e}var si=Re();function li(e,t){for(var n=arguments.length,r=new Array(n>2?n-2:0),i=2;i<n;i++)r[i-2]=arguments[i];var o=ri.get(e);if(null!=o){var a=Fe.getLifecyle(o,t);if(T(a)){var s=a.map((function(e){return e.apply(o,r)}));return s[0]}if(x(a))return a.apply(o,r)}}function ci(e){if(null==e)return"";var t=Object.keys(e).map((function(t){return t+"="+e[t]})).join("&");return""===t?t:"?"+t}function ui(e,t){var n=e;return Mr||(n=e+ci(t)),n}function di(e){return e+".onReady"}function fi(e){return e+".onShow"}function hi(e){return e+".onHide"}function pi(e,t,n,r){var i,o,a=null!==t&&void 0!==t?t:"taro_page_".concat(si()),s=null,l=!1,c=[],u={onLoad:function(t,n){var i=this;Rr.start(Rt),ti.page=this,this.config=r||{},null==this.options&&(this.options=t);var o=ui(a,t);ti.router={params:t,path:ai(this.route||this.__route__),onReady:di(a),onShow:fi(a),onHide:hi(a)};var u=function(){ti.app.mount(e,o,(function(){s=Vr.getElementById(o),Be(null!==s,"\u6ca1\u6709\u627e\u5230\u9875\u9762\u5b9e\u4f8b\u3002"),li(o,"onLoad",t),Mr||(s.ctx=i,s.performUpdate(!0,n))}))};l?c.push(u):u()},onReady:function(){var e=ui(a,this.options);Qr((function(){Br.trigger(di(a))})),li(e,"onReady")},onUnload:function(){var e=ui(a,this.options);l=!0,ti.app.unmount(e,(function(){l=!1,ri.delete(e),s&&(s.ctx=null),c.length&&(c.forEach((function(e){return e()})),c=[])}))},onShow:function(){ti.page=this,this.config=r||{};var e=ui(a,this.options);ti.router={params:this.options,path:ai(this.route||this.__route__),onReady:di(a),onShow:fi(a),onHide:hi(a)},Qr((function(){Br.trigger(fi(a))})),li(e,"onShow")},onHide:function(){ti.page=null,ti.router=null;var e=ui(a,this.options);li(e,"onHide"),Br.trigger(hi(a))},onPullDownRefresh:function(){var e=ui(a,this.options);return li(e,"onPullDownRefresh")},onReachBottom:function(){var e=ui(a,this.options);return li(e,"onReachBottom")},onPageScroll:function(e){var t=ui(a,this.options);return li(t,"onPageScroll",e)},onResize:function(e){var t=ui(a,this.options);return li(t,"onResize",e)},onTabItemTap:function(e){var t=ui(a,this.options);return li(t,"onTabItemTap",e)},onTitleClick:function(){var e=ui(a,this.options);return li(e,"onTitleClick")},onOptionMenuClick:function(){var e=ui(a,this.options);return li(e,"onOptionMenuClick")},onPopMenuClick:function(){var e=ui(a,this.options);return li(e,"onPopMenuClick")},onPullIntercept:function(){var e=ui(a,this.options);return li(e,"onPullIntercept")},onAddToFavorites:function(){var e=ui(a,this.options);return li(e,"onAddToFavorites")}};return(e.onShareAppMessage||(null===(i=e.prototype)||void 0===i?void 0:i.onShareAppMessage)||e.enableShareAppMessage)&&(u.onShareAppMessage=function(e){var t=e.target;if(null!=t){var n=t.id,r=Vr.getElementById(n);null!=r&&(e.target.dataset=r.dataset)}var i=ui(a,this.options);return li(i,"onShareAppMessage",e)}),(e.onShareTimeline||(null===(o=e.prototype)||void 0===o?void 0:o.onShareTimeline)||e.enableShareTimeline)&&(u.onShareTimeline=function(){var e=ui(a,this.options);return li(e,"onShareTimeline")}),u.eh=qe,S(n)||(u.data=n),Mr&&(u.path=a),u}function gi(e,t,n){var r,i,o,a=null!==t&&void 0!==t?t:"taro_component_".concat(si()),s=null,l={attached:function(){var t=this;Rr.start(Rt);var n=ui(a,{id:this.getPageId()});ti.app.mount(e,n,(function(){s=Vr.getElementById(n),Be(null!==s,"\u6ca1\u6709\u627e\u5230\u7ec4\u4ef6\u5b9e\u4f8b\u3002"),li(n,"onLoad"),Mr||(s.ctx=t,s.performUpdate(!0))}))},detached:function(){var e=ui(a,{id:this.getPageId()});ti.app.unmount(e,(function(){ri.delete(e),s&&(s.ctx=null)}))},pageLifetimes:{show:function(){li(a,"onShow")},hide:function(){li(a,"onHide")}},methods:{eh:qe}};return S(n)||(l.data=n),l["options"]=null!==(r=null===e||void 0===e?void 0:e["options"])&&void 0!==r?r:Oe,l["externalClasses"]=null!==(i=null===e||void 0===e?void 0:e["externalClasses"])&&void 0!==i?i:Oe,l["behaviors"]=null!==(o=null===e||void 0===e?void 0:e["behaviors"])&&void 0!==o?o:Oe,l}function vi(){return{properties:{i:{type:Object,value:Object(b["a"])({},"nn","view")},l:{type:String,value:""}},observers:{i:function(e){Le("#text"===e["nn"],"\u8bf7\u5728\u6b64\u5143\u7d20\u5916\u518d\u5957\u4e00\u5c42\u975e Text \u5143\u7d20\uff1a<text>".concat(e["v"],"</text>\uff0c\u8be6\u60c5\uff1ahttps://github.com/NervJS/taro/issues/6054"))}},options:{addGlobalClass:!0,virtualHost:!0},methods:{eh:qe}}}var bi="taro-app",mi=function(e){return function(t){var n=Mi.useContext(Fi)||bi,r=Mi.useRef(t);r.current!==t&&(r.current=t),Mi.useLayoutEffect((function(){var t=oi(n),i=!1;null==t&&(i=!0,t=Object.create(null)),t=t;var o=function(){return r.current.apply(r,arguments)};return x(t[e])?t[e]=[t[e],o]:t[e]=[].concat(Object(l["a"])(t[e]||[]),[o]),i&&ii(t,n),function(){var t=oi(n),r=t[e];r===o?t[e]=void 0:T(r)&&(t[e]=r.filter((function(e){return e!==o})))}}),[])}},yi=mi("componentDidShow"),wi=mi("componentDidHide"),ki=mi("onPullDownRefresh"),Si=mi("onReachBottom"),Ci=mi("onPageScroll"),xi=mi("onResize"),Oi=mi("onShareAppMessage"),Ti=mi("onTabItemTap"),ji=mi("onTitleClick"),Ei=mi("onOptionMenuClick"),Pi=mi("onPullIntercept"),Ai=mi("onShareTimeline"),_i=mi("onAddToFavorites"),Ii=mi("onReady"),Bi=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];return e?ti.router:Mi.useMemo((function(){return ti.router}),[])},Li=function(){};function Ri(e,t){var n;return x(t.render)||!!(null===(n=t.prototype)||void 0===n?void 0:n.isReactComponent)||t.prototype instanceof e.Component}function Ni(e,t){var n=e.createElement;return function(r){var i=Ri(e,r),o=function(e){return e&&ii(e,t)},a=i?{ref:o}:{forwardedRef:o,reactReduxForwardedRef:o};return Fi===Oe&&(Fi=e.createContext("")),function(e){Object(p["a"])(o,e);var i=Object(g["a"])(o);function o(){var e;return Object(m["a"])(this,o),e=i.apply(this,arguments),e.state={hasError:!1},e}return Object(y["a"])(o,[{key:"componentDidCatch",value:function(e,t){console.warn(e),console.error(t.componentStack)}},{key:"render",value:function(){var e=this.state.hasError?[]:n(Fi.Provider,{value:t},n(r,Object.assign(Object.assign({},this.props),a)));return Mr?n("div",{id:t,className:"taro_page"},e):n("root",{id:t},e)}}],[{key:"getDerivedStateFromError",value:function(e){return console.warn(e),{hasError:!0}}}]),o}(e.Component)}}var Di,Mi=Oe,Fi=Oe;function Wi(){var e={getLifecyle:function(e,t){return"onShow"===t?t="componentDidShow":"onHide"===t&&(t="componentDidHide"),e[t]},mergePageInstance:function(e,t){e&&t&&Object.keys(e).forEach((function(n){x(t[n])?t[n]=[t[n]].concat(Object(l["a"])(e[n])):t[n]=[].concat(Object(l["a"])(t[n]||[]),Object(l["a"])(e[n]))}))},modifyEventType:function(e){e.type=e.type.replace(/-/g,"")}};Mr&&(e.createPullDownComponent=function(e,t,n){var r=Ri(n,e);return n.forwardRef((function(t,i){var o=Object.assign({},t),a=r?{ref:i}:{forwardedRef:i,reactReduxForwardedRef:i};return n.createElement("taro-pull-to-refresh",null,n.createElement(e,Object.assign(Object.assign({},o),a)))}))},e.findDOMNode=function(e){return Di.findDOMNode(e)}),He.reconciler(e)}var zi,Ui=Re();function qi(e,t,n,r){Mi=t,Di=n,Be(!!Di,"\u6784\u5efa React/Nerv \u9879\u76ee\u8bf7\u628a process.env.FRAMEWORK \u8bbe\u7f6e\u4e3a 'react'/'nerv' ");var i,o=Mi.createRef(),a=Ri(Mi,e);Wi();var s=function(t){Object(p["a"])(r,t);var n=Object(g["a"])(r);function r(){var e;return Object(m["a"])(this,r),e=n.apply(this,arguments),e.pages=[],e.elements=[],e}return Object(y["a"])(r,[{key:"mount",value:function(e,t,n){var r=t+Ui(),i=function(){return Mi.createElement(e,{key:r,tid:t})};this.pages.push(i),this.forceUpdate(n)}},{key:"unmount",value:function(e,t){for(var n=0;n<this.elements.length;n++){var r=this.elements[n];if(r.props.tid===e){this.elements.splice(n,1);break}}this.forceUpdate(t)}},{key:"render",value:function(){while(this.pages.length>0){var t=this.pages.pop();this.elements.push(t())}var n=null;return a&&(n={ref:o}),Mi.createElement(e,n,Mr?Mi.createElement("div",null,this.elements.slice()):this.elements.slice())}}]),r}(Mi.Component),l=Object.create({render:function(e){i.forceUpdate(e)},mount:function(e,t,n){var r=Ni(Mi,t)(e);i.mount(r,t,n)},unmount:function(e,t){i.unmount(e,t)}},{config:{writable:!0,enumerable:!0,configurable:!0,value:r},onLaunch:{enumerable:!0,writable:!0,value:function(e){var t=this;ti.router=Object.assign({params:null===e||void 0===e?void 0:e.query},e),i=Di.render(Mi.createElement(s),Vr.getElementById("app"));var n=o.current;if(null===n||void 0===n?void 0:n.taroGlobalData){var r=n.taroGlobalData,a=Object.keys(r),l=Object.getOwnPropertyDescriptors(r);a.forEach((function(e){Object.defineProperty(t,e,{configurable:!0,enumerable:!0,get:function(){return r[e]},set:function(t){r[e]=t}})})),Object.defineProperties(this,l)}this.$app=n,null!=n&&x(n.onLaunch)&&n.onLaunch(e)}},onShow:{enumerable:!0,writable:!0,value:function(e){var t=o.current;ti.router=Object.assign({params:null===e||void 0===e?void 0:e.query},e),null!=t&&x(t.componentDidShow)&&t.componentDidShow(e),c("componentDidShow")}},onHide:{enumerable:!0,writable:!0,value:function(e){var t=o.current;null!=t&&x(t.componentDidHide)&&t.componentDidHide(e),c("componentDidHide")}}});function c(e){var t=oi(bi);if(t){var n=o.current,r=Fe.getLifecyle(t,e);Array.isArray(r)&&r.forEach((function(e){return e.apply(n)}))}}return ti.app=l,ti.app}function Vi(e,t){return function(n){var r=e.extend({props:{tid:String},mixins:[n,{created:function(){ii(this,t)}}]}),i={render:function(e){return e(Mr?"div":"root",{attrs:{id:t,class:Mr?"taro_page":""}},[e(r,{props:{tid:t}})])}};return i}}function Hi(){var e={getLifecyle:function(e,t){return e.$options[t]},removeAttribute:function(e,t){var n=Pe(Ee(e.tagName.toLowerCase()));n in Ce&&_e(Ce[n],t)&&O(Ce[n][t])?e.setAttribute(t,!1):delete e.props[t]}};Mr&&(e.createPullDownComponent=function(e,t,n){var r=n.extend({props:{tid:String},mixins:[e,{created:function(){ii(this,t)}}]}),i={name:"PullToRefresh",render:function(e){return e("taro-pull-to-refresh",{class:["hydrated"]},[e(r,this.$slots.default)])}};return i},e.findDOMNode=function(e){return e.$el}),He.reconciler(e)}function $i(e,t,n){zi=t,Be(!!zi,"\u6784\u5efa Vue \u9879\u76ee\u8bf7\u628a process.env.FRAMEWORK \u8bbe\u7f6e\u4e3a 'vue'"),Hi(),zi.config.getTagNamespace=Te;var r,i=[],o=[],a=new zi({render:function(t){while(o.length>0){var n=o.pop();i.push(n(t))}return t(e.$options,{ref:"app"},i.slice())},methods:{mount:function(e,t,n){o.push((function(n){return n(e,{key:t})})),this.updateSync(n)},updateSync:function(e){this._update(this._render(),!1),this.$children.forEach((function(e){return e._update(e._render(),!1)})),e()},unmount:function(e,t){for(var n=0;n<i.length;n++){var r=i[n];if(r.key===e){i.splice(n,1);break}}this.updateSync(t)}}}),s=Object.create({mount:function(e,t,n){var r=Vi(zi,t)(e);a.mount(r,t,n)},unmount:function(e,t){a.unmount(e,t)}},{config:{writable:!0,enumerable:!0,configurable:!0,value:n},onLaunch:{writable:!0,enumerable:!0,value:function(e){ti.router=Object.assign({params:null===e||void 0===e?void 0:e.query},e),a.$mount(Vr.getElementById("app")),r=a.$refs.app,null!=r&&x(r.$options.onLaunch)&&r.$options.onLaunch.call(r,e)}},onShow:{writable:!0,enumerable:!0,value:function(e){ti.router=Object.assign({params:null===e||void 0===e?void 0:e.query},e),null!=r&&x(r.$options.onShow)&&r.$options.onShow.call(r,e)}},onHide:{writable:!0,enumerable:!0,value:function(e){null!=r&&x(r.$options.onHide)&&r.$options.onHide.call(r,e)}}});return ti.app=s,ti.app}function Gi(e,t){return function(n){var r,i={props:{tid:String},created:function(){ii(this,t),li(t,"onShow")}};if(T(n.mixins)){var o=n.mixins,a=o.length-1;(null===(r=o[a].props)||void 0===r?void 0:r.tid)?n.mixins[a]=i:n.mixins.push(i)}else n.mixins=[i];return e(Mr?"div":"root",{key:t,id:t,class:Mr?"taro_page":""},[e(n,{tid:t})])}}function Ki(){var e={getLifecyle:function(e,t){return e.$options[t]},removeAttribute:function(e,t){var n=Pe(Ee(e.tagName.toLowerCase()));n in Ce&&_e(Ce[n],t)&&O(Ce[n][t])?e.setAttribute(t,!1):delete e.props[t]},modifyEventType:function(e){e.type=e.type.replace(/-/g,"")}};Mr&&(e.createPullDownComponent=function(e,t,n){var r={props:{tid:String},created:function(){ii(this,t)}};return e.mixins=T(e.mixins)?e.mixins.push(r):[r],{render:function(){return n("taro-pull-to-refresh",{class:"hydrated"},[n(e,this.$slots.default)])}}},e.findDOMNode=function(e){return e.$el}),He.reconciler(e)}function Ji(e,t,n){var r,i=[];Be(!x(e._component),"\u5165\u53e3\u7ec4\u4ef6\u4e0d\u652f\u6301\u4f7f\u7528\u51fd\u6570\u5f0f\u7ec4\u4ef6"),Ki(),e._component.render=function(){return i.slice()};var o=Object.create({mount:function(e,n,r){var o=Gi(t,n)(e);i.push(o),this.updateAppInstance(r)},unmount:function(e,t){i=i.filter((function(t){return t.key!==e})),this.updateAppInstance(t)},updateAppInstance:function(e){r.$forceUpdate(),r.$nextTick(e)}},{config:{writable:!0,enumerable:!0,configurable:!0,value:n},onLaunch:{writable:!0,enumerable:!0,value:function(t){var n;ti.router=Object.assign({params:null===t||void 0===t?void 0:t.query},t),r=e.mount("#app");var i=null===(n=null===r||void 0===r?void 0:r.$options)||void 0===n?void 0:n.onLaunch;x(i)&&i.call(r,t)}},onShow:{writable:!0,enumerable:!0,value:function(e){var t;ti.router=Object.assign({params:null===e||void 0===e?void 0:e.query},e);var n=null===(t=null===r||void 0===r?void 0:r.$options)||void 0===t?void 0:t.onShow;x(n)&&n.call(r,e)}},onHide:{writable:!0,enumerable:!0,value:function(e){var t,n=null===(t=null===r||void 0===r?void 0:r.$options)||void 0===t?void 0:t.onHide;x(n)&&n.call(r,e)}}});return ti.app=o,ti.app}function Qi(e){return null==e?"":"/"===e.charAt(0)?e.slice(1):e}var Yi=function(e,t){var n,r,i,o=ti.router,a=function(){setTimeout((function(){t?e.call(t):e()}),1)};if(null!==o){var s=null,l=ui(Qi(o.path),o.params);s=Vr.getElementById(l),null!==s?Mr?null!==(i=null===(r=null===(n=s.firstChild)||void 0===n?void 0:n["componentOnReady"])||void 0===r?void 0:r.call(n).then((function(){a()})))&&void 0!==i||a():s.enqueueUpdateCallback(e,t):a()}else a()}}.call(this,n(32),n(3)["document"],n(3)["window"],n(3)["requestAnimationFrame"],n(3)["cancelAnimationFrame"])},57:function(e,t,n){"use strict";var r=n(14),i=n(15),o=n(17),a=n(73),s=n.n(a),l=n(49),c=n(3);function u(e){return"string"===typeof e}function d(e){return null!==e&&"object"===Object(o["a"])(e)}function f(e){return"function"===typeof e}function h(e){return"number"===typeof e}var p={bindTouchStart:"",bindTouchMove:"",bindTouchEnd:"",bindTouchCancel:"",bindLongTap:""};function g(e){return"'".concat(e,"'")}var v=Object.assign({"hover-class":g("none"),"hover-stop-propagation":"false","hover-start-time":"50","hover-stay-time":"400",animation:"",bindAnimationStart:"",bindAnimationIteration:"",bindAnimationEnd:"",bindTransitionEnd:""},p),b={type:"",size:"23",color:""},m=Object.assign({longitude:"",latitude:"",scale:"16",markers:"[]",covers:"",polyline:"[]",circles:"[]",controls:"","include-points":"[]","show-location":"",polygons:"",subkey:"","layer-style":"1",rotate:"0",skew:"skew","enable-3D":"false","show-compass":"false","show-scale":"false","enable-overlooking":"false","enable-zoom":"true","enable-scroll":"true","enable-rotate":"false","enable-satellite":"false","enable-traffic":"false",setting:"[]",bindMarkerTap:"",bindLabelTap:"",bindControlTap:"",bindCalloutTap:"",bindUpdated:"",bindRegionChange:"",bindPoiTap:""},p),y={percent:"","show-info":"false","border-radius":"0","font-size":"16","stroke-width":"6",color:g("#09BB07"),activeColor:g("#09BB07"),backgroundColor:g("#EBEBEB"),active:"false","active-mode":g("backwards"),duration:"30",bindActiveEnd:""},w={nodes:"[]",space:""},k={selectable:"false",space:"",decode:"false"},S={size:g("default"),type:"",plain:"false",disabled:"",loading:"false","form-type":"","open-type":"","hover-class":g("button-hover"),"hover-stop-propagation":"false","hover-start-time":"20","hover-stay-time":"70",lang:"en","session-from":"","send-message-title":"","send-message-path":"","send-message-img":"","app-parameter":"","show-message-card":"false",bindGetUserInfo:"",bindGetAuthorize:"",bindContact:"",bindGetPhoneNumber:"",bindError:"",bindOpenSetting:"",bindLaunchApp:"",scope:"",name:""};var C={value:"",disabled:"",checked:"false",color:g("#09BB07"),name:""},x={bindChange:"",name:""},O={"read-only":"false",placeholder:"","show-img-size":"false","show-img-toolbar":"false","show-img-resize":"false",focus:"false",bindReady:"",bindFocus:"",bindBlur:"",bindInput:"",bindStatusChange:"",name:""},T={"report-submit":"false","report-submit-timeout":"0",bindSubmit:"",bindReset:"",name:""},j={value:"",type:g(""),password:"false",placeholder:"","placeholder-style":"","placeholder-class":g("input-placeholder"),disabled:"",maxlength:"140","cursor-spacing":"0","auto-focus":"false",focus:"false","confirm-type":g("done"),"confirm-hold":"false",cursor:"i.value.length","selection-start":"-1","selection-end":"-1","adjust-position":"true","hold-keyboard":"false",bindInput:"",bindFocus:"",bindBlur:"",bindConfirm:"",bindKeyboardHeightChange:"",name:""},E={for:"",name:""},P={mode:g("selector"),disabled:"",bindCancel:"",range:"","range-key":"",value:"",bindChange:"",bindColumnChange:"",start:"",end:"",fields:g("day"),"custom-item":"",name:""},A={value:"","indicator-style":"","indicator-class":"","mask-style":"","mask-class":"",bindChange:"",bindPickStart:"",bindPickEnd:"",name:""},_={name:""},I={value:"",checked:"false",disabled:"",color:g("#09BB07"),name:""},B={bindChange:"",name:""},L={min:"0",max:"100",step:"1",disabled:"",value:"0",color:g("#e9e9e9"),"selected-color":g("#1aad19"),activeColor:g("#1aad19"),backgroundColor:g("#e9e9e9"),"block-size":"28","block-color":g("#ffffff"),"show-value":"false",bindChange:"",bindChanging:"",name:""},R={checked:"false",disabled:"",type:g("switch"),color:g("#04BE02"),bindChange:"",name:""},N={src:"",bindLoad:"eh",bindError:"eh"},D={value:"",placeholder:"","placeholder-style":"","placeholder-class":g("textarea-placeholder"),disabled:"",maxlength:"140","auto-focus":"false",focus:"false","auto-height":"false",fixed:"false","cursor-spacing":"0",cursor:"-1","show-confirm-bar":"true","selection-start":"-1","selection-end":"-1","adjust-position":"true","hold-keyboard":"false",bindFocus:"",bindBlur:"",bindLineChange:"",bindInput:"",bindConfirm:"",bindKeyboardHeightChange:"",name:""},M=Object.assign({"scroll-top":"false"},p),F={"min-width":"","max-width":"",width:"","min-height":"","max-height":"",height:"",orientation:""},W={"scale-area":"false"},z=Object.assign({direction:"none",inertia:"false","out-of-bounds":"false",x:"",y:"",damping:"20",friction:"2",disabled:"",scale:"false","scale-min":"0.5","scale-max":"10","scale-value":"1",animation:"true",bindAnimationEnd:"",bindChange:"",bindScale:"",htouchmove:"",vtouchmove:"",width:g("10px"),height:g("10px")},p),U=Object.assign({"scroll-x":"false","scroll-y":"false","upper-threshold":"50","lower-threshold":"50","scroll-top":"","scroll-left":"","scroll-into-view":"","scroll-with-animation":"false","enable-back-to-top":"false","enable-flex":"false","scroll-anchoring":"false","refresher-enabled":"false","refresher-threshold":"45","refresher-default-style":g("black"),"refresher-background":g("#FFF"),"refresher-triggered":"false",enhanced:"false",bounces:"true","show-scrollbar":"true","paging-enabled":"false","fast-deceleration":"false",bindRefresherPulling:"",bindRefresherRefresh:"",bindRefresherRestore:"",bindRefresherAbort:"",bindScrollToUpper:"",bindScrollToLower:"",bindScroll:"",animation:"",bindTransitionEnd:"",bindAnimationStart:"",bindAnimationIteration:"",bindAnimationEnd:"",bindDragStart:"",bindDragging:"",bindDragEnd:""},p),q=Object.assign({"indicator-dots":"false","indicator-color":g("rgba(0, 0, 0, .3)"),"indicator-active-color":g("#000000"),autoplay:"false",current:"0",interval:"5000",duration:"500",circular:"false",vertical:"false","previous-margin":"'0px'","next-margin":"'0px'","display-multiple-items":"1","skip-hidden-item-layout":"false","easing-function":g("default"),bindChange:"",bindTransition:"",bindAnimationFinish:""},p),V={"item-id":""},H={version:g("release"),name:"",args:"",bindSuccess:"",bindFail:"",bindCancel:""},$={target:g("self"),url:"","open-type":g("navigate"),delta:"1","app-id":"",path:"","extra-data":"",version:g("version"),"hover-class":g("navigator-hover"),"hover-stop-propagation":"false","hover-start-time":"50","hover-stay-time":"600",bindSuccess:"",bindFail:"",bindComplete:""},G={id:"",src:"",loop:"false",controls:"false",poster:"",name:"",author:"",bindError:"",bindPlay:"",bindPause:"",bindTimeUpdate:"",bindEnded:""},K={mode:g("normal"),"device-position":g("back"),flash:g("auto"),"frame-size":g("medium"),bindStop:"",bindError:"",bindInitDone:"",bindScanCode:""},J=Object.assign({src:"",mode:g("scaleToFill"),webp:"false","lazy-load":"false","show-menu-by-longpress":"false",bindError:"",bindLoad:""},p),Q={src:"",mode:g("live"),autoplay:"false",muted:"false",orientation:g("vertical"),"object-fit":g("contain"),"background-mute":"false","min-cache":"1","max-cache":"3","sound-mode":g("speaker"),"auto-pause-if-navigate":"true","auto-pause-if-open-native":"true","picture-in-picture-mode":"[]",animation:"",bindStateChange:"",bindFullScreenChange:"",bindNetStatus:"",bindAudioVolumeNotify:"",bindEnterPictureInPicture:"",bindLeavePictureInPicture:""},Y={url:"",mode:g("RTC"),autopush:"false",muted:"false","enable-camera":"true","auto-focus":"true",orientation:g("vertical"),beauty:"0",whiteness:"0",aspect:g("9:16"),"min-bitrate":"200","max-bitrate":"1000","audio-quality":g("high"),"waiting-image":"","waiting-image-hash":"",zoom:"false","device-position":g("front"),"background-mute":"false",mirror:"false","remote-mirror":"false","local-mirror":"false","audio-reverb-type":"0","enable-mic":"true","enable-agc":"false","enable-ans":"false","audio-volume-type":g("voicecall"),"video-width":"360","video-height":"640",animation:"",bindStateChange:"",bindNetStatus:"",bindBgmStart:"",bindBgmProgress:"",bindBgmComplete:""},X={src:"",duration:"",controls:"true","danmu-list":"","danmu-btn":"","enable-danmu":"",autoplay:"false",loop:"false",muted:"false","initial-time":"0","page-gesture":"false",direction:"","show-progress":"true","show-fullscreen-btn":"true","show-play-btn":"true","show-center-play-btn":"true","enable-progress-gesture":"true","object-fit":g("contain"),poster:"","show-mute-btn":"false",title:"","play-btn-position":g("bottom"),"enable-play-gesture":"false","auto-pause-if-navigate":"true","auto-pause-if-open-native":"true","vslide-gesture":"false","vslide-gesture-in-fullscreen":"true","ad-unit-id":"","poster-for-crawler":"","show-casting-button":"false","picture-in-picture-mode":"[]","enable-auto-rotation":"false","show-screen-lock-button":"false",animation:"",bindPlay:"",bindPause:"",bindEnded:"",bindTimeUpdate:"",bindFullScreenChange:"",bindWaiting:"",bindError:"",bindProgress:"",bindLoadedMetadata:"",bindControlsToggle:"",bindEnterPictureInPicture:"",bindLeavePictureInPicture:"",bindSeekComplete:""},Z={type:"","canvas-id":"","disable-scroll":"false",bindTouchStart:"",bindTouchMove:"",bindTouchEnd:"",bindTouchCancel:"",bindLongtap:"",bindError:""},ee={"unit-id":"","ad-intervals":"","ad-type":g("banner"),"ad-theme":g("white"),bindLoad:"",bindError:"",bindClose:""},te={bindLoad:"",bindError:""},ne={type:"","open-gid":"",lang:g("en"),"default-text":"","default-avatar":"",bindError:""},re={src:"",bindMessage:"",bindLoad:""},ie={title:"",loading:"false","front-color":"","background-color":"","color-animation-duration":"0","color-animation-timing-func":g("linear")},oe={"background-text-style":"","background-color":"","background-color-top":"","background-color-bottom":"","scroll-top":g(""),"scroll-duration":"300","page-style":g(""),"root-font-size":g(""),bindResize:"",bindScroll:"",bindScrollDone:""},ae={},se={name:""},le={name:""},ce={View:v,Icon:b,Progress:y,RichText:w,Text:k,Button:S,Checkbox:C,CheckboxGroup:x,Editor:O,Form:T,Input:j,Label:E,Picker:P,PickerView:A,PickerViewColumn:_,Radio:I,RadioGroup:B,Slider:L,Switch:R,CoverImage:N,Textarea:D,CoverView:M,MatchMedia:F,MovableArea:W,MovableView:z,ScrollView:U,Swiper:q,SwiperItem:V,FunctionalPageNavigator:H,Navigator:$,Audio:G,Camera:K,Image:J,LivePlayer:Q,LivePusher:Y,Video:X,Canvas:Z,Ad:ee,OfficialAccount:te,OpenData:ne,WebView:re,NavigationBar:ie,PageMeta:oe,Block:ae,Map:m,Slot:le,SlotView:se},ue=[],de=function(){};function fe(e){for(var t="",n=!1,r=0;r<e.length;r++)"-"!==e[r]?(t+=n?e[r].toUpperCase():e[r],n=!1):n=!0;return t}function he(e){return e.charAt(0).toUpperCase()+e.slice(1)}var pe="\u5982\u6709\u7591\u95ee\uff0c\u8bf7\u63d0\u4ea4 issue \u81f3\uff1ahttps://github.com/nervjs/taro/issues";function ge(e,t){if(!e)throw new Error(t+"\n"+pe)}function ve(e){return"o"===e[0]&&"n"===e[1]}var be=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord/i;function me(e,t,n){var r;for(r in t)r in n||Se(e,r,null,t[r]);var i=e instanceof c["FormElement"];for(r in n)(t[r]!==n[r]||i&&"value"===r)&&Se(e,r,n[r],t[r])}function ye(e){var t=c["document"].getElementById(e.currentTarget.id),n=t.__handlers[e.type];n[0](e)}function we(e,t,n,r){var i=t.endsWith("Capture"),o=t.toLowerCase().slice(2);i&&(o=o.slice(0,-7));var a=he(fe(e.tagName.toLowerCase()));"click"===o&&a in ce&&(o="tap"),f(n)?(r||e.addEventListener(o,ye,i),e.__handlers[o][0]=n):e.removeEventListener(o,ye)}function ke(e,t,n){"-"===t[0]&&e.setProperty(t,n.toString()),e[t]=h(n)&&!1===be.test(t)?n+"px":null==n?"":n}function Se(e,t,n,r){var i,o,a,s;if(t="className"===t?"class":t,"key"===t||"children"===t||"ref"===t);else if("style"===t){var l=e.style;if(u(n))l.cssText=n;else{if(u(r)&&(l.cssText="",r=null),d(r))for(var c in r)n&&c in n||ke(l,c,"");if(d(n))for(var h in n)r&&n[h]===r[h]||ke(l,h,n[h])}}else if(ve(t))we(e,t,n,r);else if("dangerouslySetInnerHTML"===t){var p=null!==(o=null===(i=n)||void 0===i?void 0:i.__html)&&void 0!==o?o:"",g=null!==(s=null===(a=r)||void 0===a?void 0:a.__html)&&void 0!==s?s:"";(p||g)&&g!==p&&(e.innerHTML=p)}else f(n)||(null==n?e.removeAttribute(t):e.setAttribute(t,n))}var Ce=l["unstable_scheduleCallback"],xe=l["unstable_cancelCallback"],Oe=l["unstable_now"];function Te(){return!1}var je={createInstance:function(e){return c["document"].createElement(e)},createTextInstance:function(e){return c["document"].createTextNode(e)},getPublicInstance:function(e){return e},getRootHostContext:function(){return{}},getChildHostContext:function(){return{}},appendChild:function(e,t){e.appendChild(t)},appendInitialChild:function(e,t){e.appendChild(t)},appendChildToContainer:function(e,t){e.appendChild(t)},removeChild:function(e,t){e.removeChild(t)},removeChildFromContainer:function(e,t){e.removeChild(t)},insertBefore:function(e,t,n){e.insertBefore(t,n)},insertInContainerBefore:function(e,t,n){e.insertBefore(t,n)},commitTextUpdate:function(e,t,n){e.nodeValue=n},finalizeInitialChildren:function(e,t,n){return me(e,{},n),!1},prepareUpdate:function(){return ue},commitUpdate:function(e,t,n,r,i){me(e,r,i)},hideInstance:function(e){var t=e.style;t.setProperty("display","none")},unhideInstance:function(e,t){var n=t.style,r=(null===n||void 0===n?void 0:n.hasOwnProperty("display"))?n.display:null;r=null==r||"boolean"===typeof r||""===r?"":(""+r).trim(),e.style["display"]=r},shouldSetTextContent:Te,shouldDeprioritizeSubtree:Te,prepareForCommit:de,resetAfterCommit:de,commitMount:de,now:Oe,scheduleDeferredCallback:Ce,cancelDeferredCallback:xe,clearTimeout:clearTimeout,setTimeout:setTimeout,noTimeout:-1,supportsMutation:!0,supportsPersistence:!1,isPrimaryRenderer:!0,supportsHydration:!1},Ee=s()(je),Pe=new WeakMap,Ae=function(){function e(t,n){Object(r["a"])(this,e),this.renderer=t,this.internalRoot=t.createContainer(n,!1,!1)}return Object(i["a"])(e,[{key:"render",value:function(e,t){return this.renderer.updateContainer(e,this.internalRoot,null,t),this.renderer.getPublicRootInstance(this.internalRoot)}},{key:"unmount",value:function(e){this.renderer.updateContainer(null,this.internalRoot,null,e)}}]),e}();function _e(e,t,n){var r=Pe.get(t);if(null!=r)return r.render(e,n);var i=new Ae(Ee,t);return Pe.set(t,i),i.render(e,n)}var Ie=Ee.batchedUpdates;function Be(e){ge(e&&[1,8,9,11].includes(e.nodeType),"unmountComponentAtNode(...): Target container is not a DOM element.");var t=Pe.get(e);return!!t&&(Ie((function(){t.unmount((function(){Pe.delete(e)}))})),!0)}function Le(e){if(null==e)return null;var t=e.nodeType;return 1===t||3===t?e:Ee.findHostInstance(e)}var Re="function"===typeof Symbol&&Symbol.for?Symbol.for("react.portal"):60106;function Ne(e,t,n){return{$$typeof:Re,key:null==n?null:String(n),children:e,containerInfo:t,implementation:null}}var De={render:_e,unstable_batchedUpdates:Ie,unmountComponentAtNode:Be,findDOMNode:Le,createPortal:Ne};t["a"]=De},67:function(e,t,n){"use strict";n.r(t),function(e,r){var i=n(3);function o(e){return o="function"===typeof Symbol&&"symbol"===typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"===typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},o(e)}function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function s(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function l(e,t,n){return t&&s(e.prototype,t),n&&s(e,n),e}function c(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function d(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){c(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}"function"!==typeof Object.assign&&(Object.assign=function(e){if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var t=Object(e),n=1;n<arguments.length;n++){var r=arguments[n];if(null!=r)for(var i in r)Object.prototype.hasOwnProperty.call(r,i)&&(t[i]=r[i])}return t}),"function"!==typeof Object.defineProperties&&(Object.defineProperties=function(e,t){function n(e){function t(e,t){return Object.prototype.hasOwnProperty.call(e,t)}function n(e){return"function"===typeof e}if("object"!==o(e)||null===e)throw new TypeError("bad desc");var r={};if(t(e,"enumerable")&&(r.enumerable=!!e.enumerable),t(e,"configurable")&&(r.configurable=!!e.configurable),t(e,"value")&&(r.value=e.value),t(e,"writable")&&(r.writable=!!e.writable),t(e,"get")){var i=e.get;if(!n(i)&&"undefined"!==typeof i)throw new TypeError("bad get");r.get=i}if(t(e,"set")){var a=e.set;if(!n(a)&&"undefined"!==typeof a)throw new TypeError("bad set");r.set=a}if(("get"in r||"set"in r)&&("value"in r||"writable"in r))throw new TypeError("identity-confused descriptor");return r}if("object"!==o(e)||null===e)throw new TypeError("bad obj");t=Object(t);for(var r=Object.keys(t),i=[],a=0;a<r.length;a++)i.push([r[a],n(t[r[a]])]);for(var s=0;s<i.length;s++)Object.defineProperty(e,i[s][0],i[s][1]);return e});var f={WEAPP:"WEAPP",WEB:"WEB",RN:"RN",SWAN:"SWAN",ALIPAY:"ALIPAY",TT:"TT",QQ:"QQ",JD:"JD"},h=null;function p(){return h||("undefined"!==typeof jd&&jd.getSystemInfo?(h=f.JD,f.JD):"undefined"!==typeof qq&&qq.getSystemInfo?(h=f.QQ,f.QQ):"undefined"!==typeof tt&&tt.getSystemInfo?(h=f.TT,f.TT):"undefined"!==typeof wx&&wx.getSystemInfo?(h=f.WEAPP,f.WEAPP):"undefined"!==typeof swan&&swan.getSystemInfo?(h=f.SWAN,f.SWAN):"undefined"!==typeof my&&my.getSystemInfo?(h=f.ALIPAY,f.ALIPAY):"undefined"!==typeof e&&e.__fbGenNativeModule?(h=f.RN,f.RN):"undefined"!==typeof r?(h=f.WEB,f.WEB):"Unknown environment")}function g(){}var v=function(){function e(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:[],r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;a(this,e),this.index=r,this.requestParams=t,this.interceptors=n}return l(e,[{key:"proceed",value:function(e){if(this.requestParams=e,this.index>=this.interceptors.length)throw new Error("chain \u53c2\u6570\u9519\u8bef, \u8bf7\u52ff\u76f4\u63a5\u4fee\u6539 request.chain");var t=this._getNextInterceptor(),n=this._getNextChain(),r=t(n),i=r["catch"]((function(e){return Promise.reject(e)}));return"function"===typeof r.abort&&(i.abort=r.abort),i}},{key:"_getNextInterceptor",value:function(){return this.interceptors[this.index]}},{key:"_getNextChain",value:function(){return new e(this.requestParams,this.interceptors,this.index+1)}}]),e}(),b=function(){function e(t){a(this,e),this.taroInterceptor=t,this.chain=new v}return l(e,[{key:"request",value:function(e){var t=this;return this.chain.interceptors=this.chain.interceptors.filter((function(e){return e!==t.taroInterceptor})),this.chain.interceptors.push(this.taroInterceptor),this.chain.proceed(d({},e))}},{key:"addInterceptor",value:function(e){this.chain.interceptors.push(e)}},{key:"cleanInterceptors",value:function(){this.chain=new v}}]),e}();function m(e){var t,n=e.requestParams,r=new Promise((function(r,i){var o=setTimeout((function(){o=null,i(new Error("\u7f51\u7edc\u94fe\u63a5\u8d85\u65f6,\u8bf7\u7a0d\u540e\u518d\u8bd5\uff01"))}),n&&n.timeout||6e4);t=e.proceed(n),t.then((function(e){o&&(clearTimeout(o),r(e))}))["catch"]((function(e){o&&clearTimeout(o),i(e)}))}));return void 0!==t&&"function"===typeof t.abort&&(r.abort=t.abort),r}function y(e){var t=e.requestParams,n=t.method,r=t.data,i=t.url;console.log("http ".concat(n||"GET"," --\x3e ").concat(i," data: "),r);var o=e.proceed(t),a=o.then((function(e){return console.log("http <-- ".concat(i," result:"),e),e}));return"function"===typeof o.abort&&(a.abort=o.abort),a}var w=Object.freeze({__proto__:null,timeoutInterceptor:m,logInterceptor:y}),k={onSocketOpen:!0,onSocketError:!0,onSocketMessage:!0,onSocketClose:!0,onBackgroundAudioPlay:!0,onBackgroundAudioPause:!0,onBackgroundAudioStop:!0,onNetworkStatusChange:!0,offNetworkStatusChange:!0,onAccelerometerChange:!0,onCompassChange:!0,onBluetoothAdapterStateChange:!0,onBluetoothDeviceFound:!0,onBLEConnectionStateChange:!0,onBLECharacteristicValueChange:!0,onBeaconUpdate:!0,onBeaconServiceChange:!0,onUserCaptureScreen:!0,onHCEMessage:!0,onGetWifiList:!0,onWifiConnected:!0,onDeviceMotionChange:!0,setStorageSync:!0,getStorageSync:!0,getStorageInfoSync:!0,removeStorageSync:!0,clearStorageSync:!0,getSystemInfoSync:!0,getExtConfigSync:!0,getLogManager:!0,onMemoryWarning:!0,reportMonitor:!0,reportAnalytics:!0,navigateToSmartGameProgram:!0,getFileSystemManager:!0,getLaunchOptionsSync:!0,onPageNotFound:!0,onError:!0,onAppShow:!0,onAppHide:!0,offPageNotFound:!0,offError:!0,offAppShow:!0,offAppHide:!0,onAudioInterruptionEnd:!0,onAudioInterruptionBegin:!0,onLocationChange:!0,offLocationChange:!0,onUnhandledRejection:!0,offUnhandledRejection:!0,onThemeChange:!0,offThemeChange:!0,onKeyboardHeightChange:!0,offKeyboardHeightChange:!0},S={stopRecord:!0,getRecorderManager:!0,pauseVoice:!0,stopVoice:!0,pauseBackgroundAudio:!0,stopBackgroundAudio:!0,getBackgroundAudioManager:!0,createAudioContext:!0,createInnerAudioContext:!0,createVideoContext:!0,createCameraContext:!0,createLivePlayerContext:!0,createLivePusherContext:!0,createMapContext:!0,canIUse:!0,startAccelerometer:!0,stopAccelerometer:!0,startCompass:!0,stopCompass:!0,hideToast:!0,hideLoading:!0,showNavigationBarLoading:!0,hideNavigationBarLoading:!0,createAnimation:!0,createSelectorQuery:!0,createOffscreenCanvas:!0,createCanvasContext:!0,drawCanvas:!0,hideKeyboard:!0,stopPullDownRefresh:!0,createIntersectionObserver:!0,getMenuButtonBoundingClientRect:!0,onWindowResize:!0,offWindowResize:!0,setEnableDebug:!0,getRealtimeLogManager:!0,getLogManager:!0,arrayBufferToBase64:!0,base64ToArrayBuffer:!0,getAccountInfoSync:!0,getUpdateManager:!0,createWorker:!0,getPerformance:!0,reportPerformance:!0,createRewardedVideoAd:!0,createInterstitialAd:!0},C={uploadFile:!0,downloadFile:!0,connectSocket:!0,sendSocketMessage:!0,closeSocket:!0,chooseImage:!0,chooseMessageFile:!0,previewImage:!0,getImageInfo:!0,compressImage:!0,saveImageToPhotosAlbum:!0,startRecord:!0,playVoice:!0,setInnerAudioOption:!0,getAvailableAudioSources:!0,getBackgroundAudioPlayerState:!0,playBackgroundAudio:!0,seekBackgroundAudio:!0,chooseVideo:!0,saveVideoToPhotosAlbum:!0,loadFontFace:!0,chooseMedia:!0,saveFile:!0,getFileInfo:!0,getSavedFileList:!0,getSavedFileInfo:!0,removeSavedFile:!0,openDocument:!0,setStorage:!0,getStorage:!0,getStorageInfo:!0,removeStorage:!0,clearStorage:!0,navigateBack:!0,navigateTo:!0,redirectTo:!0,switchTab:!0,reLaunch:!0,startLocationUpdate:!0,startLocationUpdateBackground:!0,stopLocationUpdate:!0,getLocation:!0,chooseLocation:!0,openLocation:!0,getSystemInfo:!0,getNetworkType:!0,makePhoneCall:!0,scanCode:!0,setClipboardData:!0,getClipboardData:!0,openBluetoothAdapter:!0,closeBluetoothAdapter:!0,getBluetoothAdapterState:!0,startBluetoothDevicesDiscovery:!0,stopBluetoothDevicesDiscovery:!0,getBluetoothDevices:!0,getConnectedBluetoothDevices:!0,createBLEConnection:!0,closeBLEConnection:!0,getBLEDeviceServices:!0,getBLEDeviceCharacteristics:!0,readBLECharacteristicValue:!0,writeBLECharacteristicValue:!0,notifyBLECharacteristicValueChange:!0,startBeaconDiscovery:!0,stopBeaconDiscovery:!0,getBeacons:!0,setScreenBrightness:!0,getScreenBrightness:!0,setKeepScreenOn:!0,vibrateLong:!0,vibrateShort:!0,addPhoneContact:!0,getHCEState:!0,startHCE:!0,stopHCE:!0,sendHCEMessage:!0,startWifi:!0,stopWifi:!0,connectWifi:!0,getWifiList:!0,setWifiList:!0,getConnectedWifi:!0,startDeviceMotionListening:!0,stopDeviceMotionListening:!0,getBatteryInfo:!0,pageScrollTo:!0,showToast:!0,showLoading:!0,showModal:!0,showActionSheet:!0,setNavigationBarTitle:!0,setNavigationBarColor:!0,setTabBarBadge:!0,removeTabBarBadge:!0,showTabBarRedDot:!0,hideTabBarRedDot:!0,setTabBarStyle:!0,setTabBarItem:!0,showTabBar:!0,hideTabBar:!0,setTopBarText:!0,startPullDownRefresh:!0,canvasToTempFilePath:!0,canvasGetImageData:!0,canvasPutImageData:!0,setBackgroundColor:!0,setBackgroundTextStyle:!0,getSelectedTextRange:!0,hideHomeButton:!0,getExtConfig:!0,login:!0,checkSession:!0,authorize:!0,getUserInfo:!0,checkIsSupportFacialRecognition:!0,startFacialRecognitionVerify:!0,startFacialRecognitionVerifyAndUploadVideo:!0,faceVerifyForPay:!0,requestPayment:!0,showShareMenu:!0,hideShareMenu:!0,updateShareMenu:!0,getShareInfo:!0,chooseAddress:!0,addCard:!0,openCard:!0,openSetting:!0,getSetting:!0,getWeRunData:!0,navigateToMiniProgram:!0,navigateBackMiniProgram:!0,chooseInvoice:!0,chooseInvoiceTitle:!0,checkIsSupportSoterAuthentication:!0,startSoterAuthentication:!0,checkIsSoterEnrolledInDevice:!0,requestSubscribeMessage:!0,setEnableDebug:!0,getOpenUserInfo:!0,getPhoneNumber:!0,ocrIdCard:!0,ocrBankCard:!0,ocrDrivingLicense:!0,ocrVehicleLicense:!0,textReview:!0,textToAudio:!0,imageAudit:!0,advancedGeneralIdentify:!0,objectDetectIdentify:!0,carClassify:!0,dishClassify:!0,logoClassify:!0,animalClassify:!0,plantClassify:!0,setPageInfo:!0,getSwanId:!0,requestPolymerPayment:!0,navigateToSmartProgram:!0,navigateBackSmartProgram:!0,preloadSubPackage:!0};function x(e){var t=e.designWidth,n=void 0===t?700:t,r=e.deviceRatio,i=void 0===r?{640:1.17,750:1,828:.905}:r;this.config=this.config||{},this.config.designWidth=n,this.config.deviceRatio=i}var O={Events:i["Events"],eventCenter:i["eventCenter"],getEnv:p,ENV_TYPE:f,render:g,noPromiseApis:S,onAndSyncApis:k,otherApis:C,initPxTransform:x,Link:b,interceptors:w,Current:i["Current"],getCurrentInstance:i["getCurrentInstance"],useDidShow:i["useDidShow"],useDidHide:i["useDidHide"],usePullDownRefresh:i["usePullDownRefresh"],useReachBottom:i["useReachBottom"],usePageScroll:i["usePageScroll"],useResize:i["useResize"],useShareAppMessage:i["useShareAppMessage"],useTabItemTap:i["useTabItemTap"],useTitleClick:i["useTitleClick"],useOptionMenuClick:i["useOptionMenuClick"],usePullIntercept:i["usePullIntercept"],useShareTimeline:i["useShareTimeline"],useAddToFavorites:i["useAddToFavorites"],useReady:i["useReady"],useRouter:i["useRouter"],options:i["options"],nextTick:i["nextTick"]};t["default"]=O}.call(this,n(32),n(3)["window"])}}]);
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["taro"],{
+
+/***/ "./node_modules/@tarojs/api/dist/index.esm.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@tarojs/api/dist/index.esm.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global, window) {/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js");
+
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+if (typeof Object.assign !== 'function') {
+  // Must be writable: true, enumerable: false, configurable: true
+  Object.assign = function (target) {
+    // .length of function is 2
+    if (target == null) {
+      // TypeError if undefined or null
+      throw new TypeError('Cannot convert undefined or null to object');
+    }
+
+    var to = Object(target);
+
+    for (var index = 1; index < arguments.length; index++) {
+      var nextSource = arguments[index];
+
+      if (nextSource != null) {
+        // Skip over if undefined or null
+        for (var nextKey in nextSource) {
+          // Avoid bugs when hasOwnProperty is shadowed
+          if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+    }
+
+    return to;
+  };
+}
+
+if (typeof Object.defineProperties !== 'function') {
+  Object.defineProperties = function (obj, properties) {
+    function convertToDescriptor(desc) {
+      function hasProperty(obj, prop) {
+        return Object.prototype.hasOwnProperty.call(obj, prop);
+      }
+
+      function isCallable(v) {
+        // NB: modify as necessary if other values than functions are callable.
+        return typeof v === 'function';
+      }
+
+      if (_typeof(desc) !== 'object' || desc === null) {
+        throw new TypeError('bad desc');
+      }
+
+      var d = {};
+      if (hasProperty(desc, 'enumerable')) d.enumerable = !!desc.enumerable;
+
+      if (hasProperty(desc, 'configurable')) {
+        d.configurable = !!desc.configurable;
+      }
+
+      if (hasProperty(desc, 'value')) d.value = desc.value;
+      if (hasProperty(desc, 'writable')) d.writable = !!desc.writable;
+
+      if (hasProperty(desc, 'get')) {
+        var g = desc.get;
+
+        if (!isCallable(g) && typeof g !== 'undefined') {
+          throw new TypeError('bad get');
+        }
+
+        d.get = g;
+      }
+
+      if (hasProperty(desc, 'set')) {
+        var s = desc.set;
+
+        if (!isCallable(s) && typeof s !== 'undefined') {
+          throw new TypeError('bad set');
+        }
+
+        d.set = s;
+      }
+
+      if (('get' in d || 'set' in d) && ('value' in d || 'writable' in d)) {
+        throw new TypeError('identity-confused descriptor');
+      }
+
+      return d;
+    }
+
+    if (_typeof(obj) !== 'object' || obj === null) throw new TypeError('bad obj');
+    properties = Object(properties);
+    var keys = Object.keys(properties);
+    var descs = [];
+
+    for (var i = 0; i < keys.length; i++) {
+      descs.push([keys[i], convertToDescriptor(properties[keys[i]])]);
+    }
+
+    for (var _i = 0; _i < descs.length; _i++) {
+      Object.defineProperty(obj, descs[_i][0], descs[_i][1]);
+    }
+
+    return obj;
+  };
+}
+
+var ENV_TYPE = {
+  WEAPP: 'WEAPP',
+  WEB: 'WEB',
+  RN: 'RN',
+  SWAN: 'SWAN',
+  ALIPAY: 'ALIPAY',
+  TT: 'TT',
+  QQ: 'QQ',
+  JD: 'JD'
+};
+var _env = null; // 一个taro项目肯定运行同样的环境
+
+function getEnv() {
+  if (_env) return _env;
+
+  if (typeof jd !== 'undefined' && jd.getSystemInfo) {
+    _env = ENV_TYPE.JD;
+    return ENV_TYPE.JD;
+  }
+
+  if (typeof qq !== 'undefined' && qq.getSystemInfo) {
+    _env = ENV_TYPE.QQ;
+    return ENV_TYPE.QQ;
+  }
+
+  if (typeof tt !== 'undefined' && tt.getSystemInfo) {
+    _env = ENV_TYPE.TT;
+    return ENV_TYPE.TT;
+  }
+
+  if (typeof wx !== 'undefined' && wx.getSystemInfo) {
+    _env = ENV_TYPE.WEAPP;
+    return ENV_TYPE.WEAPP;
+  }
+
+  if (typeof swan !== 'undefined' && swan.getSystemInfo) {
+    _env = ENV_TYPE.SWAN;
+    return ENV_TYPE.SWAN;
+  }
+
+  if (typeof my !== 'undefined' && my.getSystemInfo) {
+    _env = ENV_TYPE.ALIPAY;
+    return ENV_TYPE.ALIPAY;
+  }
+
+  if (typeof global !== 'undefined' && global.__fbGenNativeModule) {
+    _env = ENV_TYPE.RN;
+    return ENV_TYPE.RN;
+  }
+
+  if (typeof window !== 'undefined') {
+    _env = ENV_TYPE.WEB;
+    return ENV_TYPE.WEB;
+  }
+
+  return 'Unknown environment';
+}
+
+function render() {}
+
+var Chain = /*#__PURE__*/function () {
+  function Chain(requestParams) {
+    var interceptors = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+    _classCallCheck(this, Chain);
+
+    this.index = index;
+    this.requestParams = requestParams;
+    this.interceptors = interceptors;
+  }
+
+  _createClass(Chain, [{
+    key: "proceed",
+    value: function proceed(requestParams) {
+      this.requestParams = requestParams;
+
+      if (this.index >= this.interceptors.length) {
+        throw new Error('chain 参数错误, 请勿直接修改 request.chain');
+      }
+
+      var nextInterceptor = this._getNextInterceptor();
+
+      var nextChain = this._getNextChain();
+
+      var p = nextInterceptor(nextChain);
+      var res = p["catch"](function (err) {
+        return Promise.reject(err);
+      });
+      if (typeof p.abort === 'function') res.abort = p.abort;
+      return res;
+    }
+  }, {
+    key: "_getNextInterceptor",
+    value: function _getNextInterceptor() {
+      return this.interceptors[this.index];
+    }
+  }, {
+    key: "_getNextChain",
+    value: function _getNextChain() {
+      return new Chain(this.requestParams, this.interceptors, this.index + 1);
+    }
+  }]);
+
+  return Chain;
+}();
+
+var Link = /*#__PURE__*/function () {
+  function Link(interceptor) {
+    _classCallCheck(this, Link);
+
+    this.taroInterceptor = interceptor;
+    this.chain = new Chain();
+  }
+
+  _createClass(Link, [{
+    key: "request",
+    value: function request(requestParams) {
+      var _this = this;
+
+      this.chain.interceptors = this.chain.interceptors.filter(function (interceptor) {
+        return interceptor !== _this.taroInterceptor;
+      });
+      this.chain.interceptors.push(this.taroInterceptor);
+      return this.chain.proceed(_objectSpread2({}, requestParams));
+    }
+  }, {
+    key: "addInterceptor",
+    value: function addInterceptor(interceptor) {
+      this.chain.interceptors.push(interceptor);
+    }
+  }, {
+    key: "cleanInterceptors",
+    value: function cleanInterceptors() {
+      this.chain = new Chain();
+    }
+  }]);
+
+  return Link;
+}();
+
+function timeoutInterceptor(chain) {
+  var requestParams = chain.requestParams;
+  var p;
+  var res = new Promise(function (resolve, reject) {
+    var timeout = setTimeout(function () {
+      timeout = null;
+      reject(new Error('网络链接超时,请稍后再试！'));
+    }, requestParams && requestParams.timeout || 60000);
+    p = chain.proceed(requestParams);
+    p.then(function (res) {
+      if (!timeout) return;
+      clearTimeout(timeout);
+      resolve(res);
+    })["catch"](function (err) {
+      timeout && clearTimeout(timeout);
+      reject(err);
+    });
+  });
+  if (p !== undefined && typeof p.abort === 'function') res.abort = p.abort;
+  return res;
+}
+
+function logInterceptor(chain) {
+  var requestParams = chain.requestParams;
+  var method = requestParams.method,
+      data = requestParams.data,
+      url = requestParams.url; // eslint-disable-next-line no-console
+
+  console.log("http ".concat(method || 'GET', " --> ").concat(url, " data: "), data);
+  var p = chain.proceed(requestParams);
+  var res = p.then(function (res) {
+    // eslint-disable-next-line no-console
+    console.log("http <-- ".concat(url, " result:"), res);
+    return res;
+  });
+  if (typeof p.abort === 'function') res.abort = p.abort;
+  return res;
+}
+
+var interceptors = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  timeoutInterceptor: timeoutInterceptor,
+  logInterceptor: logInterceptor
+});
+var onAndSyncApis = {
+  onSocketOpen: true,
+  onSocketError: true,
+  onSocketMessage: true,
+  onSocketClose: true,
+  onBackgroundAudioPlay: true,
+  onBackgroundAudioPause: true,
+  onBackgroundAudioStop: true,
+  onNetworkStatusChange: true,
+  onAccelerometerChange: true,
+  onCompassChange: true,
+  onBluetoothAdapterStateChange: true,
+  onBluetoothDeviceFound: true,
+  onBLEConnectionStateChange: true,
+  onBLECharacteristicValueChange: true,
+  onBeaconUpdate: true,
+  onBeaconServiceChange: true,
+  onUserCaptureScreen: true,
+  onHCEMessage: true,
+  onGetWifiList: true,
+  onWifiConnected: true,
+  onDeviceMotionChange: true,
+  setStorageSync: true,
+  getStorageSync: true,
+  getStorageInfoSync: true,
+  removeStorageSync: true,
+  clearStorageSync: true,
+  getSystemInfoSync: true,
+  getExtConfigSync: true,
+  getLogManager: true,
+  onMemoryWarning: true,
+  reportMonitor: true,
+  reportAnalytics: true,
+  navigateToSmartGameProgram: true,
+  // 文件
+  getFileSystemManager: true,
+  getLaunchOptionsSync: true,
+  onPageNotFound: true,
+  onError: true,
+  onAppShow: true,
+  onAppHide: true,
+  offPageNotFound: true,
+  offError: true,
+  offAppShow: true,
+  offAppHide: true,
+  onAudioInterruptionEnd: true,
+  onAudioInterruptionBegin: true,
+  onLocationChange: true,
+  offLocationChange: true,
+  // 基础
+  onUnhandledRejection: true,
+  offUnhandledRejection: true,
+  onThemeChange: true,
+  offThemeChange: true,
+  // 界面
+  onKeyboardHeightChange: true,
+  offKeyboardHeightChange: true
+};
+var noPromiseApis = {
+  // 媒体
+  stopRecord: true,
+  getRecorderManager: true,
+  pauseVoice: true,
+  stopVoice: true,
+  pauseBackgroundAudio: true,
+  stopBackgroundAudio: true,
+  getBackgroundAudioManager: true,
+  createAudioContext: true,
+  createInnerAudioContext: true,
+  createVideoContext: true,
+  createCameraContext: true,
+  createLivePlayerContext: true,
+  createLivePusherContext: true,
+  // 位置
+  createMapContext: true,
+  // 设备
+  canIUse: true,
+  startAccelerometer: true,
+  stopAccelerometer: true,
+  startCompass: true,
+  stopCompass: true,
+  // 界面
+  hideToast: true,
+  hideLoading: true,
+  showNavigationBarLoading: true,
+  hideNavigationBarLoading: true,
+  createAnimation: true,
+  createSelectorQuery: true,
+  createOffscreenCanvas: true,
+  createCanvasContext: true,
+  // createContext: true,
+  drawCanvas: true,
+  hideKeyboard: true,
+  stopPullDownRefresh: true,
+  createIntersectionObserver: true,
+  // 菜单
+  getMenuButtonBoundingClientRect: true,
+  onWindowResize: true,
+  offWindowResize: true,
+  // 调试
+  setEnableDebug: true,
+  getRealtimeLogManager: true,
+  getLogManager: true,
+  // 拓展接口
+  arrayBufferToBase64: true,
+  base64ToArrayBuffer: true,
+  getAccountInfoSync: true,
+  getUpdateManager: true,
+  createWorker: true,
+  // 广告
+  createRewardedVideoAd: true,
+  createInterstitialAd: true
+};
+var otherApis = {
+  // 网络
+  uploadFile: true,
+  downloadFile: true,
+  connectSocket: true,
+  sendSocketMessage: true,
+  closeSocket: true,
+  // 媒体
+  chooseImage: true,
+  chooseMessageFile: true,
+  previewImage: true,
+  getImageInfo: true,
+  compressImage: true,
+  saveImageToPhotosAlbum: true,
+  startRecord: true,
+  playVoice: true,
+  setInnerAudioOption: true,
+  getAvailableAudioSources: true,
+  getBackgroundAudioPlayerState: true,
+  playBackgroundAudio: true,
+  seekBackgroundAudio: true,
+  chooseVideo: true,
+  saveVideoToPhotosAlbum: true,
+  loadFontFace: true,
+  // 文件
+  saveFile: true,
+  getFileInfo: true,
+  getSavedFileList: true,
+  getSavedFileInfo: true,
+  removeSavedFile: true,
+  openDocument: true,
+  // 数据缓存
+  setStorage: true,
+  getStorage: true,
+  getStorageInfo: true,
+  removeStorage: true,
+  clearStorage: true,
+  // 导航
+  navigateBack: true,
+  navigateTo: true,
+  redirectTo: true,
+  switchTab: true,
+  reLaunch: true,
+  // 位置
+  startLocationUpdate: true,
+  startLocationUpdateBackground: true,
+  stopLocationUpdate: true,
+  getLocation: true,
+  chooseLocation: true,
+  openLocation: true,
+  // 设备
+  getSystemInfo: true,
+  getNetworkType: true,
+  makePhoneCall: true,
+  scanCode: true,
+  setClipboardData: true,
+  getClipboardData: true,
+  openBluetoothAdapter: true,
+  closeBluetoothAdapter: true,
+  getBluetoothAdapterState: true,
+  startBluetoothDevicesDiscovery: true,
+  stopBluetoothDevicesDiscovery: true,
+  getBluetoothDevices: true,
+  getConnectedBluetoothDevices: true,
+  createBLEConnection: true,
+  closeBLEConnection: true,
+  getBLEDeviceServices: true,
+  getBLEDeviceCharacteristics: true,
+  readBLECharacteristicValue: true,
+  writeBLECharacteristicValue: true,
+  notifyBLECharacteristicValueChange: true,
+  startBeaconDiscovery: true,
+  stopBeaconDiscovery: true,
+  getBeacons: true,
+  setScreenBrightness: true,
+  getScreenBrightness: true,
+  setKeepScreenOn: true,
+  vibrateLong: true,
+  vibrateShort: true,
+  addPhoneContact: true,
+  getHCEState: true,
+  startHCE: true,
+  stopHCE: true,
+  sendHCEMessage: true,
+  startWifi: true,
+  stopWifi: true,
+  connectWifi: true,
+  getWifiList: true,
+  setWifiList: true,
+  getConnectedWifi: true,
+  startDeviceMotionListening: true,
+  stopDeviceMotionListening: true,
+  // 界面
+  pageScrollTo: true,
+  showToast: true,
+  showLoading: true,
+  showModal: true,
+  showActionSheet: true,
+  setNavigationBarTitle: true,
+  setNavigationBarColor: true,
+  setTabBarBadge: true,
+  removeTabBarBadge: true,
+  showTabBarRedDot: true,
+  hideTabBarRedDot: true,
+  setTabBarStyle: true,
+  setTabBarItem: true,
+  showTabBar: true,
+  hideTabBar: true,
+  setTopBarText: true,
+  startPullDownRefresh: true,
+  canvasToTempFilePath: true,
+  canvasGetImageData: true,
+  canvasPutImageData: true,
+  setBackgroundColor: true,
+  setBackgroundTextStyle: true,
+  getSelectedTextRange: true,
+  hideHomeButton: true,
+  // 第三方平台
+  getExtConfig: true,
+  // 开放接口
+  login: true,
+  checkSession: true,
+  authorize: true,
+  getUserInfo: true,
+  checkIsSupportFacialRecognition: true,
+  startFacialRecognitionVerify: true,
+  startFacialRecognitionVerifyAndUploadVideo: true,
+  faceVerifyForPay: true,
+  requestPayment: true,
+  showShareMenu: true,
+  hideShareMenu: true,
+  updateShareMenu: true,
+  getShareInfo: true,
+  chooseAddress: true,
+  addCard: true,
+  openCard: true,
+  openSetting: true,
+  getSetting: true,
+  getWeRunData: true,
+  navigateToMiniProgram: true,
+  navigateBackMiniProgram: true,
+  chooseInvoice: true,
+  chooseInvoiceTitle: true,
+  checkIsSupportSoterAuthentication: true,
+  startSoterAuthentication: true,
+  checkIsSoterEnrolledInDevice: true,
+  // 订阅消息
+  requestSubscribeMessage: true,
+  setEnableDebug: true,
+  // 支付宝小程序API
+  getOpenUserInfo: true,
+  // 百度小程序专有 API
+  // 百度小程序 AI 相关
+  ocrIdCard: true,
+  ocrBankCard: true,
+  ocrDrivingLicense: true,
+  ocrVehicleLicense: true,
+  textReview: true,
+  textToAudio: true,
+  imageAudit: true,
+  advancedGeneralIdentify: true,
+  objectDetectIdentify: true,
+  carClassify: true,
+  dishClassify: true,
+  logoClassify: true,
+  animalClassify: true,
+  plantClassify: true,
+  setPageInfo: true,
+  // 用户信息
+  getSwanId: true,
+  // 百度收银台支付
+  requestPolymerPayment: true,
+  // 打开小程序
+  navigateToSmartProgram: true,
+  navigateBackSmartProgram: true,
+  preloadSubPackage: true
+};
+
+function initPxTransform(config) {
+  var _config$designWidth = config.designWidth,
+      designWidth = _config$designWidth === void 0 ? 700 : _config$designWidth,
+      _config$deviceRatio = config.deviceRatio,
+      deviceRatio = _config$deviceRatio === void 0 ? {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2
+  } : _config$deviceRatio;
+  this.config = this.config || {};
+  this.config.designWidth = designWidth;
+  this.config.deviceRatio = deviceRatio;
+}
+/* eslint-disable camelcase */
+
+
+var Taro = {
+  Events: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["Events"],
+  eventCenter: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["eventCenter"],
+  getEnv: getEnv,
+  ENV_TYPE: ENV_TYPE,
+  render: render,
+  noPromiseApis: noPromiseApis,
+  onAndSyncApis: onAndSyncApis,
+  otherApis: otherApis,
+  initPxTransform: initPxTransform,
+  Link: Link,
+  interceptors: interceptors,
+  Current: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["Current"],
+  getCurrentInstance: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["getCurrentInstance"],
+  useDidShow: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useDidShow"],
+  useDidHide: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useDidHide"],
+  usePullDownRefresh: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["usePullDownRefresh"],
+  useReachBottom: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useReachBottom"],
+  usePageScroll: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["usePageScroll"],
+  useResize: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useResize"],
+  useShareAppMessage: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useShareAppMessage"],
+  useTabItemTap: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useTabItemTap"],
+  useTitleClick: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useTitleClick"],
+  useOptionMenuClick: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useOptionMenuClick"],
+  usePullIntercept: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["usePullIntercept"],
+  useShareTimeline: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useShareTimeline"],
+  useAddToFavorites: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useAddToFavorites"],
+  useReady: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useReady"],
+  useRouter: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["useRouter"],
+  options: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["options"],
+  nextTick: _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["nextTick"]
+};
+/* harmony default export */ __webpack_exports__["default"] = (Taro);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js")["window"]))
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/components/mini/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@tarojs/components/mini/index.js ***!
+  \*******************************************************/
+/*! exports provided: View, Icon, Progress, RichText, Text, Button, Checkbox, CheckboxGroup, Editor, Form, Input, Label, Picker, PickerView, PickerViewColumn, Radio, RadioGroup, Slider, Switch, CoverImage, Textarea, CoverView, MatchMedia, MoveableArea, MoveableView, ScrollView, Swiper, SwiperItem, FunctionalPageNavigator, Navigator, Audio, Camera, Image, LivePlayer, LivePusher, Video, Map, Canvas, Ad, OfficialAccount, OpenData, WebView, NavigationBar, PageMeta, Block, MovableArea, MovableView, Slot */
+/*! exports used: Image, Slot, Swiper, SwiperItem, Text, View, WebView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return View; });
+/* unused harmony export Icon */
+/* unused harmony export Progress */
+/* unused harmony export RichText */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Text; });
+/* unused harmony export Button */
+/* unused harmony export Checkbox */
+/* unused harmony export CheckboxGroup */
+/* unused harmony export Editor */
+/* unused harmony export Form */
+/* unused harmony export Input */
+/* unused harmony export Label */
+/* unused harmony export Picker */
+/* unused harmony export PickerView */
+/* unused harmony export PickerViewColumn */
+/* unused harmony export Radio */
+/* unused harmony export RadioGroup */
+/* unused harmony export Slider */
+/* unused harmony export Switch */
+/* unused harmony export CoverImage */
+/* unused harmony export Textarea */
+/* unused harmony export CoverView */
+/* unused harmony export MatchMedia */
+/* unused harmony export MoveableArea */
+/* unused harmony export MoveableView */
+/* unused harmony export ScrollView */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Swiper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SwiperItem; });
+/* unused harmony export FunctionalPageNavigator */
+/* unused harmony export Navigator */
+/* unused harmony export Audio */
+/* unused harmony export Camera */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Image; });
+/* unused harmony export LivePlayer */
+/* unused harmony export LivePusher */
+/* unused harmony export Video */
+/* unused harmony export Map */
+/* unused harmony export Canvas */
+/* unused harmony export Ad */
+/* unused harmony export OfficialAccount */
+/* unused harmony export OpenData */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return WebView; });
+/* unused harmony export NavigationBar */
+/* unused harmony export PageMeta */
+/* unused harmony export Block */
+/* unused harmony export MovableArea */
+/* unused harmony export MovableView */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Slot; });
+var View = 'view';
+var Icon = 'icon';
+var Progress = 'progress';
+var RichText = 'rich-text';
+var Text = 'text';
+var Button = 'button';
+var Checkbox = 'checkbox';
+var CheckboxGroup = 'checkbox-group';
+var Editor = 'editor';
+var Form = 'form';
+var Input = 'input';
+var Label = 'label';
+var Picker = 'picker';
+var PickerView = 'picker-view';
+var PickerViewColumn = 'picker-view-column';
+var Radio = 'radio';
+var RadioGroup = 'radio-group';
+var Slider = 'slider';
+var Switch = 'switch';
+var CoverImage = 'cover-image';
+var Textarea = 'textarea';
+var CoverView = 'cover-view';
+var MatchMedia = 'match-media';
+var MoveableArea = 'moveable-area';
+var MoveableView = 'moveable-view';
+var ScrollView = 'scroll-view';
+var Swiper = 'swiper';
+var SwiperItem = 'swiper-item';
+var FunctionalPageNavigator = 'functional-page-navigator';
+var Navigator = 'navigator';
+var Audio = 'audio';
+var Camera = 'camera';
+var Image = 'image';
+var LivePlayer = 'live-player';
+var LivePusher = 'live-pusher';
+var Video = 'video';
+var Map = 'map';
+var Canvas = 'canvas';
+var Ad = 'ad';
+var OfficialAccount = 'official-account';
+var OpenData = 'open-data';
+var WebView = 'web-view';
+var NavigationBar = 'navigation-bar';
+var PageMeta = 'page-meta';
+var Block = 'block';
+var MovableArea = 'movable-area';
+var MovableView = 'movable-view';
+var Slot = 'slot';
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/mini-runner/dist/template/comp.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@tarojs/mini-runner/dist/template/comp.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* eslint-disable no-undef */
+
+var runtime_1 = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js"); // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+
+
+Component(runtime_1.createRecursiveComponentConfig());
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js ***!
+  \*******************************************************************************************/
+/*! exports provided: Current, CurrentReconciler, Events, FormElement, Style, TaroElement, TaroEvent, TaroNode, TaroRootElement, TaroText, cancelAnimationFrame, connectReactPage, connectVuePage, createComponentConfig, createDocument, createEvent, createPageConfig, createReactApp, createRecursiveComponentConfig, createVue3App, createVueApp, document, eventCenter, getComputedStyle, getCurrentInstance, hydrate, injectPageInstance, navigator, nextTick, now, options, requestAnimationFrame, stringify, useAddToFavorites, useDidHide, useDidShow, useOptionMenuClick, usePageScroll, usePullDownRefresh, usePullIntercept, useReachBottom, useReady, useResize, useRouter, useScope, useShareAppMessage, useShareTimeline, useTabItemTap, useTitleClick, window */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(document, window, requestAnimationFrame, cancelAnimationFrame) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Current", function() { return Current; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentReconciler", function() { return CurrentReconciler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Events", function() { return Events; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormElement", function() { return FormElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Style", function() { return Style; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroElement", function() { return TaroElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroEvent", function() { return TaroEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroNode", function() { return TaroNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroRootElement", function() { return TaroRootElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroText", function() { return TaroText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelAnimationFrame", function() { return caf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "connectReactPage", function() { return connectReactPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "connectVuePage", function() { return connectVuePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComponentConfig", function() { return createComponentConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createDocument", function() { return createDocument; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPageConfig", function() { return createPageConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReactApp", function() { return createReactApp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRecursiveComponentConfig", function() { return createRecursiveComponentConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVue3App", function() { return createVue3App; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVueApp", function() { return createVueApp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "document", function() { return document$1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventCenter", function() { return eventCenter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComputedStyle", function() { return getComputedStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrentInstance", function() { return getCurrentInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hydrate", function() { return hydrate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "injectPageInstance", function() { return injectPageInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navigator", function() { return navigator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nextTick", function() { return nextTick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "now", function() { return now; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "options", function() { return options; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestAnimationFrame", function() { return raf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringify", function() { return stringify; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useAddToFavorites", function() { return useAddToFavorites; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDidHide", function() { return useDidHide; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDidShow", function() { return useDidShow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useOptionMenuClick", function() { return useOptionMenuClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePageScroll", function() { return usePageScroll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePullDownRefresh", function() { return usePullDownRefresh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePullIntercept", function() { return usePullIntercept; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useReachBottom", function() { return useReachBottom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useReady", function() { return useReady; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResize", function() { return useResize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRouter", function() { return useRouter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useScope", function() { return useScope; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useShareAppMessage", function() { return useShareAppMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useShareTimeline", function() { return useShareTimeline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTabItemTap", function() { return useTabItemTap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTitleClick", function() { return useTitleClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "window", function() { return window$1; });
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/set */ "./node_modules/@babel/runtime/helpers/esm/set.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/get */ "./node_modules/@babel/runtime/helpers/esm/get.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper */ "./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper */ "./node_modules/@babel/runtime/helpers/esm/createSuper.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isString(o) {
+  return typeof o === 'string';
+}
+
+function isUndefined(o) {
+  return typeof o === 'undefined';
+}
+
+function isObject(o) {
+  return o !== null && Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])(o) === 'object';
+}
+
+function isBoolean(o) {
+  return o === true || o === false;
+}
+
+function isFunction(o) {
+  return typeof o === 'function';
+}
+
+function isNumber(o) {
+  return typeof o === 'number';
+}
+
+function isBooleanStringLiteral(o) {
+  return o === 'true' || o === 'false';
+}
+
+var isArray = Array.isArray;
+
+function selectEnv(options) {
+  var option;
+
+  if (false) {} else if (false) {} else if (false) {} else if (false) {} else if (false) {} else if (true) {
+    option = options.weapp;
+  }
+
+  return option || options.default || Object.create(null);
+}
+
+var touchEvents = {
+  bindTouchStart: '',
+  bindTouchMove: '',
+  bindTouchEnd: '',
+  bindTouchCancel: '',
+  bindLongTap: ''
+};
+
+function singleQuote(s) {
+  return "'".concat(s, "'");
+}
+
+var View = Object.assign({
+  'hover-class': singleQuote('none'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '50',
+  'hover-stay-time': '400',
+  animation: '',
+  bindAnimationStart: '',
+  bindAnimationIteration: '',
+  bindAnimationEnd: '',
+  bindTransitionEnd: ''
+}, touchEvents);
+var Icon = {
+  type: '',
+  size: '23',
+  color: ''
+};
+var Map$1 = Object.assign({
+  longitude: '',
+  latitude: '',
+  scale: '16',
+  markers: '[]',
+  covers: '',
+  polyline: '[]',
+  circles: '[]',
+  controls: '',
+  'include-points': '[]',
+  'show-location': '',
+  polygons: '',
+  subkey: '',
+  'layer-style': '1',
+  rotate: '0',
+  skew: 'skew',
+  'enable-3D': 'false',
+  'show-compass': 'false',
+  'show-scale': 'false',
+  'enable-overlooking': 'false',
+  'enable-zoom': 'true',
+  'enable-scroll': 'true',
+  'enable-rotate': 'false',
+  'enable-satellite': 'false',
+  'enable-traffic': 'false',
+  setting: '[]',
+  bindMarkerTap: '',
+  bindLabelTap: '',
+  bindControlTap: '',
+  bindCalloutTap: '',
+  bindUpdated: '',
+  bindRegionChange: '',
+  bindPoiTap: ''
+}, touchEvents);
+var Progress = {
+  percent: '',
+  'show-info': 'false',
+  'border-radius': '0',
+  'font-size': '16',
+  'stroke-width': '6',
+  color: singleQuote('#09BB07'),
+  activeColor: singleQuote('#09BB07'),
+  backgroundColor: singleQuote('#EBEBEB'),
+  active: 'false',
+  'active-mode': singleQuote('backwards'),
+  duration: '30',
+  bindActiveEnd: ''
+};
+var RichText = {
+  nodes: '[]',
+  space: ''
+};
+var Text = {
+  selectable: 'false',
+  space: '',
+  decode: 'false'
+};
+var Button = Object.assign({
+  size: singleQuote('default'),
+  type: '',
+  plain: 'false',
+  disabled: '',
+  loading: 'false',
+  'form-type': '',
+  'open-type': '',
+  'hover-class': singleQuote('button-hover'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '20',
+  'hover-stay-time': '70',
+  lang: 'en',
+  'session-from': '',
+  'send-message-title': '',
+  'send-message-path': '',
+  'send-message-img': '',
+  'app-parameter': '',
+  'show-message-card': 'false',
+  bindGetUserInfo: '',
+  bindGetAuthorize: '',
+  bindContact: '',
+  bindGetPhoneNumber: '',
+  bindError: '',
+  bindOpenSetting: '',
+  bindLaunchApp: '',
+  scope: '',
+  name: ''
+}, selectEnv({
+  qq: {
+    'app-packagename': '',
+    'app-bundleid': '',
+    'app-connect-id': ''
+  }
+}));
+var Checkbox = {
+  value: '',
+  disabled: '',
+  checked: 'false',
+  color: singleQuote('#09BB07'),
+  name: ''
+};
+var CheckboxGroup = {
+  bindChange: '',
+  name: ''
+};
+var Editor = {
+  'read-only': 'false',
+  placeholder: '',
+  'show-img-size': 'false',
+  'show-img-toolbar': 'false',
+  'show-img-resize': 'false',
+  focus: 'false',
+  bindReady: '',
+  bindFocus: '',
+  bindBlur: '',
+  bindInput: '',
+  bindStatusChange: '',
+  name: ''
+};
+var Form = {
+  'report-submit': 'false',
+  'report-submit-timeout': '0',
+  bindSubmit: '',
+  bindReset: '',
+  name: ''
+};
+var Input = Object.assign({
+  value: '',
+  type: singleQuote(''),
+  password: 'false',
+  placeholder: '',
+  'placeholder-style': '',
+  'placeholder-class': singleQuote('input-placeholder'),
+  disabled: '',
+  maxlength: '140',
+  'cursor-spacing': '0',
+  'auto-focus': 'false',
+  focus: 'false',
+  'confirm-type': singleQuote('done'),
+  'confirm-hold': 'false',
+  cursor: 'i.value.length',
+  'selection-start': '-1',
+  'selection-end': '-1',
+  'adjust-position': 'true',
+  'hold-keyboard': 'false',
+  bindInput: '',
+  bindFocus: '',
+  bindBlur: '',
+  bindConfirm: '',
+  bindKeyboardHeightChange: '',
+  name: ''
+}, selectEnv({
+  alipay: {
+    'random-number': 'false',
+    controlled: 'false'
+  },
+  weapp: {
+    'always-embed': 'false'
+  }
+}));
+var Label = {
+  for: '',
+  name: ''
+};
+var Picker = {
+  mode: singleQuote('selector'),
+  disabled: '',
+  bindCancel: '',
+  range: '',
+  'range-key': '',
+  value: '',
+  bindChange: '',
+  bindColumnChange: '',
+  start: '',
+  end: '',
+  fields: singleQuote('day'),
+  'custom-item': '',
+  name: ''
+};
+var PickerView = {
+  value: '',
+  'indicator-style': '',
+  'indicator-class': '',
+  'mask-style': '',
+  'mask-class': '',
+  bindChange: '',
+  bindPickStart: '',
+  bindPickEnd: '',
+  name: ''
+};
+var PickerViewColumn = {
+  name: ''
+};
+var Radio = {
+  value: '',
+  checked: 'false',
+  disabled: '',
+  color: singleQuote('#09BB07'),
+  name: ''
+};
+var RadioGroup = {
+  bindChange: '',
+  name: ''
+};
+var Slider = {
+  min: '0',
+  max: '100',
+  step: '1',
+  disabled: '',
+  value: '0',
+  color: singleQuote('#e9e9e9'),
+  'selected-color': singleQuote('#1aad19'),
+  activeColor: singleQuote('#1aad19'),
+  backgroundColor: singleQuote('#e9e9e9'),
+  'block-size': '28',
+  'block-color': singleQuote('#ffffff'),
+  'show-value': 'false',
+  bindChange: '',
+  bindChanging: '',
+  name: ''
+};
+var Switch = {
+  checked: 'false',
+  disabled: '',
+  type: singleQuote('switch'),
+  color: singleQuote('#04BE02'),
+  bindChange: '',
+  name: ''
+};
+var CoverImage = {
+  src: '',
+  bindLoad: 'eh',
+  bindError: 'eh'
+};
+var Textarea = {
+  value: '',
+  placeholder: '',
+  'placeholder-style': '',
+  'placeholder-class': singleQuote('textarea-placeholder'),
+  disabled: '',
+  maxlength: '140',
+  'auto-focus': 'false',
+  focus: 'false',
+  'auto-height': 'false',
+  fixed: 'false',
+  'cursor-spacing': '0',
+  cursor: '-1',
+  'show-confirm-bar': 'true',
+  'selection-start': '-1',
+  'selection-end': '-1',
+  'adjust-position': 'true',
+  'hold-keyboard': 'false',
+  bindFocus: '',
+  bindBlur: '',
+  bindLineChange: '',
+  bindInput: '',
+  bindConfirm: '',
+  bindKeyboardHeightChange: '',
+  name: ''
+};
+var CoverView = Object.assign({
+  'scroll-top': 'false'
+}, touchEvents);
+var MatchMedia = {
+  'min-width': '',
+  'max-width': '',
+  width: '',
+  'min-height': '',
+  'max-height': '',
+  height: '',
+  orientation: ''
+};
+var MovableArea = {
+  'scale-area': 'false'
+};
+var MovableView = Object.assign({
+  direction: 'none',
+  inertia: 'false',
+  'out-of-bounds': 'false',
+  x: '',
+  y: '',
+  damping: '20',
+  friction: '2',
+  disabled: '',
+  scale: 'false',
+  'scale-min': '0.5',
+  'scale-max': '10',
+  'scale-value': '1',
+  animation: 'true',
+  bindAnimationEnd: '',
+  bindChange: '',
+  bindScale: '',
+  htouchmove: '',
+  vtouchmove: '',
+  width: singleQuote('10px'),
+  height: singleQuote('10px')
+}, touchEvents);
+var ScrollView = Object.assign({
+  'scroll-x': 'false',
+  'scroll-y': 'false',
+  'upper-threshold': '50',
+  'lower-threshold': '50',
+  'scroll-top': '',
+  'scroll-left': '',
+  'scroll-into-view': '',
+  'scroll-with-animation': 'false',
+  'enable-back-to-top': 'false',
+  'enable-flex': 'false',
+  'scroll-anchoring': 'false',
+  'refresher-enabled': 'false',
+  'refresher-threshold': '45',
+  'refresher-default-style': singleQuote('black'),
+  'refresher-background': singleQuote('#FFF'),
+  'refresher-triggered': 'false',
+  enhanced: 'false',
+  bounces: 'true',
+  'show-scrollbar': 'true',
+  'paging-enabled': 'false',
+  'fast-deceleration': 'false',
+  bindRefresherPulling: '',
+  bindRefresherRefresh: '',
+  bindRefresherRestore: '',
+  bindRefresherAbort: '',
+  bindScrollToUpper: '',
+  bindScrollToLower: '',
+  bindScroll: '',
+  animation: '',
+  bindTransitionEnd: '',
+  bindAnimationStart: '',
+  bindAnimationIteration: '',
+  bindAnimationEnd: '',
+  bindDragStart: '',
+  bindDragging: '',
+  bindDragEnd: ''
+}, touchEvents);
+var Swiper = Object.assign({
+  'indicator-dots': 'false',
+  'indicator-color': singleQuote('rgba(0, 0, 0, .3)'),
+  'indicator-active-color': singleQuote('#000000'),
+  autoplay: 'false',
+  current: '0',
+  interval: '5000',
+  duration: '500',
+  circular: 'false',
+  vertical: 'false',
+  'previous-margin': '\'0px\'',
+  'next-margin': '\'0px\'',
+  'snap-to-edge': 'false',
+  'display-multiple-items': '1',
+  'skip-hidden-item-layout': 'false',
+  'easing-function': singleQuote('default'),
+  bindChange: '',
+  bindTransition: '',
+  bindAnimationFinish: ''
+}, touchEvents);
+var SwiperItem = {
+  'item-id': ''
+};
+var FunctionalPageNavigator = {
+  version: singleQuote('release'),
+  name: '',
+  args: '',
+  bindSuccess: '',
+  bindFail: '',
+  bindCancel: ''
+};
+var Navigator = {
+  target: singleQuote('self'),
+  url: '',
+  'open-type': singleQuote('navigate'),
+  delta: '1',
+  'app-id': '',
+  path: '',
+  'extra-data': '',
+  version: singleQuote('version'),
+  'hover-class': singleQuote('navigator-hover'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '50',
+  'hover-stay-time': '600',
+  bindSuccess: '',
+  bindFail: '',
+  bindComplete: ''
+};
+var Audio = {
+  id: '',
+  src: '',
+  loop: 'false',
+  controls: 'false',
+  poster: '',
+  name: '',
+  author: '',
+  bindError: '',
+  bindPlay: '',
+  bindPause: '',
+  bindTimeUpdate: '',
+  bindEnded: ''
+};
+var Camera = {
+  mode: singleQuote('normal'),
+  'device-position': singleQuote('back'),
+  flash: singleQuote('auto'),
+  'frame-size': singleQuote('medium'),
+  bindStop: '',
+  bindError: '',
+  bindInitDone: '',
+  bindScanCode: ''
+};
+var Image = Object.assign({
+  src: '',
+  mode: singleQuote('scaleToFill'),
+  webp: 'false',
+  'lazy-load': 'false',
+  'show-menu-by-longpress': 'false',
+  bindError: '',
+  bindLoad: ''
+}, touchEvents);
+var LivePlayer = {
+  src: '',
+  mode: singleQuote('live'),
+  autoplay: 'false',
+  muted: 'false',
+  orientation: singleQuote('vertical'),
+  'object-fit': singleQuote('contain'),
+  'background-mute': 'false',
+  'min-cache': '1',
+  'max-cache': '3',
+  'sound-mode': singleQuote('speaker'),
+  'auto-pause-if-navigate': 'true',
+  'auto-pause-if-open-native': 'true',
+  'picture-in-picture-mode': '[]',
+  animation: '',
+  bindStateChange: '',
+  bindFullScreenChange: '',
+  bindNetStatus: '',
+  bindAudioVolumeNotify: '',
+  bindEnterPictureInPicture: '',
+  bindLeavePictureInPicture: ''
+};
+var LivePusher = {
+  url: '',
+  mode: singleQuote('RTC'),
+  autopush: 'false',
+  muted: 'false',
+  'enable-camera': 'true',
+  'auto-focus': 'true',
+  orientation: singleQuote('vertical'),
+  beauty: '0',
+  whiteness: '0',
+  aspect: singleQuote('9:16'),
+  'min-bitrate': '200',
+  'max-bitrate': '1000',
+  'audio-quality': singleQuote('high'),
+  'waiting-image': '',
+  'waiting-image-hash': '',
+  zoom: 'false',
+  'device-position': singleQuote('front'),
+  'background-mute': 'false',
+  mirror: 'false',
+  'remote-mirror': 'false',
+  'local-mirror': 'false',
+  'audio-reverb-type': '0',
+  'enable-mic': 'true',
+  'enable-agc': 'false',
+  'enable-ans': 'false',
+  'audio-volume-type': singleQuote('voicecall'),
+  'video-width': '360',
+  'video-height': '640',
+  animation: '',
+  bindStateChange: '',
+  bindNetStatus: '',
+  bindBgmStart: '',
+  bindBgmProgress: '',
+  bindBgmComplete: ''
+};
+var Video = {
+  src: '',
+  duration: '',
+  controls: 'true',
+  'danmu-list': '',
+  'danmu-btn': '',
+  'enable-danmu': '',
+  autoplay: 'false',
+  loop: 'false',
+  muted: 'false',
+  'initial-time': '0',
+  'page-gesture': 'false',
+  direction: '',
+  'show-progress': 'true',
+  'show-fullscreen-btn': 'true',
+  'show-play-btn': 'true',
+  'show-center-play-btn': 'true',
+  'enable-progress-gesture': 'true',
+  'object-fit': singleQuote('contain'),
+  poster: '',
+  'show-mute-btn': 'false',
+  title: '',
+  'play-btn-position': singleQuote('bottom'),
+  'enable-play-gesture': 'false',
+  'auto-pause-if-navigate': 'true',
+  'auto-pause-if-open-native': 'true',
+  'vslide-gesture': 'false',
+  'vslide-gesture-in-fullscreen': 'true',
+  'ad-unit-id': '',
+  'poster-for-crawler': '',
+  'show-casting-button': 'false',
+  'picture-in-picture-mode': '[]',
+  // picture-in-picture-show-progress 属性先注释掉的原因如下：
+  // 该属性超过了 wxml 属性的长度限制，实际无法使用且导致编译报错。可等微信官方修复后再放开。
+  // 参考1：https://developers.weixin.qq.com/community/develop/doc/000a429beb87f0eac07acc0fc5b400
+  // 参考2: https://developers.weixin.qq.com/community/develop/doc/0006883619c48054286a4308258c00?_at=vyxqpllafi
+  // 'picture-in-picture-show-progress': 'false',
+  'enable-auto-rotation': 'false',
+  'show-screen-lock-button': 'false',
+  animation: '',
+  bindPlay: '',
+  bindPause: '',
+  bindEnded: '',
+  bindTimeUpdate: '',
+  bindFullScreenChange: '',
+  bindWaiting: '',
+  bindError: '',
+  bindProgress: '',
+  bindLoadedMetadata: '',
+  bindControlsToggle: '',
+  bindEnterPictureInPicture: '',
+  bindLeavePictureInPicture: '',
+  bindSeekComplete: ''
+};
+var Canvas = {
+  type: '',
+  'canvas-id': '',
+  'disable-scroll': 'false',
+  bindTouchStart: '',
+  bindTouchMove: '',
+  bindTouchEnd: '',
+  bindTouchCancel: '',
+  bindLongtap: '',
+  bindError: ''
+};
+var Ad = {
+  'unit-id': '',
+  'ad-intervals': '',
+  'ad-type': singleQuote('banner'),
+  'ad-theme': singleQuote('white'),
+  bindLoad: '',
+  bindError: '',
+  bindClose: ''
+};
+var OfficialAccount = {
+  bindLoad: '',
+  bindError: ''
+};
+var OpenData = {
+  type: '',
+  'open-gid': '',
+  lang: singleQuote('en'),
+  'default-text': '',
+  'default-avatar': '',
+  bindError: ''
+};
+var WebView = {
+  src: '',
+  bindMessage: '',
+  bindLoad: ''
+};
+var NavigationBar = {
+  title: '',
+  loading: 'false',
+  'front-color': '',
+  'background-color': '',
+  'color-animation-duration': '0',
+  'color-animation-timing-func': singleQuote('linear')
+};
+var PageMeta = {
+  'background-text-style': '',
+  'background-color': '',
+  'background-color-top': '',
+  'background-color-bottom': '',
+  'scroll-top': singleQuote(''),
+  'scroll-duration': '300',
+  'page-style': singleQuote(''),
+  'root-font-size': singleQuote(''),
+  bindResize: '',
+  bindScroll: '',
+  bindScrollDone: ''
+};
+var Block = {}; // For Vue，因为 slot 标签被 vue 占用了
+
+var SlotView = {
+  name: ''
+}; // For React
+// Slot 和 SlotView 最终都会编译成 <view slot={{ i.name }} />
+// 因为 <slot name="{{ i.name }}" /> 适用性没有前者高（无法添加类和样式）
+// 不给 View 直接加 slot 属性的原因是性能损耗
+
+var Slot = {
+  name: ''
+};
+var internalComponents = {
+  View: View,
+  Icon: Icon,
+  Progress: Progress,
+  RichText: RichText,
+  Text: Text,
+  Button: Button,
+  Checkbox: Checkbox,
+  CheckboxGroup: CheckboxGroup,
+  Editor: Editor,
+  Form: Form,
+  Input: Input,
+  Label: Label,
+  Picker: Picker,
+  PickerView: PickerView,
+  PickerViewColumn: PickerViewColumn,
+  Radio: Radio,
+  RadioGroup: RadioGroup,
+  Slider: Slider,
+  Switch: Switch,
+  CoverImage: CoverImage,
+  Textarea: Textarea,
+  CoverView: CoverView,
+  MatchMedia: MatchMedia,
+  MovableArea: MovableArea,
+  MovableView: MovableView,
+  ScrollView: ScrollView,
+  Swiper: Swiper,
+  SwiperItem: SwiperItem,
+  FunctionalPageNavigator: FunctionalPageNavigator,
+  Navigator: Navigator,
+  Audio: Audio,
+  Camera: Camera,
+  Image: Image,
+  LivePlayer: LivePlayer,
+  LivePusher: LivePusher,
+  Video: Video,
+  Canvas: Canvas,
+  Ad: Ad,
+  OfficialAccount: OfficialAccount,
+  OpenData: OpenData,
+  WebView: WebView,
+  NavigationBar: NavigationBar,
+  PageMeta: PageMeta,
+  Block: Block,
+  Map: Map$1,
+  Slot: Slot,
+  SlotView: SlotView
+};
+var controlledComponent = new Set(['input', 'checkbox', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea']);
+var EMPTY_OBJ = {};
+
+var noop = function noop() {};
+
+function toDashed(s) {
+  return s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+function toCamelCase(s) {
+  var camel = '';
+  var nextCap = false;
+
+  for (var i = 0; i < s.length; i++) {
+    if (s[i] !== '-') {
+      camel += nextCap ? s[i].toUpperCase() : s[i];
+      nextCap = false;
+    } else {
+      nextCap = true;
+    }
+  }
+
+  return camel;
+}
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+var hasOwn = function hasOwn(val, key) {
+  return hasOwnProperty.call(val, key);
+};
+
+var reportIssue = '如有疑问，请提交 issue 至：https://github.com/nervjs/taro/issues';
+/**
+ * ensure takes a condition and throw a error if the condition fails,
+ * like failure::ensure: https://docs.rs/failure/0.1.1/failure/macro.ensure.html
+ * @param condition condition.
+ * @param msg error message.
+ */
+
+function ensure(condition, msg) {
+  if (!condition) {
+    throw new Error(msg + '\n' + reportIssue);
+  }
+}
+
+function warn(condition, msg) {
+  if (true) {
+    if (condition) {
+      console.warn(msg);
+    }
+  }
+}
+
+var incrementId = function incrementId() {
+  var id = 0;
+  return function () {
+    return (id++).toString();
+  };
+};
+
+function isElement(node) {
+  return node.nodeType === 1
+  /* ELEMENT_NODE */
+  ;
+}
+
+function isText(node) {
+  return node.nodeType === 3
+  /* TEXT_NODE */
+  ;
+}
+
+var TaroEventTarget = /*#__PURE__*/function () {
+  function TaroEventTarget() {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroEventTarget);
+
+    this.__handlers = {};
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroEventTarget, [{
+    key: "addEventListener",
+    value: function addEventListener(type, handler, options) {
+      warn(type === 'regionchange', 'map 组件的 regionchange 事件非常特殊，请使用 begin/end 事件替代。详情：https://github.com/NervJS/taro/issues/5766');
+      type = type.toLowerCase();
+      var handlers = this.__handlers[type];
+      var isCapture = Boolean(options);
+      var isOnce = false;
+
+      if (isObject(options)) {
+        isCapture = Boolean(options.capture);
+        isOnce = Boolean(options.once);
+      }
+
+      if (isOnce) {
+        var wrapper = function wrapper() {
+          handler.apply(this, arguments); // this 指向 Element
+
+          this.removeEventListener(type, wrapper);
+        };
+
+        this.addEventListener(type, wrapper, Object.assign(Object.assign({}, options), {
+          once: false
+        }));
+        return;
+      }
+
+      warn(isCapture, 'The event capture feature is unimplemented.');
+
+      if (isArray(handlers)) {
+        handlers.push(handler);
+      } else {
+        this.__handlers[type] = [handler];
+      }
+    }
+  }, {
+    key: "removeEventListener",
+    value: function removeEventListener(type, handler) {
+      type = type.toLowerCase();
+
+      if (handler == null) {
+        return;
+      }
+
+      var handlers = this.__handlers[type];
+
+      if (!isArray(handlers)) {
+        return;
+      }
+
+      var index = handlers.indexOf(handler);
+      warn(index === -1, "\u4E8B\u4EF6: '".concat(type, "' \u6CA1\u6709\u6CE8\u518C\u5728 DOM \u4E2D\uFF0C\u56E0\u6B64\u4E0D\u4F1A\u88AB\u79FB\u9664\u3002"));
+      handlers.splice(index, 1);
+    }
+  }]);
+
+  return TaroEventTarget;
+}();
+
+var eventSource = new Map();
+
+var TaroEvent = /*#__PURE__*/function () {
+  function TaroEvent(type, opts, event) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroEvent);
+
+    this._stop = false;
+    this._end = false;
+    this.defaultPrevented = false; // timestamp can either be hi-res ( relative to page load) or low-res (relative to UNIX epoch)
+    // here use hi-res timestamp
+
+    this.timeStamp = Date.now();
+    this.type = type.toLowerCase();
+    this.mpEvent = event;
+    this.bubbles = Boolean(opts && opts.bubbles);
+    this.cancelable = Boolean(opts && opts.cancelable);
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroEvent, [{
+    key: "stopPropagation",
+    value: function stopPropagation() {
+      this._stop = true;
+    }
+  }, {
+    key: "stopImmediatePropagation",
+    value: function stopImmediatePropagation() {
+      this._end = this._stop = true;
+    }
+  }, {
+    key: "preventDefault",
+    value: function preventDefault() {
+      this.defaultPrevented = true;
+    }
+  }, {
+    key: "target",
+    get: function get() {
+      var _a, _b, _c;
+
+      var element = document$1.getElementById((_a = this.mpEvent) === null || _a === void 0 ? void 0 : _a.target.id);
+      return Object.assign(Object.assign(Object.assign({}, (_b = this.mpEvent) === null || _b === void 0 ? void 0 : _b.target), (_c = this.mpEvent) === null || _c === void 0 ? void 0 : _c.detail), {
+        dataset: element !== null ? element.dataset : EMPTY_OBJ
+      });
+    }
+  }, {
+    key: "currentTarget",
+    get: function get() {
+      var _a, _b, _c;
+
+      var element = document$1.getElementById((_a = this.mpEvent) === null || _a === void 0 ? void 0 : _a.currentTarget.id);
+
+      if (element === null) {
+        return this.target;
+      }
+
+      return Object.assign(Object.assign(Object.assign({}, (_b = this.mpEvent) === null || _b === void 0 ? void 0 : _b.currentTarget), (_c = this.mpEvent) === null || _c === void 0 ? void 0 : _c.detail), {
+        dataset: element.dataset
+      });
+    }
+  }]);
+
+  return TaroEvent;
+}();
+
+function createEvent(event, _) {
+  if (typeof event === 'string') {
+    return new TaroEvent(event, {
+      bubbles: true,
+      cancelable: true
+    });
+  }
+
+  var domEv = new TaroEvent(event.type, {
+    bubbles: true,
+    cancelable: true
+  }, event);
+
+  for (var key in event) {
+    if (key === 'currentTarget' || key === 'target' || key === 'type' || key === 'timeStamp') {
+      continue;
+    } else {
+      domEv[key] = event[key];
+    }
+  }
+
+  return domEv;
+}
+
+function eventHandler(event) {
+  if (event.currentTarget == null) {
+    event.currentTarget = event.target;
+  }
+
+  var node = document$1.getElementById(event.currentTarget.id);
+
+  if (node != null) {
+    node.dispatchEvent(createEvent(event));
+  }
+}
+/**
+ * React also has a fancy function's name for this: `hydrate()`.
+ * You may have been heard `hydrate` as a SSR-related function,
+ * actually, `hydrate` basicly do the `render()` thing, but ignore some properties,
+ * it's a vnode traverser and modifier: that's exactly what Taro's doing in here.
+ */
+
+
+function hydrate(node) {
+  var _data;
+
+  if (isText(node)) {
+    var _ref;
+
+    return _ref = {}, Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])(_ref, "v"
+    /* Text */
+    , node.nodeValue), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])(_ref, "nn"
+    /* NodeName */
+    , node.nodeName), _ref;
+  }
+
+  var data = (_data = {}, Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])(_data, "nn"
+  /* NodeName */
+  , node.nodeName), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])(_data, "uid", node.uid), _data);
+  var props = node.props,
+      childNodes = node.childNodes;
+
+  for (var prop in props) {
+    if (!prop.startsWith('data-') && // 在 node.dataset 的数据
+    prop !== 'class' && prop !== 'style' && prop !== 'id') {
+      data[toCamelCase(prop)] = props[prop];
+    }
+  }
+
+  if (childNodes.length > 0) {
+    data["cn"
+    /* Childnodes */
+    ] = childNodes.map(hydrate);
+  }
+
+  if (node.className !== '') {
+    data["cl"
+    /* Class */
+    ] = node.className;
+  }
+
+  if (node.cssText !== '' && node.nodeName !== 'swiper-item') {
+    data["st"
+    /* Style */
+    ] = node.cssText;
+  }
+
+  return data;
+}
+
+var CurrentReconciler = {
+  getLifecyle: function getLifecyle(instance, lifecyle) {
+    return instance[lifecyle];
+  }
+};
+var options = {
+  prerender: true,
+  debug: false,
+  // html 只影响 Element#innerHTML API
+  html: {
+    skipElements: new Set(['style', 'script']),
+    voidElements: new Set(['!doctype', 'area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr']),
+    closingElements: new Set(['html', 'head', 'body', 'p', 'dt', 'dd', 'li', 'option', 'thead', 'th', 'tbody', 'tr', 'td', 'tfoot', 'colgroup']),
+    renderHTMLTag: false
+  },
+  reconciler: function reconciler(_reconciler) {
+    Object.assign(CurrentReconciler, _reconciler);
+  }
+};
+
+function initPosition() {
+  return {
+    index: 0,
+    column: 0,
+    line: 0
+  };
+}
+
+function feedPosition(position, str, len) {
+  var start = position.index;
+  var end = position.index = start + len;
+
+  for (var i = start; i < end; i++) {
+    var char = str.charAt(i);
+
+    if (char === '\n') {
+      position.line++;
+      position.column = 0;
+    } else {
+      position.column++;
+    }
+  }
+}
+
+function jumpPosition(position, str, end) {
+  var len = end - position.index;
+  return feedPosition(position, str, len);
+}
+
+function copyPosition(position) {
+  return {
+    index: position.index,
+    line: position.line,
+    column: position.column
+  };
+}
+
+var whitespace = /\s/;
+
+function isWhitespaceChar(char) {
+  return whitespace.test(char);
+}
+
+var equalSign = /=/;
+
+function isEqualSignChar(char) {
+  return equalSign.test(char);
+}
+
+function shouldBeIgnore(tagName) {
+  var name = tagName.toLowerCase();
+
+  if (options.html.skipElements.has(name)) {
+    return true;
+  }
+
+  return false;
+}
+
+var alphanumeric = /[A-Za-z0-9]/;
+
+function findTextEnd(str, index) {
+  while (true) {
+    var textEnd = str.indexOf('<', index);
+
+    if (textEnd === -1) {
+      return textEnd;
+    }
+
+    var char = str.charAt(textEnd + 1);
+
+    if (char === '/' || char === '!' || alphanumeric.test(char)) {
+      return textEnd;
+    }
+
+    index = textEnd + 1;
+  }
+}
+
+function isWordEnd(cursor, wordBegin, html) {
+  if (!isWhitespaceChar(html.charAt(cursor))) return false;
+  var len = html.length; // backwrad
+
+  for (var i = cursor - 1; i > wordBegin; i--) {
+    var char = html.charAt(i);
+
+    if (!isWhitespaceChar(char)) {
+      if (isEqualSignChar(char)) return false;
+      break;
+    }
+  } // forward
+
+
+  for (var _i = cursor + 1; _i < len; _i++) {
+    var _char = html.charAt(_i);
+
+    if (!isWhitespaceChar(_char)) {
+      if (isEqualSignChar(_char)) return false;
+      return true;
+    }
+  }
+}
+
+var Scaner = /*#__PURE__*/function () {
+  function Scaner(html) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, Scaner);
+
+    this.tokens = [];
+    this.position = initPosition();
+    this.html = html;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(Scaner, [{
+    key: "scan",
+    value: function scan() {
+      var html = this.html,
+          position = this.position;
+      var len = html.length;
+
+      while (position.index < len) {
+        var start = position.index;
+        this.scanText();
+
+        if (position.index === start) {
+          var isComment = html.startsWith('!--', start + 1);
+
+          if (isComment) {
+            this.scanComment();
+          } else {
+            var tagName = this.scanTag();
+
+            if (shouldBeIgnore(tagName)) {
+              this.scanSkipTag(tagName);
+            }
+          }
+        }
+      }
+
+      return this.tokens;
+    }
+  }, {
+    key: "scanText",
+    value: function scanText() {
+      var type = 'text';
+      var html = this.html,
+          position = this.position;
+      var textEnd = findTextEnd(html, position.index);
+
+      if (textEnd === position.index) {
+        return;
+      }
+
+      if (textEnd === -1) {
+        textEnd = html.length;
+      }
+
+      var start = copyPosition(position);
+      var content = html.slice(position.index, textEnd);
+      jumpPosition(position, html, textEnd);
+      var end = copyPosition(position);
+      this.tokens.push({
+        type: type,
+        content: content,
+        position: {
+          start: start,
+          end: end
+        }
+      });
+    }
+  }, {
+    key: "scanComment",
+    value: function scanComment() {
+      var type = 'comment';
+      var html = this.html,
+          position = this.position;
+      var start = copyPosition(position);
+      feedPosition(position, html, 4); // "<!--".length
+
+      var contentEnd = html.indexOf('-->', position.index);
+      var commentEnd = contentEnd + 3; // "-->".length
+
+      if (contentEnd === -1) {
+        contentEnd = commentEnd = html.length;
+      }
+
+      var content = html.slice(position.index, contentEnd);
+      jumpPosition(position, html, commentEnd);
+      this.tokens.push({
+        type: type,
+        content: content,
+        position: {
+          start: start,
+          end: copyPosition(position)
+        }
+      });
+    }
+  }, {
+    key: "scanTag",
+    value: function scanTag() {
+      this.scanTagStart();
+      var tagName = this.scanTagName();
+      this.scanAttrs();
+      this.scanTagEnd();
+      return tagName;
+    }
+  }, {
+    key: "scanTagStart",
+    value: function scanTagStart() {
+      var type = 'tag-start';
+      var html = this.html,
+          position = this.position;
+      var secondChar = html.charAt(position.index + 1);
+      var close = secondChar === '/';
+      var start = copyPosition(position);
+      feedPosition(position, html, close ? 2 : 1);
+      this.tokens.push({
+        type: type,
+        close: close,
+        position: {
+          start: start
+        }
+      });
+    }
+  }, {
+    key: "scanTagEnd",
+    value: function scanTagEnd() {
+      var type = 'tag-end';
+      var html = this.html,
+          position = this.position;
+      var firstChar = html.charAt(position.index);
+      var close = firstChar === '/';
+      feedPosition(position, html, close ? 2 : 1);
+      var end = copyPosition(position);
+      this.tokens.push({
+        type: type,
+        close: close,
+        position: {
+          end: end
+        }
+      });
+    }
+  }, {
+    key: "scanTagName",
+    value: function scanTagName() {
+      var type = 'tag';
+      var html = this.html,
+          position = this.position;
+      var len = html.length;
+      var start = position.index;
+
+      while (start < len) {
+        var char = html.charAt(start);
+        var isTagChar = !(isWhitespaceChar(char) || char === '/' || char === '>');
+        if (isTagChar) break;
+        start++;
+      }
+
+      var end = start + 1;
+
+      while (end < len) {
+        var _char2 = html.charAt(end);
+
+        var _isTagChar = !(isWhitespaceChar(_char2) || _char2 === '/' || _char2 === '>');
+
+        if (!_isTagChar) break;
+        end++;
+      }
+
+      jumpPosition(position, html, end);
+      var tagName = html.slice(start, end);
+      this.tokens.push({
+        type: type,
+        content: tagName
+      });
+      return tagName;
+    }
+  }, {
+    key: "scanAttrs",
+    value: function scanAttrs() {
+      var html = this.html,
+          position = this.position,
+          tokens = this.tokens;
+      var cursor = position.index;
+      var quote = null; // null, single-, or double-quote
+
+      var wordBegin = cursor; // index of word start
+
+      var words = []; // "key", "key=value", "key='value'", etc
+
+      var len = html.length;
+
+      while (cursor < len) {
+        var char = html.charAt(cursor);
+
+        if (quote) {
+          var isQuoteEnd = char === quote;
+
+          if (isQuoteEnd) {
+            quote = null;
+          }
+
+          cursor++;
+          continue;
+        }
+
+        var isTagEnd = char === '/' || char === '>';
+
+        if (isTagEnd) {
+          if (cursor !== wordBegin) {
+            words.push(html.slice(wordBegin, cursor));
+          }
+
+          break;
+        }
+
+        if (isWordEnd(cursor, wordBegin, html)) {
+          if (cursor !== wordBegin) {
+            words.push(html.slice(wordBegin, cursor));
+          }
+
+          wordBegin = cursor + 1;
+          cursor++;
+          continue;
+        }
+
+        var isQuoteStart = char === '\'' || char === '"';
+
+        if (isQuoteStart) {
+          quote = char;
+          cursor++;
+          continue;
+        }
+
+        cursor++;
+      }
+
+      jumpPosition(position, html, cursor);
+      var wLen = words.length;
+      var type = 'attribute';
+
+      for (var i = 0; i < wLen; i++) {
+        var word = words[i];
+        var isNotPair = word.includes('=');
+
+        if (isNotPair) {
+          var secondWord = words[i + 1];
+
+          if (secondWord && secondWord.startsWith('=')) {
+            if (secondWord.length > 1) {
+              var newWord = word + secondWord;
+              tokens.push({
+                type: type,
+                content: newWord
+              });
+              i += 1;
+              continue;
+            }
+
+            var thirdWord = words[i + 2];
+            i += 1;
+
+            if (thirdWord) {
+              var _newWord = word + '=' + thirdWord;
+
+              tokens.push({
+                type: type,
+                content: _newWord
+              });
+              i += 1;
+              continue;
+            }
+          }
+        }
+
+        if (word.endsWith('=')) {
+          var _secondWord = words[i + 1];
+
+          if (_secondWord && !_secondWord.includes('=')) {
+            var _newWord3 = word + _secondWord;
+
+            tokens.push({
+              type: type,
+              content: _newWord3
+            });
+            i += 1;
+            continue;
+          }
+
+          var _newWord2 = word.slice(0, -1);
+
+          tokens.push({
+            type: type,
+            content: _newWord2
+          });
+          continue;
+        }
+
+        tokens.push({
+          type: type,
+          content: word
+        });
+      }
+    }
+  }, {
+    key: "scanSkipTag",
+    value: function scanSkipTag(tagName) {
+      var html = this.html,
+          position = this.position,
+          tokens = this.tokens;
+      var safeTagName = tagName.toLowerCase();
+      var len = html.length;
+      var index = position.index;
+
+      while (index < len) {
+        var nextTag = html.indexOf('</', index);
+
+        if (nextTag === -1) {
+          this.scanText();
+          break;
+        }
+
+        var tagStartPosition = copyPosition(position);
+        jumpPosition(tagStartPosition, html, nextTag);
+        var tagState = {
+          html: html,
+          position: tagStartPosition,
+          tokens: []
+        };
+        var name = this.scanTag();
+
+        if (safeTagName !== name.toLowerCase()) {
+          index = tagState.position.index;
+          continue;
+        }
+
+        if (nextTag !== position.index) {
+          var textStart = copyPosition(position);
+          jumpPosition(position, html, nextTag);
+          tokens.push({
+            type: 'text',
+            content: html.slice(textStart.index, nextTag),
+            position: {
+              start: textStart,
+              end: copyPosition(position)
+            }
+          });
+        }
+
+        tokens.push.apply(tokens, tagState.tokens);
+        jumpPosition(position, html, tagState.position.index);
+        break;
+      }
+    }
+  }]);
+
+  return Scaner;
+}();
+
+function makeMap(str, expectsLowerCase) {
+  var map = Object.create(null);
+  var list = str.split(',');
+
+  for (var i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+
+  return expectsLowerCase ? function (val) {
+    return !!map[val.toLowerCase()];
+  } : function (val) {
+    return !!map[val];
+  };
+}
+
+var specialMiniElements = {
+  img: 'image',
+  iframe: 'web-view'
+};
+var internalCompsList = Object.keys(internalComponents).map(function (i) {
+  return i.toLowerCase();
+}).join(','); // https://developers.weixin.qq.com/miniprogram/dev/component
+
+var isMiniElements = makeMap(internalCompsList, true); // https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements
+
+var isInlineElements = makeMap('a,i,abbr,iframe,select,acronym,slot,small,span,bdi,kbd,strong,big,map,sub,sup,br,mark,mark,meter,template,canvas,textarea,cite,object,time,code,output,u,data,picture,tt,datalist,var,dfn,del,q,em,s,embed,samp,b', true); // https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+
+var isBlockElements = makeMap('address,fieldset,li,article,figcaption,main,aside,figure,nav,blockquote,footer,ol,details,form,p,dialog,h1,h2,h3,h4,h5,h6,pre,dd,header,section,div,hgroup,table,dl,hr,ul,dt', true);
+var closingTagAncestorBreakers = {
+  li: ['ul', 'ol', 'menu'],
+  dt: ['dl'],
+  dd: ['dl'],
+  tbody: ['table'],
+  thead: ['table'],
+  tfoot: ['table'],
+  tr: ['table'],
+  td: ['table']
+};
+
+function hasTerminalParent(tagName, stack) {
+  var tagParents = closingTagAncestorBreakers[tagName];
+
+  if (tagParents) {
+    var currentIndex = stack.length - 1;
+
+    while (currentIndex >= 0) {
+      var parentTagName = stack[currentIndex].tagName;
+
+      if (parentTagName === tagName) {
+        break;
+      }
+
+      if (tagParents && tagParents.includes(parentTagName)) {
+        return true;
+      }
+
+      currentIndex--;
+    }
+  }
+
+  return false;
+}
+
+function unquote(str) {
+  var car = str.charAt(0);
+  var end = str.length - 1;
+  var isQuoteStart = car === '"' || car === "'";
+
+  if (isQuoteStart && car === str.charAt(end)) {
+    return str.slice(1, end);
+  }
+
+  return str;
+}
+
+function getTagName(tag) {
+  if (options.html.renderHTMLTag) {
+    return tag;
+  }
+
+  if (specialMiniElements[tag]) {
+    return specialMiniElements[tag];
+  } else if (isMiniElements(tag)) {
+    return tag;
+  } else if (isBlockElements(tag)) {
+    return 'view';
+  } else if (isInlineElements(tag)) {
+    return 'text';
+  }
+
+  return 'view';
+}
+
+function splitEqual(str) {
+  var sep = '=';
+  var idx = str.indexOf(sep);
+  if (idx === -1) return [str];
+  var key = str.slice(0, idx).trim();
+  var value = str.slice(idx + sep.length).trim();
+  return [key, value];
+}
+
+function format(children) {
+  return children.filter(function (child) {
+    if (child.type === 'comment') {
+      return false;
+    } else if (child.type === 'text') {
+      return child.content !== '';
+    }
+
+    return true;
+  }).map(function (child) {
+    if (child.type === 'text') {
+      var text = document$1.createTextNode(child.content);
+
+      if (isFunction(options.html.transformText)) {
+        return options.html.transformText(text, child);
+      }
+
+      return text;
+    }
+
+    var el = document$1.createElement(getTagName(child.tagName));
+
+    if (!options.html.renderHTMLTag) {
+      el.className = child.tagName;
+    }
+
+    for (var i = 0; i < child.attributes.length; i++) {
+      var attr = child.attributes[i];
+
+      var _splitEqual = splitEqual(attr),
+          _splitEqual2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"])(_splitEqual, 2),
+          key = _splitEqual2[0],
+          value = _splitEqual2[1];
+
+      if (key === 'class') {
+        el.className += ' ' + unquote(value);
+      } else if (key[0] === 'o' && key[1] === 'n') {
+        continue;
+      } else {
+        el.setAttribute(key, value == null ? true : unquote(value));
+      }
+    }
+
+    var ch = format(child.children);
+
+    for (var _i2 = 0; _i2 < ch.length; _i2++) {
+      el.appendChild(ch[_i2]);
+    }
+
+    if (isFunction(options.html.transformElement)) {
+      return options.html.transformElement(el, child);
+    }
+
+    return el;
+  });
+}
+
+function parser(html) {
+  var tokens = new Scaner(html).scan();
+  var root = {
+    tagName: '',
+    children: [],
+    type: 'element',
+    attributes: []
+  };
+  var state = {
+    tokens: tokens,
+    options: options,
+    cursor: 0,
+    stack: [root]
+  };
+  parse(state);
+  return format(root.children);
+}
+
+function parse(state) {
+  var tokens = state.tokens,
+      stack = state.stack;
+  var cursor = state.cursor;
+  var len = tokens.length;
+  var nodes = stack[stack.length - 1].children;
+
+  while (cursor < len) {
+    var token = tokens[cursor];
+
+    if (token.type !== 'tag-start') {
+      // comment or text
+      nodes.push(token);
+      cursor++;
+      continue;
+    }
+
+    var tagToken = tokens[++cursor];
+    cursor++;
+    var tagName = tagToken.content.toLowerCase();
+
+    if (token.close) {
+      var index = stack.length;
+      var shouldRewind = false;
+
+      while (--index > -1) {
+        if (stack[index].tagName === tagName) {
+          shouldRewind = true;
+          break;
+        }
+      }
+
+      while (cursor < len) {
+        var endToken = tokens[cursor];
+        if (endToken.type !== 'tag-end') break;
+        cursor++;
+      }
+
+      if (shouldRewind) {
+        stack.splice(index);
+        break;
+      } else {
+        continue;
+      }
+    }
+
+    var isClosingTag = options.html.closingElements.has(tagName);
+    var shouldRewindToAutoClose = isClosingTag;
+
+    if (shouldRewindToAutoClose) {
+      shouldRewindToAutoClose = !hasTerminalParent(tagName, stack);
+    }
+
+    if (shouldRewindToAutoClose) {
+      var currentIndex = stack.length - 1;
+
+      while (currentIndex > 0) {
+        if (tagName === stack[currentIndex].tagName) {
+          stack.splice(currentIndex);
+          var previousIndex = currentIndex - 1;
+          nodes = stack[previousIndex].children;
+          break;
+        }
+
+        currentIndex = currentIndex - 1;
+      }
+    }
+
+    var attributes = [];
+    var attrToken = void 0;
+
+    while (cursor < len) {
+      attrToken = tokens[cursor];
+      if (attrToken.type === 'tag-end') break;
+      attributes.push(attrToken.content);
+      cursor++;
+    }
+
+    cursor++;
+    var children = [];
+    var element = {
+      type: 'element',
+      tagName: tagToken.content,
+      attributes: attributes,
+      children: children
+    };
+    nodes.push(element);
+    var hasChildren = !(attrToken.close || options.html.voidElements.has(tagName));
+
+    if (hasChildren) {
+      stack.push({
+        tagName: tagName,
+        children: children
+      });
+      var innerState = {
+        tokens: tokens,
+        cursor: cursor,
+        stack: stack
+      };
+      parse(innerState);
+      cursor = innerState.cursor;
+    }
+  }
+
+  state.cursor = cursor;
+}
+
+function setInnerHTML(element, html) {
+  element.textContent = '';
+  var children = parser(html);
+
+  for (var i = 0; i < children.length; i++) {
+    element.appendChild(children[i]);
+  }
+}
+
+var nodeId = incrementId();
+
+var TaroNode = /*#__PURE__*/function (_TaroEventTarget) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(TaroNode, _TaroEventTarget);
+
+  var _super = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(TaroNode);
+
+  function TaroNode(nodeType, nodeName) {
+    var _this;
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroNode);
+
+    _this = _super.call(this);
+    _this.parentNode = null;
+    _this.childNodes = [];
+
+    _this.hydrate = function (node) {
+      return function () {
+        return hydrate(node);
+      };
+    };
+
+    _this.nodeType = nodeType;
+    _this.nodeName = nodeName;
+    _this.uid = "_n_".concat(nodeId());
+    eventSource.set(_this.uid, Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(_this));
+    return _this;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroNode, [{
+    key: "insertBefore",
+    value: function insertBefore(newChild, refChild, isReplace) {
+      var _this2 = this;
+
+      var _a;
+
+      newChild.remove();
+      newChild.parentNode = this;
+      var payload;
+
+      if (refChild) {
+        var index = this.findIndex(this.childNodes, refChild);
+        this.childNodes.splice(index, 0, newChild);
+
+        if (isReplace === true) {
+          payload = {
+            path: newChild._path,
+            value: this.hydrate(newChild)
+          };
+        } else {
+          payload = {
+            path: "".concat(this._path, ".", "cn"
+            /* Childnodes */
+            ),
+            value: function value() {
+              return _this2.childNodes.map(hydrate);
+            }
+          };
+        }
+      } else {
+        this.childNodes.push(newChild);
+        payload = {
+          path: newChild._path,
+          value: this.hydrate(newChild)
+        };
+      }
+
+      (_a = CurrentReconciler.insertBefore) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, this, newChild, refChild);
+      this.enqueueUpdate(payload);
+      return newChild;
+    }
+  }, {
+    key: "appendChild",
+    value: function appendChild(child) {
+      var _a;
+
+      this.insertBefore(child);
+      (_a = CurrentReconciler.appendChild) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, this, child);
+    }
+  }, {
+    key: "replaceChild",
+    value: function replaceChild(newChild, oldChild) {
+      var _a;
+
+      if (oldChild.parentNode === this) {
+        this.insertBefore(newChild, oldChild, true);
+        oldChild.remove(true);
+        return oldChild;
+      }
+
+      (_a = CurrentReconciler.removeChild) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, this, newChild, oldChild);
+    }
+  }, {
+    key: "removeChild",
+    value: function removeChild(child, isReplace) {
+      var _this3 = this;
+
+      var index = this.findIndex(this.childNodes, child);
+      this.childNodes.splice(index, 1);
+
+      if (isReplace !== true) {
+        this.enqueueUpdate({
+          path: "".concat(this._path, ".", "cn"
+          /* Childnodes */
+          ),
+          value: function value() {
+            return _this3.childNodes.map(hydrate);
+          }
+        });
+      }
+
+      child.parentNode = null;
+      eventSource.delete(child.uid); // @TODO: eventSource memory overflow
+      // child._empty()
+
+      return child;
+    }
+  }, {
+    key: "remove",
+    value: function remove(isReplace) {
+      if (this.parentNode) {
+        this.parentNode.removeChild(this, isReplace);
+      }
+    }
+  }, {
+    key: "hasChildNodes",
+    value: function hasChildNodes() {
+      return this.childNodes.length > 0;
+    }
+  }, {
+    key: "enqueueUpdate",
+    value: function enqueueUpdate(payload) {
+      if (this._root === null) {
+        return;
+      }
+
+      this._root.enqueueUpdate(payload);
+    }
+    /**
+     * like jQuery's $.empty()
+     */
+
+  }, {
+    key: "_empty",
+    value: function _empty() {
+      while (this.childNodes.length > 0) {
+        var child = this.childNodes[0];
+        child.parentNode = null;
+        eventSource.delete(child.uid);
+        this.childNodes.shift();
+      }
+    }
+    /**
+     * @textContent 目前只能置空子元素
+     * @TODO 等待完整 innerHTML 实现
+     */
+
+  }, {
+    key: "findIndex",
+    value: function findIndex(childeNodes, refChild) {
+      var index = childeNodes.indexOf(refChild);
+      ensure(index !== -1, 'The node to be replaced is not a child of this node.');
+      return index;
+    }
+  }, {
+    key: "cloneNode",
+    value: function cloneNode() {
+      var isDeep = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var constructor = this.constructor;
+      var newNode;
+
+      if (this.nodeType === 1
+      /* ELEMENT_NODE */
+      ) {
+          newNode = new constructor(this.nodeType, this.nodeName);
+        } else if (this.nodeType === 3
+      /* TEXT_NODE */
+      ) {
+          newNode = new constructor('');
+        }
+
+      for (var key in this) {
+        var value = this[key];
+
+        if (['props', 'dataset'].includes(key) && Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])(value) === 'object') {
+          newNode[key] = Object.assign({}, value);
+        } else if (key === '_value') {
+          newNode[key] = value;
+        } else if (key === 'style') {
+          newNode.style._value = Object.assign({}, value._value);
+          newNode.style._usedStyleProp = new Set(Array.from(value._usedStyleProp));
+        }
+      }
+
+      if (isDeep) {
+        newNode.childNodes = this.childNodes.map(function (node) {
+          return node.cloneNode(true);
+        });
+      }
+
+      return newNode;
+    }
+  }, {
+    key: "_path",
+    get: function get() {
+      if (this.parentNode !== null) {
+        var index =  false ? undefined : '[' + this.parentNode.childNodes.indexOf(this) + ']';
+        return "".concat(this.parentNode._path, ".", "cn"
+        /* Childnodes */
+        , ".").concat(index);
+      }
+
+      return '';
+    }
+  }, {
+    key: "_root",
+    get: function get() {
+      if (this.parentNode !== null) {
+        return this.parentNode._root;
+      }
+
+      return null;
+    }
+  }, {
+    key: "parentElement",
+    get: function get() {
+      var parentNode = this.parentNode;
+
+      if (parentNode != null && parentNode.nodeType === 1
+      /* ELEMENT_NODE */
+      ) {
+          return parentNode;
+        }
+
+      return null;
+    }
+  }, {
+    key: "nextSibling",
+    get: function get() {
+      var parentNode = this.parentNode;
+
+      if (parentNode) {
+        return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) + 1] || null;
+      }
+
+      return null;
+    }
+  }, {
+    key: "previousSibling",
+    get: function get() {
+      var parentNode = this.parentNode;
+
+      if (parentNode) {
+        return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) - 1] || null;
+      }
+
+      return null;
+    }
+  }, {
+    key: "firstChild",
+    get: function get() {
+      return this.childNodes[0] || null;
+    }
+  }, {
+    key: "lastChild",
+    get: function get() {
+      var c = this.childNodes;
+      return c[c.length - 1] || null;
+    }
+  }, {
+    key: "textContent",
+    set: function set(text) {
+      this._empty();
+
+      if (text === '') {
+        this.enqueueUpdate({
+          path: "".concat(this._path, ".", "cn"
+          /* Childnodes */
+          ),
+          value: function value() {
+            return [];
+          }
+        });
+      } else {
+        this.appendChild(document$1.createTextNode(text));
+      }
+    }
+  }, {
+    key: "innerHTML",
+    set: function set(html) {
+      setInnerHTML(this, html);
+    },
+    get: function get() {
+      return '';
+    }
+  }]);
+
+  return TaroNode;
+}(TaroEventTarget);
+
+var TaroText = /*#__PURE__*/function (_TaroNode) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(TaroText, _TaroNode);
+
+  var _super2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(TaroText);
+
+  function TaroText(text) {
+    var _this4;
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroText);
+
+    _this4 = _super2.call(this, 3
+    /* TEXT_NODE */
+    , '#text');
+    _this4._value = text;
+    return _this4;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroText, [{
+    key: "textContent",
+    set: function set(text) {
+      this._value = text;
+      this.enqueueUpdate({
+        path: "".concat(this._path, ".", "v"
+        /* Text */
+        ),
+        value: text
+      });
+    },
+    get: function get() {
+      return this._value;
+    }
+  }, {
+    key: "nodeValue",
+    set: function set(text) {
+      this.textContent = text;
+    },
+    get: function get() {
+      return this._value;
+    }
+  }]);
+
+  return TaroText;
+}(TaroNode);
+/*
+ *
+ * https://www.w3.org/Style/CSS/all-properties.en.html
+ */
+
+
+var styleProperties = ['alignContent', 'alignItems', 'alignSelf', 'alignmentAdjust', 'alignmentBaseline', 'all', 'animation', 'animationDelay', 'animationDirection', 'animationDuration', 'animationFillMode', 'animationIterationCount', 'animationName', 'animationPlayState', 'animationTimingFunction', 'appearance', 'azimuth', 'backfaceVisibility', 'background', 'backgroundAttachment', 'backgroundBlendMode', 'backgroundClip', 'backgroundColor', 'backgroundImage', 'backgroundOrigin', 'backgroundPosition', 'backgroundRepeat', 'backgroundSize', 'baselineShift', 'blockOverflow', 'blockSize', 'bookmarkLabel', 'bookmarkLevel', 'bookmarkState', 'border', 'borderBlock', 'borderBlockColor', 'borderBlockEnd', 'borderBlockEndColor', 'borderBlockEndStyle', 'borderBlockEndWidth', 'borderBlockStart', 'borderBlockStartColor', 'borderBlockStartStyle', 'borderBlockStartWidth', 'borderBlockStyle', 'borderBlockWidth', 'borderBottom', 'borderBottomColor', 'borderBottomFitLength', 'borderBottomFitWidth', 'borderBottomImage', 'borderBottomLeftFitWidth', 'borderBottomLeftImage', 'borderBottomLeftRadius', 'borderBottomRightFitLength', 'borderBottomRightFitWidth', 'borderBottomRightImage', 'borderBottomRightRadius', 'borderBottomStyle', 'borderBottomWidth', 'borderBottomlEftFitLength', 'borderBoundary', 'borderBreak', 'borderCollapse', 'borderColor', 'borderCornerFit', 'borderCornerImage', 'borderCornerImageTransform', 'borderEndEndRadius', 'borderEndStartRadius', 'borderFit', 'borderFitLength', 'borderFitWidth', 'borderImage', 'borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageTransform', 'borderImageWidth', 'borderInline', 'borderInlineColor', 'borderInlineEnd', 'borderInlineEndColor', 'borderInlineEndStyle', 'borderInlineEndWidth', 'borderInlineStart', 'borderInlineStartColor', 'borderInlineStartStyle', 'borderInlineStartWidth', 'borderInlineStyle', 'borderInlineWidth', 'borderLeft', 'borderLeftColor', 'borderLeftFitLength', 'borderLeftFitWidth', 'borderLeftImage', 'borderLeftStyle', 'borderLeftWidth', 'borderRadius', 'borderRight', 'borderRightColor', 'borderRightFitLength', 'borderRightFitWidth', 'borderRightImage', 'borderRightStyle', 'borderRightWidth', 'borderSpacing', 'borderStartEndRadius', 'borderStartStartRadius', 'borderStyle', 'borderTop', 'borderTopColor', 'borderTopFitLength', 'borderTopFitWidth', 'borderTopImage', 'borderTopLeftFitLength', 'borderTopLeftFitWidth', 'borderTopLeftImage', 'borderTopLeftRadius', 'borderTopRightFitLength', 'borderTopRightFitWidth', 'borderTopRightImage', 'borderTopRightRadius', 'borderTopStyle', 'borderTopWidth', 'borderWidth', 'bottom', 'boxDecorationBreak', 'boxShadow', 'boxSizing', 'boxSnap', 'breakAfter', 'breakBefore', 'breakInside', 'captionSide', 'caret', 'caretColor', 'caretShape', 'chains', 'clear', 'clip', 'clipPath', 'clipRule', 'color', 'colorAdjust', 'colorInterpolationFilters', 'colorScheme', 'columnCount', 'columnFill', 'columnGap', 'columnRule', 'columnRuleColor', 'columnRuleStyle', 'columnRuleWidth', 'columnSpan', 'columnWidth', 'columns', 'contain', 'content', 'continue', 'counterIncrement', 'counterReset', 'counterSet', 'cue', 'cueAfter', 'cueBefore', 'cursor', 'direction', 'display', 'dominantBaseline', 'dropInitialAfterAdjust', 'dropInitialAfterAlign', 'dropInitialBeforeAdjust', 'dropInitialBeforeAlign', 'dropInitialSize', 'dropInitialValue', 'elevation', 'emptyCells', 'filter', 'flex', 'flexBasis', 'flexDirection', 'flexFlow', 'flexGrow', 'flexShrink', 'flexWrap', 'float', 'floodColor', 'floodOpacity', 'flow', 'flowFrom', 'flowInto', 'font', 'fontFamily', 'fontFeatureSettings', 'fontKerning', 'fontLanguageOverride', 'fontMaxSize', 'fontMinSize', 'fontOpticalSizing', 'fontPalette', 'fontSize', 'fontSizeAdjust', 'fontStretch', 'fontStyle', 'fontSynthesis', 'fontSynthesisSmallCaps', 'fontSynthesisStyle', 'fontSynthesisWeight', 'fontVariant', 'fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantEmoji', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition', 'fontVariationSettings', 'fontWeight', 'footnoteDisplay', 'footnotePolicy', 'forcedColorAdjust', 'gap', 'glyphOrientationVertical', 'grid', 'gridArea', 'gridAutoColumns', 'gridAutoFlow', 'gridAutoRows', 'gridColumn', 'gridColumnEnd', 'gridColumnStart', 'gridRow', 'gridRowEnd', 'gridRowStart', 'gridTemplate', 'gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows', 'hangingPunctuation', 'height', 'hyphenateCharacter', 'hyphenateLimitChars', 'hyphenateLimitLast', 'hyphenateLimitLines', 'hyphenateLimitZone', 'hyphens', 'imageOrientation', 'imageResolution', 'initialLetters', 'initialLettersAlign', 'initialLettersWrap', 'inlineBoxAlign', 'inlineSize', 'inlineSizing', 'inset', 'insetBlock', 'insetBlockEnd', 'insetBlockStart', 'insetInline', 'insetInlineEnd', 'insetInlineStart', 'isolation', 'justifyContent', 'justifyItems', 'justifySelf', 'left', 'letterSpacing', 'lightingColor', 'lineBreak', 'lineClamp', 'lineGrid', 'lineHeight', 'linePadding', 'lineSnap', 'lineStacking', 'lineStackingRuby', 'lineStackingShift', 'lineStackingStrategy', 'listStyle', 'listStyleImage', 'listStylePosition', 'listStyleType', 'margin', 'marginBlock', 'marginBlockEnd', 'marginBlockStart', 'marginBottom', 'marginInline', 'marginInlineEnd', 'marginInlineStart', 'marginLeft', 'marginRight', 'marginTop', 'marginTrim', 'markerSide', 'mask', 'maskBorder', 'maskBorderMode', 'maskBorderOutset', 'maskBorderRepeat', 'maskBorderSlice', 'maskBorderSource', 'maskBorderWidth', 'maskClip', 'maskComposite', 'maskImage', 'maskMode', 'maskOrigin', 'maskPosition', 'maskRepeat', 'maskSize', 'maskType', 'maxBlockSize', 'maxHeight', 'maxInlineSize', 'maxLines', 'maxWidth', 'minBlockSize', 'minHeight', 'minInlineSize', 'minWidth', 'mixBlendMode', 'navDown', 'navLeft', 'navRight', 'navUp', 'objectFit', 'objectPosition', 'offset', 'offsetAfter', 'offsetAnchor', 'offsetBefore', 'offsetDistance', 'offsetEnd', 'offsetPath', 'offsetPosition', 'offsetRotate', 'offsetStart', 'opacity', 'order', 'orphans', 'outline', 'outlineColor', 'outlineOffset', 'outlineStyle', 'outlineWidth', 'overflow', 'overflowBlock', 'overflowInline', 'overflowWrap', 'overflowX', 'overflowY', 'padding', 'paddingBlock', 'paddingBlockEnd', 'paddingBlockStart', 'paddingBottom', 'paddingInline', 'paddingInlineEnd', 'paddingInlineStart', 'paddingLeft', 'paddingRight', 'paddingTop', 'page', 'pageBreakAfter', 'pageBreakBefore', 'pageBreakInside', 'pause', 'pauseAfter', 'pauseBefore', 'perspective', 'perspectiveOrigin', 'pitch', 'pitchRange', 'placeContent', 'placeItems', 'placeSelf', 'playDuring', 'pointerEvents', 'position', 'quotes', 'regionFragment', 'resize', 'richness', 'right', 'rowGap', 'rubyAlign', 'rubyMerge', 'rubyPosition', 'running', 'scrollBehavior', 'scrollMargin', 'scrollMarginBlock', 'scrollMarginBlockEnd', 'scrollMarginBlockStart', 'scrollMarginBottom', 'scrollMarginInline', 'scrollMarginInlineEnd', 'scrollMarginInlineStart', 'scrollMarginLeft', 'scrollMarginRight', 'scrollMarginTop', 'scrollPadding', 'scrollPaddingBlock', 'scrollPaddingBlockEnd', 'scrollPaddingBlockStart', 'scrollPaddingBottom', 'scrollPaddingInline', 'scrollPaddingInlineEnd', 'scrollPaddingInlineStart', 'scrollPaddingLeft', 'scrollPaddingRight', 'scrollPaddingTop', 'scrollSnapAlign', 'scrollSnapStop', 'scrollSnapType', 'shapeImageThreshold', 'shapeInside', 'shapeMargin', 'shapeOutside', 'speak', 'speakHeader', 'speakNumeral', 'speakPunctuation', 'speechRate', 'stress', 'stringSet', 'tabSize', 'tableLayout', 'textAlign', 'textAlignAll', 'textAlignLast', 'textCombineUpright', 'textDecoration', 'textDecorationColor', 'textDecorationLine', 'textDecorationStyle', 'textEmphasis', 'textEmphasisColor', 'textEmphasisPosition', 'textEmphasisStyle', 'textGroupAlign', 'textHeight', 'textIndent', 'textJustify', 'textOrientation', 'textOverflow', 'textShadow', 'textSpaceCollapse', 'textSpaceTrim', 'textSpacing', 'textTransform', 'textUnderlinePosition', 'textWrap', 'top', 'transform', 'transformBox', 'transformOrigin', 'transformStyle', 'transition', 'transitionDelay', 'transitionDuration', 'transitionProperty', 'transitionTimingFunction', 'unicodeBidi', 'userSelect', 'verticalAlign', 'visibility', 'voiceFamily', 'volume', 'whiteSpace', 'widows', 'width', 'willChange', 'wordBreak', 'wordSpacing', 'wordWrap', 'wrapAfter', 'wrapBefore', 'wrapFlow', 'wrapInside', 'wrapThrough', 'writingMode', 'zIndex'];
+var PROPERTY_THRESHOLD = 2046;
+var SET_DATA = '小程序 setData';
+var PAGE_INIT = '页面初始化';
+
+function setStyle(newVal, styleKey) {
+  var old = this[styleKey];
+
+  if (newVal) {
+    this._usedStyleProp.add(styleKey);
+  }
+
+  warn(isString(newVal) && newVal.length > PROPERTY_THRESHOLD, "Style \u5C5E\u6027 ".concat(styleKey, " \u7684\u503C\u6570\u636E\u91CF\u8FC7\u5927\uFF0C\u53EF\u80FD\u4F1A\u5F71\u54CD\u6E32\u67D3\u6027\u80FD\uFF0C\u8003\u8651\u4F7F\u7528 CSS \u7C7B\u6216\u5176\u5B83\u65B9\u6848\u66FF\u4EE3\u3002"));
+
+  if (old !== newVal) {
+    this._value[styleKey] = newVal;
+
+    this._element.enqueueUpdate({
+      path: "".concat(this._element._path, ".", "st"
+      /* Style */
+      ),
+      value: this.cssText
+    });
+  }
+}
+
+function initStyle(ctor) {
+  var properties = {};
+
+  var _loop = function _loop(i) {
+    var styleKey = styleProperties[i];
+    properties[styleKey] = {
+      get: function get() {
+        return this._value[styleKey] || '';
+      },
+      set: function set(newVal) {
+        setStyle.call(this, newVal, styleKey);
+      }
+    };
+  };
+
+  for (var i = 0; i < styleProperties.length; i++) {
+    _loop(i);
+  }
+
+  Object.defineProperties(ctor.prototype, properties);
+}
+
+var Style = /*#__PURE__*/function () {
+  function Style(element) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, Style);
+
+    this._element = element;
+    this._usedStyleProp = new Set();
+    this._value = {};
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(Style, [{
+    key: "setCssVariables",
+    value: function setCssVariables(styleKey) {
+      var _this5 = this;
+
+      this.hasOwnProperty(styleKey) || Object.defineProperty(this, styleKey, {
+        enumerable: true,
+        configurable: true,
+        get: function get() {
+          return _this5._value[styleKey] || '';
+        },
+        set: function set(newVal) {
+          setStyle.call(_this5, newVal, styleKey);
+        }
+      });
+    }
+  }, {
+    key: "setProperty",
+    value: function setProperty(propertyName, value) {
+      if (propertyName[0] === '-') {
+        this.setCssVariables(propertyName);
+      } else {
+        propertyName = toCamelCase(propertyName);
+      }
+
+      if (isUndefined(value)) {
+        return;
+      }
+
+      if (value === null || value === '') {
+        this.removeProperty(propertyName);
+      } else {
+        this[propertyName] = value;
+      }
+    }
+  }, {
+    key: "removeProperty",
+    value: function removeProperty(propertyName) {
+      propertyName = toCamelCase(propertyName);
+
+      if (!this._usedStyleProp.has(propertyName)) {
+        return '';
+      }
+
+      var value = this[propertyName];
+      this[propertyName] = '';
+
+      this._usedStyleProp.delete(propertyName);
+
+      return value;
+    }
+  }, {
+    key: "getPropertyValue",
+    value: function getPropertyValue(propertyName) {
+      propertyName = toCamelCase(propertyName);
+      var value = this[propertyName];
+
+      if (!value) {
+        return '';
+      }
+
+      return value;
+    }
+  }, {
+    key: "cssText",
+    get: function get() {
+      var _this6 = this;
+
+      var text = '';
+
+      this._usedStyleProp.forEach(function (key) {
+        var val = _this6[key];
+        if (!val) return;
+        text += "".concat(toDashed(key), ": ").concat(val, ";");
+      });
+
+      return text;
+    },
+    set: function set(str) {
+      var _this7 = this;
+
+      if (str == null) {
+        str = '';
+      }
+
+      this._usedStyleProp.forEach(function (prop) {
+        _this7.removeProperty(prop);
+      });
+
+      if (str === '') {
+        return;
+      }
+
+      var rules = str.split(';');
+
+      for (var i = 0; i < rules.length; i++) {
+        var rule = rules[i].trim();
+
+        if (rule === '') {
+          continue;
+        }
+
+        var _rule$split = rule.split(':'),
+            _rule$split2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"])(_rule$split, 2),
+            propName = _rule$split2[0],
+            val = _rule$split2[1];
+
+        if (isUndefined(val)) {
+          continue;
+        }
+
+        this.setProperty(propName.trim(), val.trim());
+      }
+    }
+  }]);
+
+  return Style;
+}();
+
+initStyle(Style);
+
+function returnTrue() {
+  return true;
+}
+
+function treeToArray(root, predict) {
+  var array = [];
+  var filter = predict !== null && predict !== void 0 ? predict : returnTrue;
+  var object = root;
+
+  while (object) {
+    if (object.nodeType === 1
+    /* ELEMENT_NODE */
+    && filter(object)) {
+      array.push(object);
+    }
+
+    object = following(object, root);
+  }
+
+  return array;
+}
+
+function following(el, root) {
+  var firstChild = el.firstChild;
+
+  if (firstChild) {
+    return firstChild;
+  }
+
+  var current = el;
+
+  do {
+    if (current === root) {
+      return null;
+    }
+
+    var nextSibling = current.nextSibling;
+
+    if (nextSibling) {
+      return nextSibling;
+    }
+
+    current = current.parentElement;
+  } while (current);
+
+  return null;
+}
+
+var ClassList = /*#__PURE__*/function (_Set) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(ClassList, _Set);
+
+  var _super3 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(ClassList);
+
+  function ClassList(className, el) {
+    var _thisSuper, _this8;
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, ClassList);
+
+    _this8 = _super3.call(this);
+    className.trim().split(/\s+/).forEach(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])((_thisSuper = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(_this8), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype)), "add", _thisSuper).bind(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(_this8)));
+    _this8.el = el;
+    return _this8;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(ClassList, [{
+    key: "add",
+    value: function add(s) {
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "add", this).call(this, s);
+
+      this._update();
+
+      return this;
+    }
+  }, {
+    key: "remove",
+    value: function remove(s) {
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "delete", this).call(this, s);
+
+      this._update();
+    }
+  }, {
+    key: "toggle",
+    value: function toggle(s) {
+      if (Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "has", this).call(this, s)) {
+        Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "delete", this).call(this, s);
+      } else {
+        Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "add", this).call(this, s);
+      }
+
+      this._update();
+    }
+  }, {
+    key: "replace",
+    value: function replace(s1, s2) {
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "delete", this).call(this, s1);
+
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "add", this).call(this, s2);
+
+      this._update();
+    }
+  }, {
+    key: "contains",
+    value: function contains(s) {
+      return Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(ClassList.prototype), "has", this).call(this, s);
+    }
+  }, {
+    key: "toString",
+    value: function toString() {
+      return this.value;
+    }
+  }, {
+    key: "_update",
+    value: function _update() {
+      this.el.className = this.value;
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(this).join(' ');
+    }
+  }]);
+
+  return ClassList;
+}( /*#__PURE__*/Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(Set));
+/* eslint-disable no-dupe-class-members */
+
+
+var TaroElement = /*#__PURE__*/function (_TaroNode2) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(TaroElement, _TaroNode2);
+
+  var _super4 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(TaroElement);
+
+  function TaroElement(nodeType, nodeName) {
+    var _this9;
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroElement);
+
+    _this9 = _super4.call(this, nodeType || 1
+    /* ELEMENT_NODE */
+    , nodeName);
+    _this9.props = {};
+    _this9.dataset = EMPTY_OBJ;
+    _this9.tagName = nodeName.toUpperCase();
+    _this9.style = new Style(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(_this9));
+    warn(_this9.tagName === 'MAP' && "weapp" === 'weapp', '微信小程序 map 组件的 `setting` 属性需要传递一个默认值。详情：\n https://developers.weixin.qq.com/miniprogram/dev/component/map.html');
+    return _this9;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroElement, [{
+    key: "hasAttribute",
+    value: function hasAttribute(qualifiedName) {
+      return !isUndefined(this.props[qualifiedName]);
+    }
+  }, {
+    key: "hasAttributes",
+    value: function hasAttributes() {
+      return this.attributes.length > 0;
+    }
+  }, {
+    key: "focus",
+    value: function focus() {
+      this.setAttribute('focus', true);
+    }
+  }, {
+    key: "blur",
+    value: function blur() {
+      this.setAttribute('focus', false);
+    }
+  }, {
+    key: "setAttribute",
+    value: function setAttribute(qualifiedName, value) {
+      var _a;
+
+      warn(isString(value) && value.length > PROPERTY_THRESHOLD, "\u5143\u7D20 ".concat(this.nodeName, " \u7684 \u5C5E\u6027 ").concat(qualifiedName, " \u7684\u503C\u6570\u636E\u91CF\u8FC7\u5927\uFF0C\u53EF\u80FD\u4F1A\u5F71\u54CD\u6E32\u67D3\u6027\u80FD\u3002\u8003\u8651\u964D\u4F4E\u56FE\u7247\u8F6C\u4E3A base64 \u7684\u9608\u503C\u6216\u5728 CSS \u4E2D\u4F7F\u7528 base64\u3002"));
+
+      if (qualifiedName === 'style') {
+        this.style.cssText = value;
+        qualifiedName = "st"
+        /* Style */
+        ;
+      } else if (qualifiedName === 'id') {
+        eventSource.delete(this.uid);
+        this.props[qualifiedName] = this.uid = value;
+        eventSource.set(value, this);
+        qualifiedName = 'uid';
+      } else {
+        this.props[qualifiedName] = value;
+
+        if (qualifiedName === 'class') {
+          qualifiedName = "cl"
+          /* Class */
+          ;
+        }
+
+        if (qualifiedName.startsWith('data-')) {
+          if (this.dataset === EMPTY_OBJ) {
+            this.dataset = Object.create(null);
+          }
+
+          this.dataset[toCamelCase(qualifiedName.replace(/^data-/, ''))] = value;
+        }
+      }
+
+      (_a = CurrentReconciler.setAttribute) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, this, qualifiedName, value);
+      this.enqueueUpdate({
+        path: "".concat(this._path, ".").concat(toCamelCase(qualifiedName)),
+        value: value
+      });
+    }
+  }, {
+    key: "removeAttribute",
+    value: function removeAttribute(qualifiedName) {
+      var _a;
+
+      if (qualifiedName === 'style') {
+        this.style.cssText = '';
+      } else {
+        delete this.props[qualifiedName];
+      }
+
+      (_a = CurrentReconciler.removeAttribute) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, this, qualifiedName);
+      this.enqueueUpdate({
+        path: "".concat(this._path, ".").concat(toCamelCase(qualifiedName)),
+        value: ''
+      });
+    }
+  }, {
+    key: "getAttribute",
+    value: function getAttribute(qualifiedName) {
+      var attr = qualifiedName === 'style' ? this.style.cssText : this.props[qualifiedName];
+      return attr !== null && attr !== void 0 ? attr : '';
+    }
+  }, {
+    key: "getElementsByTagName",
+    value: function getElementsByTagName(tagName) {
+      var _this10 = this;
+
+      return treeToArray(this, function (el) {
+        return el.nodeName === tagName || tagName === '*' && _this10 !== el;
+      });
+    }
+  }, {
+    key: "getElementsByClassName",
+    value: function getElementsByClassName(className) {
+      return treeToArray(this, function (el) {
+        var classList = el.classList;
+        var classNames = className.trim().split(/\s+/);
+        return classNames.every(function (c) {
+          return classList.has(c);
+        });
+      });
+    }
+  }, {
+    key: "dispatchEvent",
+    value: function dispatchEvent(event) {
+      var cancelable = event.cancelable;
+      var listeners = this.__handlers[event.type];
+
+      if (!isArray(listeners)) {
+        return;
+      }
+
+      for (var i = listeners.length; i--;) {
+        var listener = listeners[i];
+        var result = void 0;
+
+        if (listener._stop) {
+          listener._stop = false;
+        } else {
+          result = listener.call(this, event);
+        }
+
+        if ((result === false || event._end) && cancelable) {
+          event.defaultPrevented = true;
+        }
+
+        if (event._end && event._stop) {
+          break;
+        }
+      }
+
+      if (event._stop) {
+        this._stopPropagation(event);
+      } else {
+        event._stop = true;
+      }
+
+      return listeners != null;
+    }
+  }, {
+    key: "_stopPropagation",
+    value: function _stopPropagation(event) {
+      // eslint-disable-next-line @typescript-eslint/no-this-alias
+      var target = this; // eslint-disable-next-line no-cond-assign
+
+      while (target = target.parentNode) {
+        var listeners = target.__handlers[event.type];
+
+        if (!isArray(listeners)) {
+          continue;
+        }
+
+        for (var i = listeners.length; i--;) {
+          var l = listeners[i];
+          l._stop = true;
+        }
+      }
+    }
+  }, {
+    key: "id",
+    get: function get() {
+      return this.getAttribute('id');
+    },
+    set: function set(val) {
+      this.setAttribute('id', val);
+    }
+  }, {
+    key: "classList",
+    get: function get() {
+      return new ClassList(this.className, this);
+    }
+  }, {
+    key: "className",
+    get: function get() {
+      return this.getAttribute('class') || '';
+    },
+    set: function set(val) {
+      this.setAttribute('class', val);
+    }
+  }, {
+    key: "cssText",
+    get: function get() {
+      return this.getAttribute('style') || '';
+    }
+  }, {
+    key: "children",
+    get: function get() {
+      return this.childNodes.filter(isElement);
+    }
+  }, {
+    key: "attributes",
+    get: function get() {
+      var _this11 = this;
+
+      var propKeys = Object.keys(this.props);
+      var style = this.style.cssText;
+      var attrs = propKeys.map(function (p) {
+        return {
+          name: p,
+          value: _this11.props[p]
+        };
+      });
+      return attrs.concat(style ? {
+        name: 'style',
+        value: style
+      } : []);
+    }
+  }, {
+    key: "textContent",
+    get: function get() {
+      var text = '';
+
+      for (var i = 0; i < this.childNodes.length; i++) {
+        var element = this.childNodes[i];
+        text += element.textContent;
+      }
+
+      return text;
+    },
+    set: function set(text) {
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_set__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(TaroElement.prototype), "textContent", text, this, true);
+    }
+  }]);
+
+  return TaroElement;
+}(TaroNode);
+
+var FormElement = /*#__PURE__*/function (_TaroElement) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(FormElement, _TaroElement);
+
+  var _super5 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(FormElement);
+
+  function FormElement() {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, FormElement);
+
+    return _super5.apply(this, arguments);
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(FormElement, [{
+    key: "dispatchEvent",
+    value: function dispatchEvent(event) {
+      if ((event.type === 'input' || event.type === 'change') && event.mpEvent) {
+        var val = event.mpEvent.detail.value;
+
+        if (isNumber(val) || isArray(val)) {
+          val = JSON.stringify(val);
+        }
+
+        if (isString(val) || isBoolean(val)) {
+          this.props.value = val;
+        }
+      }
+
+      return Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_get__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(FormElement.prototype), "dispatchEvent", this).call(this, event);
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      // eslint-disable-next-line dot-notation
+      var val = this.props['value'];
+      return val == null ? '' : val;
+    },
+    set: function set(val) {
+      if (isNumber(val) || isArray(val)) {
+        val = JSON.stringify(val);
+      }
+
+      this.setAttribute('value', val);
+    }
+  }]);
+
+  return FormElement;
+}(TaroElement);
+
+var Performance = /*#__PURE__*/function () {
+  function Performance() {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, Performance);
+
+    this.recorder = new Map();
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(Performance, [{
+    key: "start",
+    value: function start(id) {
+      if (!options.debug) {
+        return;
+      }
+
+      this.recorder.set(id, Date.now());
+    }
+  }, {
+    key: "stop",
+    value: function stop(id) {
+      if (!options.debug) {
+        return;
+      }
+
+      var now = Date.now();
+      var prev = this.recorder.get(id);
+      var time = now - prev; // eslint-disable-next-line no-console
+
+      console.log("".concat(id, " \u65F6\u957F\uFF1A ").concat(time, "ms"));
+    }
+  }]);
+
+  return Performance;
+}();
+
+var perf = new Performance();
+
+var TaroRootElement = /*#__PURE__*/function (_TaroElement2) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(TaroRootElement, _TaroElement2);
+
+  var _super6 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(TaroRootElement);
+
+  function TaroRootElement() {
+    var _this12;
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroRootElement);
+
+    _this12 = _super6.call(this, 1
+    /* ELEMENT_NODE */
+    , 'root');
+    _this12.pendingUpdate = false;
+    _this12.updatePayloads = [];
+    _this12.pendingFlush = false;
+    _this12.updateCallbacks = [];
+    _this12.ctx = null;
+    return _this12;
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroRootElement, [{
+    key: "enqueueUpdate",
+    value: function enqueueUpdate(payload) {
+      this.updatePayloads.push(payload);
+
+      if (this.pendingUpdate || this.ctx === null) {
+        return;
+      }
+
+      this.performUpdate();
+    }
+  }, {
+    key: "performUpdate",
+    value: function performUpdate() {
+      var _this13 = this;
+
+      var initRender = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var prerender = arguments.length > 1 ? arguments[1] : undefined;
+      this.pendingUpdate = true;
+      var ctx = this.ctx;
+      setTimeout(function () {
+        var _a, _b;
+
+        perf.start(SET_DATA);
+        var data = Object.create(null);
+        var resetPaths = new Set(initRender ? ['root.cn.[0]', 'root.cn[0]'] : []);
+
+        while (_this13.updatePayloads.length > 0) {
+          var _this13$updatePayload = _this13.updatePayloads.shift(),
+              path = _this13$updatePayload.path,
+              value = _this13$updatePayload.value;
+
+          if (path.endsWith("cn"
+          /* Childnodes */
+          )) {
+            resetPaths.add(path);
+          }
+
+          data[path] = value;
+        }
+
+        var _loop2 = function _loop2(_path) {
+          resetPaths.forEach(function (p) {
+            // 已经重置了数组，就不需要分别再设置了
+            if (_path.includes(p) && _path !== p) {
+              delete data[_path];
+            }
+          });
+          var value = data[_path];
+
+          if (isFunction(value)) {
+            data[_path] = value();
+          }
+        };
+
+        for (var _path in data) {
+          _loop2(_path);
+        }
+
+        (_a = CurrentReconciler.prepareUpdateData) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, data, _this13);
+
+        if (initRender) {
+          (_b = CurrentReconciler.appendInitialPage) === null || _b === void 0 ? void 0 : _b.call(CurrentReconciler, data, _this13);
+        }
+
+        if (isFunction(prerender)) {
+          prerender(data);
+        } else {
+          _this13.pendingUpdate = false;
+          ctx.setData(data, function () {
+            perf.stop(SET_DATA);
+
+            if (!_this13.pendingFlush) {
+              _this13.flushUpdateCallback();
+            }
+
+            if (initRender) {
+              perf.stop(PAGE_INIT);
+            }
+          });
+        }
+      }, 0);
+    }
+  }, {
+    key: "enqueueUpdateCallbak",
+    value: function enqueueUpdateCallbak(cb, ctx) {
+      this.updateCallbacks.push(function () {
+        ctx ? cb.call(ctx) : cb();
+      });
+    }
+  }, {
+    key: "flushUpdateCallback",
+    value: function flushUpdateCallback() {
+      this.pendingFlush = false;
+      var copies = this.updateCallbacks.slice(0);
+      this.updateCallbacks.length = 0;
+
+      for (var i = 0; i < copies.length; i++) {
+        copies[i]();
+      }
+    }
+  }, {
+    key: "_path",
+    get: function get() {
+      return 'root';
+    }
+  }, {
+    key: "_root",
+    get: function get() {
+      return this;
+    }
+  }]);
+
+  return TaroRootElement;
+}(TaroElement);
+
+var isBrowser = typeof document !== 'undefined' && !!document.scripts;
+var doc = isBrowser ? document : EMPTY_OBJ;
+var win = isBrowser ? window : EMPTY_OBJ;
+
+var TaroDocument = /*#__PURE__*/function (_TaroElement3) {
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(TaroDocument, _TaroElement3);
+
+  var _super7 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(TaroDocument);
+
+  function TaroDocument() {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, TaroDocument);
+
+    return _super7.call(this, 9
+    /* DOCUMENT_NODE */
+    , '#document');
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(TaroDocument, [{
+    key: "createElement",
+    value: function createElement(type) {
+      if (type === 'root') {
+        return new TaroRootElement();
+      }
+
+      if (controlledComponent.has(type)) {
+        return new FormElement(1
+        /* ELEMENT_NODE */
+        , type);
+      }
+
+      return new TaroElement(1
+      /* ELEMENT_NODE */
+      , type);
+    }
+  }, {
+    key: "createTextNode",
+    value: function createTextNode(text) {
+      return new TaroText(text);
+    }
+  }, {
+    key: "getElementById",
+    value: function getElementById(id) {
+      var el = eventSource.get(id);
+      return isUndefined(el) ? null : el;
+    }
+  }, {
+    key: "getElementsByTagName",
+    value: function getElementsByTagName(tagName) {
+      var _this14 = this;
+
+      var elements = [];
+      eventSource.forEach(function (node) {
+        if (node.nodeType !== 1
+        /* ELEMENT_NODE */
+        ) {
+            return;
+          }
+
+        if (node.nodeName === tagName || tagName === '*' && node !== _this14) {
+          elements.push(node);
+        }
+      });
+      return elements;
+    }
+  }, {
+    key: "querySelector",
+    value: function querySelector(query) {
+      // 为了 Vue3 的乞丐版实现
+      if (/^#/.test(query)) {
+        return this.getElementById(query.slice(1));
+      }
+
+      return null;
+    } // @TODO: @PERF: 在 hydrate 移除掉空的 node
+
+  }, {
+    key: "createComment",
+    value: function createComment() {
+      return new TaroText('');
+    }
+  }]);
+
+  return TaroDocument;
+}(TaroElement);
+
+function createDocument() {
+  var doc = new TaroDocument();
+  doc.appendChild(doc.documentElement = doc.createElement('html'));
+  doc.documentElement.appendChild(doc.head = doc.createElement('head'));
+  var body = doc.createElement('body');
+  doc.documentElement.appendChild(body);
+  doc.body = body;
+  var app = doc.createElement('app');
+  app.id = 'app';
+  var container = doc.createElement('container'); // 多包一层主要为了兼容 vue
+
+  container.appendChild(app);
+  doc.documentElement.lastChild.appendChild(container);
+  doc.createEvent = createEvent;
+  return doc;
+}
+
+var document$1 = isBrowser ? doc : createDocument();
+var machine = 'Macintosh';
+var arch = 'Intel Mac OS X 10_14_5';
+var engine = 'AppleWebKit/534.36 (KHTML, like Gecko) NodeJS/v4.1.0 Chrome/76.0.3809.132 Safari/534.36';
+var navigator = isBrowser ? win.navigator : {
+  appCodeName: 'Mozilla',
+  appName: 'Netscape',
+  appVersion: '5.0 (' + machine + '; ' + arch + ') ' + engine,
+  cookieEnabled: true,
+  mimeTypes: [],
+  onLine: true,
+  platform: 'MacIntel',
+  plugins: [],
+  product: 'Taro',
+  productSub: '20030107',
+  userAgent: 'Mozilla/5.0 (' + machine + '; ' + arch + ') ' + engine,
+  vendor: 'Joyent',
+  vendorSub: ''
+}; // https://github.com/myrne/performance-now
+
+var now;
+
+(function () {
+  var loadTime;
+
+  if (typeof performance !== 'undefined' && performance !== null && performance.now) {
+    now = function now() {
+      return performance.now();
+    };
+  } else if (Date.now) {
+    now = function now() {
+      return Date.now() - loadTime;
+    };
+
+    loadTime = Date.now();
+  } else {
+    now = function now() {
+      return new Date().getTime() - loadTime;
+    };
+
+    loadTime = new Date().getTime();
+  }
+})();
+
+var lastTime = 0; // https://gist.github.com/paulirish/1579671
+// https://gist.github.com/jalbam/5fe05443270fa6d8136238ec72accbc0
+
+var raf = typeof requestAnimationFrame !== 'undefined' && requestAnimationFrame !== null ? requestAnimationFrame : function (callback) {
+  var _now = now();
+
+  var nextTime = Math.max(lastTime + 16, _now); // First time will execute it immediately but barely noticeable and performance is gained.
+
+  return setTimeout(function () {
+    callback(lastTime = nextTime);
+  }, nextTime - _now);
+};
+var caf = typeof cancelAnimationFrame !== 'undefined' && cancelAnimationFrame !== null ? cancelAnimationFrame : clearTimeout;
+
+function getComputedStyle(element) {
+  return new Style(element);
+}
+
+var window$1 = isBrowser ? win : {
+  navigator: navigator,
+  document: document$1
+};
+
+if (true) {
+  window$1.requestAnimationFrame = raf;
+  window$1.cancelAnimationFrame = caf;
+  window$1.Date = Date;
+  window$1.setTimeout = setTimeout;
+  window$1.getComputedStyle = getComputedStyle;
+}
+
+var Current = {
+  app: null,
+  router: null,
+  page: null
+};
+
+var getCurrentInstance = function getCurrentInstance() {
+  return Current;
+};
+
+var Events = /*#__PURE__*/function () {
+  function Events(opts) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, Events);
+
+    if (typeof opts !== 'undefined' && opts.callbacks) {
+      this.callbacks = opts.callbacks;
+    } else {
+      this.callbacks = {};
+    }
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(Events, [{
+    key: "on",
+    value: function on(eventName, callback, context) {
+      var event, node, tail, list;
+
+      if (!callback) {
+        return this;
+      }
+
+      eventName = eventName.split(Events.eventSplitter);
+      var calls = this.callbacks;
+
+      while (event = eventName.shift()) {
+        list = calls[event];
+        node = list ? list.tail : {};
+        node.next = tail = {};
+        node.context = context;
+        node.callback = callback;
+        calls[event] = {
+          tail: tail,
+          next: list ? list.next : node
+        };
+      }
+
+      return this;
+    }
+  }, {
+    key: "once",
+    value: function once(events, callback, context) {
+      var _this15 = this;
+
+      var wrapper = function wrapper() {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        callback.apply(_this15, args);
+
+        _this15.off(events, wrapper, context);
+      };
+
+      this.on(events, wrapper, context);
+      return this;
+    }
+  }, {
+    key: "off",
+    value: function off(events, callback, context) {
+      var event, calls, node, tail, cb, ctx;
+
+      if (!(calls = this.callbacks)) {
+        return this;
+      }
+
+      if (!(events || callback || context)) {
+        delete this.callbacks;
+        return this;
+      }
+
+      events = events ? events.split(Events.eventSplitter) : Object.keys(calls);
+
+      while (event = events.shift()) {
+        node = calls[event];
+        delete calls[event];
+
+        if (!node || !(callback || context)) {
+          continue;
+        }
+
+        tail = node.tail;
+
+        while ((node = node.next) !== tail) {
+          cb = node.callback;
+          ctx = node.context;
+
+          if (callback && cb !== callback || context && ctx !== context) {
+            this.on(event, cb, ctx);
+          }
+        }
+      }
+
+      return this;
+    }
+  }, {
+    key: "trigger",
+    value: function trigger(events) {
+      var event, node, calls, tail;
+
+      if (!(calls = this.callbacks)) {
+        return this;
+      }
+
+      events = events.split(Events.eventSplitter);
+      var rest = [].slice.call(arguments, 1);
+
+      while (event = events.shift()) {
+        if (node = calls[event]) {
+          tail = node.tail;
+
+          while ((node = node.next) !== tail) {
+            node.callback.apply(node.context || this, rest);
+          }
+        }
+      }
+
+      return this;
+    }
+  }]);
+
+  return Events;
+}();
+
+Events.eventSplitter = /\s+/;
+var eventCenter;
+
+if (false) {} else {
+  eventCenter = new Events();
+}
+/* eslint-disable dot-notation */
+
+
+var instances = new Map();
+
+function injectPageInstance(inst, id) {
+  var _a;
+
+  (_a = CurrentReconciler.mergePageInstance) === null || _a === void 0 ? void 0 : _a.call(CurrentReconciler, instances.get(id), inst);
+  instances.set(id, inst);
+}
+
+function getPageInstance(id) {
+  return instances.get(id);
+}
+
+function addLeadingSlash(path) {
+  if (path == null) {
+    return '';
+  }
+
+  return path.charAt(0) === '/' ? path : '/' + path;
+}
+
+var pageId = incrementId();
+
+function safeExecute(path, lifecycle) {
+  for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+    args[_key2 - 2] = arguments[_key2];
+  }
+
+  var instance = instances.get(path);
+
+  if (instance == null) {
+    return;
+  }
+
+  var func = CurrentReconciler.getLifecyle(instance, lifecycle);
+
+  if (isArray(func)) {
+    var res = func.map(function (fn) {
+      return fn.apply(instance, args);
+    });
+    return res[0];
+  }
+
+  if (!isFunction(func)) {
+    return;
+  }
+
+  return func.apply(instance, args);
+}
+
+function stringify(obj) {
+  if (obj == null) {
+    return '';
+  }
+
+  var path = Object.keys(obj).map(function (key) {
+    return key + '=' + obj[key];
+  }).join('&');
+  return path === '' ? path : '?' + path;
+}
+
+function getPath(id, options) {
+  var path = id;
+
+  if (!isBrowser) {
+    path = id + stringify(options);
+  }
+
+  return path;
+}
+
+function getOnReadyEventKey(path) {
+  return path + '.' + 'onReady';
+}
+
+function getOnShowEventKey(path) {
+  return path + '.' + 'onShow';
+}
+
+function getOnHideEventKey(path) {
+  return path + '.' + 'onHide';
+}
+
+function createPageConfig(component, pageName, data, pageConfig) {
+  var _a, _b;
+
+  var id = pageName !== null && pageName !== void 0 ? pageName : "taro_page_".concat(pageId()); // 小程序 Page 构造器是一个傲娇小公主，不能把复杂的对象挂载到参数上
+
+  var pageElement = null;
+  var config = {
+    onLoad: function onLoad(options, cb) {
+      var _this16 = this;
+
+      perf.start(PAGE_INIT);
+      Current.page = this;
+      this.config = pageConfig || {};
+
+      if (this.options == null) {
+        this.options = options;
+      }
+
+      var path = getPath(id, options);
+      Current.router = {
+        params: options,
+        path: addLeadingSlash(this.route || this.__route__),
+        onReady: getOnReadyEventKey(id),
+        onShow: getOnShowEventKey(id),
+        onHide: getOnHideEventKey(id)
+      };
+      Current.app.mount(component, path, function () {
+        pageElement = document$1.getElementById(path);
+        ensure(pageElement !== null, '没有找到页面实例。');
+        safeExecute(path, 'onLoad', options);
+
+        if (!isBrowser) {
+          pageElement.ctx = _this16;
+          pageElement.performUpdate(true, cb);
+        }
+      });
+    },
+    onReady: function onReady() {
+      var path = getPath(id, this.options);
+      raf(function () {
+        eventCenter.trigger(getOnReadyEventKey(id));
+      });
+      safeExecute(path, 'onReady');
+    },
+    onUnload: function onUnload() {
+      var path = getPath(id, this.options);
+      Current.app.unmount(path, function () {
+        instances.delete(path);
+
+        if (pageElement) {
+          pageElement.ctx = null;
+        }
+      });
+    },
+    onShow: function onShow() {
+      Current.page = this;
+      this.config = pageConfig || {};
+      var path = getPath(id, this.options);
+      Current.router = {
+        params: this.options,
+        path: addLeadingSlash(this.route || this.__route__),
+        onReady: getOnReadyEventKey(id),
+        onShow: getOnShowEventKey(id),
+        onHide: getOnHideEventKey(id)
+      };
+      raf(function () {
+        eventCenter.trigger(getOnShowEventKey(id));
+      });
+      safeExecute(path, 'onShow');
+    },
+    onHide: function onHide() {
+      Current.page = null;
+      Current.router = null;
+      var path = getPath(id, this.options);
+      raf(function () {
+        eventCenter.trigger(getOnHideEventKey(id));
+      });
+      safeExecute(path, 'onHide');
+    },
+    onPullDownRefresh: function onPullDownRefresh() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onPullDownRefresh');
+    },
+    onReachBottom: function onReachBottom() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onReachBottom');
+    },
+    onPageScroll: function onPageScroll(options) {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onPageScroll', options);
+    },
+    onResize: function onResize(options) {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onResize', options);
+    },
+    onTabItemTap: function onTabItemTap(options) {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onTabItemTap', options);
+    },
+    onTitleClick: function onTitleClick() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onTitleClick');
+    },
+    onOptionMenuClick: function onOptionMenuClick() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onOptionMenuClick');
+    },
+    onPopMenuClick: function onPopMenuClick() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onPopMenuClick');
+    },
+    onPullIntercept: function onPullIntercept() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onPullIntercept');
+    },
+    onAddToFavorites: function onAddToFavorites() {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onAddToFavorites');
+    }
+  }; // onShareAppMessage 和 onShareTimeline 一样，会影响小程序右上方按钮的选项，因此不能默认注册。
+
+  if (component.onShareAppMessage || ((_a = component.prototype) === null || _a === void 0 ? void 0 : _a.onShareAppMessage) || component.enableShareAppMessage) {
+    config.onShareAppMessage = function (options) {
+      var target = options.target;
+
+      if (target != null) {
+        var _id = target.id;
+        var element = document$1.getElementById(_id);
+
+        if (element != null) {
+          options.target.dataset = element.dataset;
+        }
+      }
+
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onShareAppMessage', options);
+    };
+  }
+
+  if (component.onShareTimeline || ((_b = component.prototype) === null || _b === void 0 ? void 0 : _b.onShareTimeline) || component.enableShareTimeline) {
+    config.onShareTimeline = function () {
+      var path = getPath(id, this.options);
+      return safeExecute(path, 'onShareTimeline');
+    };
+  }
+
+  config.eh = eventHandler;
+
+  if (!isUndefined(data)) {
+    config.data = data;
+  }
+
+  if (isBrowser) {
+    config.path = id;
+  }
+
+  return config;
+}
+
+function createComponentConfig(component, componentName, data) {
+  var _a, _b, _c;
+
+  var id = componentName !== null && componentName !== void 0 ? componentName : "taro_component_".concat(pageId());
+  var componentElement = null;
+  var config = {
+    attached: function attached() {
+      var _this17 = this;
+
+      perf.start(PAGE_INIT);
+      var path = getPath(id, {
+        id: this.getPageId()
+      });
+      Current.app.mount(component, path, function () {
+        componentElement = document$1.getElementById(path);
+        ensure(componentElement !== null, '没有找到组件实例。');
+        safeExecute(path, 'onLoad');
+
+        if (!isBrowser) {
+          componentElement.ctx = _this17;
+          componentElement.performUpdate(true);
+        }
+      });
+    },
+    detached: function detached() {
+      var path = getPath(id, {
+        id: this.getPageId()
+      });
+      Current.app.unmount(path, function () {
+        instances.delete(path);
+
+        if (componentElement) {
+          componentElement.ctx = null;
+        }
+      });
+    },
+    pageLifetimes: {
+      show: function show() {
+        safeExecute(id, 'onShow');
+      },
+      hide: function hide() {
+        safeExecute(id, 'onHide');
+      }
+    },
+    methods: {
+      eh: eventHandler
+    }
+  };
+
+  if (!isUndefined(data)) {
+    config.data = data;
+  }
+
+  config['options'] = (_a = component === null || component === void 0 ? void 0 : component['options']) !== null && _a !== void 0 ? _a : EMPTY_OBJ;
+  config['externalClasses'] = (_b = component === null || component === void 0 ? void 0 : component['externalClasses']) !== null && _b !== void 0 ? _b : EMPTY_OBJ;
+  config['behaviors'] = (_c = component === null || component === void 0 ? void 0 : component['behaviors']) !== null && _c !== void 0 ? _c : EMPTY_OBJ;
+  return config;
+}
+
+function createRecursiveComponentConfig() {
+  return {
+    properties: {
+      i: {
+        type: Object,
+        value: Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])({}, "nn"
+        /* NodeName */
+        , 'view')
+      },
+      l: {
+        type: String,
+        value: ''
+      }
+    },
+    observers: {
+      i: function i(val) {
+        warn(val["nn"
+        /* NodeName */
+        ] === '#text', "\u8BF7\u5728\u6B64\u5143\u7D20\u5916\u518D\u5957\u4E00\u5C42\u975E Text \u5143\u7D20\uFF1A<text>".concat(val["v"
+        /* Text */
+        ], "</text>\uFF0C\u8BE6\u60C5\uFF1Ahttps://github.com/NervJS/taro/issues/6054"));
+      }
+    },
+    options: {
+      addGlobalClass: true
+    },
+    methods: {
+      eh: eventHandler
+    }
+  };
+}
+
+function isClassComponent(R, component) {
+  var _a;
+
+  return isFunction(component.render) || !!((_a = component.prototype) === null || _a === void 0 ? void 0 : _a.isReactComponent) || component.prototype instanceof R.Component; // compat for some others react-like library
+}
+
+function connectReactPage(R, id) {
+  var h = R.createElement;
+  return function (component) {
+    // eslint-disable-next-line dot-notation
+    var isReactComponent = isClassComponent(R, component);
+
+    var inject = function inject(node) {
+      return node && injectPageInstance(node, id);
+    };
+
+    var refs = isReactComponent ? {
+      ref: inject
+    } : {
+      forwardedRef: inject,
+      // 兼容 react-redux 7.20.1+
+      reactReduxForwardedRef: inject
+    };
+
+    if (PageContext === EMPTY_OBJ) {
+      PageContext = R.createContext('');
+    }
+
+    return /*#__PURE__*/function (_R$Component) {
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(Page, _R$Component);
+
+      var _super8 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(Page);
+
+      function Page() {
+        var _this18;
+
+        Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, Page);
+
+        _this18 = _super8.apply(this, arguments);
+        _this18.state = {
+          hasError: false
+        };
+        return _this18;
+      }
+
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(Page, [{
+        key: "componentDidCatch",
+        // React 16 uncaught error 会导致整个应用 crash，
+        // 目前把错误缩小到页面
+        value: function componentDidCatch(error, info) {
+          console.warn(error);
+          console.error(info.componentStack);
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          var children = this.state.hasError ? [] : h(PageContext.Provider, {
+            value: id
+          }, h(component, Object.assign(Object.assign({}, this.props), refs)));
+
+          if (isBrowser) {
+            return h('div', {
+              id: id,
+              className: 'taro_page'
+            }, children);
+          }
+
+          return h('root', {
+            id: id
+          }, children);
+        }
+      }], [{
+        key: "getDerivedStateFromError",
+        value: function getDerivedStateFromError(error) {
+          console.warn(error);
+          return {
+            hasError: true
+          };
+        }
+      }]);
+
+      return Page;
+    }(R.Component);
+  };
+} // 初始值设置为 any 主要是为了过 TS 的校验
+
+
+var R = EMPTY_OBJ;
+var PageContext = EMPTY_OBJ;
+var ReactDOM;
+
+function setReconciler() {
+  var hostConfig = {
+    getLifecyle: function getLifecyle(instance, lifecycle) {
+      if (lifecycle === 'onShow') {
+        lifecycle = 'componentDidShow';
+      } else if (lifecycle === 'onHide') {
+        lifecycle = 'componentDidHide';
+      }
+
+      return instance[lifecycle];
+    },
+    mergePageInstance: function mergePageInstance(prev, next) {
+      if (!prev || !next) return; // 子组件使用 lifecycle hooks 注册了生命周期后，会存在 prev，里面是注册的生命周期回调。
+
+      Object.keys(prev).forEach(function (item) {
+        if (isFunction(next[item])) {
+          next[item] = [next[item]].concat(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(prev[item]));
+        } else {
+          next[item] = [].concat(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(next[item] || []), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(prev[item]));
+        }
+      });
+    }
+  };
+
+  if (isBrowser) {
+    hostConfig.createPullDownComponent = function (el, _, R) {
+      var isReactComponent = isClassComponent(R, el);
+      return R.forwardRef(function (props, ref) {
+        var newProps = Object.assign({}, props);
+
+        if (isReactComponent) {
+          newProps.ref = ref;
+        }
+
+        return R.createElement('taro-pull-to-refresh', null, R.createElement(el, newProps));
+      });
+    };
+
+    hostConfig.findDOMNode = function (inst) {
+      return ReactDOM.findDOMNode(inst);
+    };
+  }
+
+  options.reconciler(hostConfig);
+}
+
+var pageKeyId = incrementId();
+
+function createReactApp(App, react, reactdom, config) {
+  R = react;
+  ReactDOM = reactdom;
+  ensure(!!ReactDOM, '构建 React/Nerv 项目请把 process.env.FRAMEWORK 设置为 \'react\'/\'nerv\' ');
+  var ref = R.createRef();
+  var isReactComponent = isClassComponent(R, App);
+  setReconciler();
+  var wrapper;
+
+  var AppWrapper = /*#__PURE__*/function (_R$Component2) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"])(AppWrapper, _R$Component2);
+
+    var _super9 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(AppWrapper);
+
+    function AppWrapper() {
+      var _this19;
+
+      Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"])(this, AppWrapper);
+
+      _this19 = _super9.apply(this, arguments); // run createElement() inside the render function to make sure that owner is right
+
+      _this19.pages = [];
+      _this19.elements = [];
+      return _this19;
+    }
+
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"])(AppWrapper, [{
+      key: "mount",
+      value: function mount(component, id, cb) {
+        var key = id + pageKeyId();
+
+        var page = function page() {
+          return R.createElement(component, {
+            key: key,
+            tid: id
+          });
+        };
+
+        this.pages.push(page);
+        this.forceUpdate(cb);
+      }
+    }, {
+      key: "unmount",
+      value: function unmount(id, cb) {
+        for (var i = 0; i < this.elements.length; i++) {
+          var element = this.elements[i];
+
+          if (element.props.tid === id) {
+            this.elements.splice(i, 1);
+            break;
+          }
+        }
+
+        this.forceUpdate(cb);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        while (this.pages.length > 0) {
+          var page = this.pages.pop();
+          this.elements.push(page());
+        }
+
+        var props = null;
+
+        if (isReactComponent) {
+          props = {
+            ref: ref
+          };
+        }
+
+        return R.createElement(App, props, isBrowser ? R.createElement('div', null, this.elements.slice()) : this.elements.slice());
+      }
+    }]);
+
+    return AppWrapper;
+  }(R.Component);
+
+  var app = Object.create({
+    render: function render(cb) {
+      wrapper.forceUpdate(cb);
+    },
+    mount: function mount(component, id, cb) {
+      var page = connectReactPage(R, id)(component);
+      wrapper.mount(page, id, cb);
+    },
+    unmount: function unmount(id, cb) {
+      wrapper.unmount(id, cb);
+    }
+  }, {
+    config: {
+      writable: true,
+      enumerable: true,
+      configurable: true,
+      value: config
+    },
+    onLaunch: {
+      enumerable: true,
+      writable: true,
+      value: function value(options) {
+        // eslint-disable-next-line react/no-render-return-value
+        wrapper = ReactDOM.render(R.createElement(AppWrapper), document$1.getElementById('app'));
+        var app = ref.current;
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+
+        if (app != null && isFunction(app.onLaunch)) {
+          app.onLaunch(options);
+        }
+      }
+    },
+    onShow: {
+      enumerable: true,
+      writable: true,
+      value: function value(options) {
+        var app = ref.current;
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+
+        if (app != null && isFunction(app.componentDidShow)) {
+          app.componentDidShow(options);
+        }
+      }
+    },
+    onHide: {
+      enumerable: true,
+      writable: true,
+      value: function value(options) {
+        var app = ref.current;
+
+        if (app != null && isFunction(app.componentDidHide)) {
+          app.componentDidHide(options);
+        }
+      }
+    }
+  });
+  Current.app = app;
+  return Current.app;
+}
+
+function connectVuePage(Vue, id) {
+  return function (component) {
+    var injectedPage = Vue.extend({
+      props: {
+        tid: String
+      },
+      mixins: [component, {
+        created: function created() {
+          injectPageInstance(this, id);
+        }
+      }]
+    });
+    var options = {
+      render: function render(h) {
+        return h(isBrowser ? 'div' : 'root', {
+          attrs: {
+            id: id,
+            class: isBrowser ? 'taro_page' : ''
+          }
+        }, [h(injectedPage, {
+          props: {
+            tid: id
+          }
+        })]);
+      }
+    };
+    return options;
+  };
+}
+
+function setReconciler$1() {
+  var hostConfig = {
+    getLifecyle: function getLifecyle(instance, lifecycle) {
+      return instance.$options[lifecycle];
+    },
+    removeAttribute: function removeAttribute(dom, qualifiedName) {
+      var compName = capitalize(toCamelCase(dom.tagName.toLowerCase()));
+
+      if (compName in internalComponents && hasOwn(internalComponents[compName], qualifiedName) && isBooleanStringLiteral(internalComponents[compName][qualifiedName])) {
+        // avoid attribute being removed because set false value in vue
+        dom.setAttribute(qualifiedName, false);
+      } else {
+        delete dom.props[qualifiedName];
+      }
+    }
+  };
+
+  if (isBrowser) {
+    hostConfig.createPullDownComponent = function (el, path, vue) {
+      var injectedPage = vue.extend({
+        props: {
+          tid: String
+        },
+        mixins: [el, {
+          created: function created() {
+            injectPageInstance(this, path);
+          }
+        }]
+      });
+      var options = {
+        name: 'PullToRefresh',
+        render: function render(h) {
+          return h('taro-pull-to-refresh', {
+            class: ['hydrated']
+          }, [h(injectedPage, this.$slots.default)]);
+        }
+      };
+      return options;
+    };
+
+    hostConfig.findDOMNode = function (el) {
+      return el.$el;
+    };
+  }
+
+  options.reconciler(hostConfig);
+}
+
+var Vue;
+
+function createVueApp(App, vue, config) {
+  Vue = vue;
+  ensure(!!Vue, '构建 Vue 项目请把 process.env.FRAMEWORK 设置为 \'vue\'');
+  setReconciler$1();
+  Vue.config.getTagNamespace = noop;
+  var elements = [];
+  var pages = [];
+  var appInstance;
+  var wrapper = new Vue({
+    render: function render(h) {
+      while (pages.length > 0) {
+        var page = pages.pop();
+        elements.push(page(h));
+      }
+
+      return h(App.$options, {
+        ref: 'app'
+      }, elements.slice());
+    },
+    methods: {
+      mount: function mount(component, id, cb) {
+        pages.push(function (h) {
+          return h(component, {
+            key: id
+          });
+        });
+        this.updateSync(cb);
+      },
+      updateSync: function updateSync(cb) {
+        this._update(this._render(), false);
+
+        this.$children.forEach(function (child) {
+          return child._update(child._render(), false);
+        });
+        cb();
+      },
+      unmount: function unmount(id, cb) {
+        for (var i = 0; i < elements.length; i++) {
+          var element = elements[i];
+
+          if (element.key === id) {
+            elements.splice(i, 1);
+            break;
+          }
+        }
+
+        this.updateSync(cb);
+      }
+    }
+  });
+  var app = Object.create({
+    mount: function mount(component, id, cb) {
+      var page = connectVuePage(Vue, id)(component);
+      wrapper.mount(page, id, cb);
+    },
+    unmount: function unmount(id, cb) {
+      wrapper.unmount(id, cb);
+    }
+  }, {
+    config: {
+      writable: true,
+      enumerable: true,
+      configurable: true,
+      value: config
+    },
+    onLaunch: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        wrapper.$mount(document$1.getElementById('app'));
+        appInstance = wrapper.$refs.app;
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+
+        if (appInstance != null && isFunction(appInstance.$options.onLaunch)) {
+          appInstance.$options.onLaunch.call(appInstance, options);
+        }
+      }
+    },
+    onShow: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+
+        if (appInstance != null && isFunction(appInstance.$options.onShow)) {
+          appInstance.$options.onShow.call(appInstance, options);
+        }
+      }
+    },
+    onHide: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        if (appInstance != null && isFunction(appInstance.$options.onHide)) {
+          appInstance.$options.onHide.call(appInstance, options);
+        }
+      }
+    }
+  });
+  Current.app = app;
+  return Current.app;
+}
+
+function createVue3Page(h, id) {
+  return function (component) {
+    // vue3 组件 created 时机比小程序页面 onShow 慢，这里先插入一个实例以响应初始化时的小程序生命周期调用
+    injectPageInstance({
+      $options: component
+    }, id);
+    var inject = {
+      props: {
+        tid: String
+      },
+      created: function created() {
+        injectPageInstance(this, id);
+      }
+    };
+    component.mixins = isArray(component.mixins) ? component.mixins.push(inject) : [inject];
+    return h(isBrowser ? 'div' : 'root', {
+      key: id,
+      id: id,
+      class: isBrowser ? 'taro_page' : ''
+    }, [h(component, {
+      tid: id
+    })]);
+  };
+}
+
+function setReconciler$2() {
+  var hostConfig = {
+    getLifecyle: function getLifecyle(instance, lifecycle) {
+      return instance.$options[lifecycle];
+    },
+    removeAttribute: function removeAttribute(dom, qualifiedName) {
+      var compName = capitalize(toCamelCase(dom.tagName.toLowerCase()));
+
+      if (compName in internalComponents && hasOwn(internalComponents[compName], qualifiedName) && isBooleanStringLiteral(internalComponents[compName][qualifiedName])) {
+        // avoid attribute being removed because set false value in vue
+        dom.setAttribute(qualifiedName, false);
+      } else {
+        delete dom.props[qualifiedName];
+      }
+    }
+  };
+
+  if (isBrowser) {
+    hostConfig.createPullDownComponent = function (component, path, h) {
+      var inject = {
+        props: {
+          tid: String
+        },
+        created: function created() {
+          injectPageInstance(this, path);
+        }
+      };
+      component.mixins = isArray(component.mixins) ? component.mixins.push(inject) : [inject];
+      return {
+        render: function render() {
+          return h('taro-pull-to-refresh', {
+            class: 'hydrated'
+          }, [h(component, this.$slots.default)]);
+        }
+      };
+    };
+
+    hostConfig.findDOMNode = function (el) {
+      return el.$el;
+    };
+  }
+
+  options.reconciler(hostConfig);
+}
+
+function createVue3App(app, h, config) {
+  var pages = [];
+  var appInstance;
+  ensure(!isFunction(app._component), '入口组件不支持使用函数式组件');
+  setReconciler$2();
+
+  app._component.render = function () {
+    return pages.slice();
+  };
+
+  var appConfig = Object.create({
+    mount: function mount(component, id, cb) {
+      var page = createVue3Page(h, id)(component);
+      pages.push(page);
+      this.updateAppInstance(cb);
+    },
+    unmount: function unmount(id, cb) {
+      pages = pages.filter(function (page) {
+        return page.key !== id;
+      });
+      this.updateAppInstance(cb);
+    },
+    updateAppInstance: function updateAppInstance(cb) {
+      appInstance.$forceUpdate();
+      appInstance.$nextTick(cb);
+    }
+  }, {
+    config: {
+      writable: true,
+      enumerable: true,
+      configurable: true,
+      value: config
+    },
+    onLaunch: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        var _a;
+
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+        appInstance = app.mount('#app');
+        var onLaunch = (_a = appInstance === null || appInstance === void 0 ? void 0 : appInstance.$options) === null || _a === void 0 ? void 0 : _a.onLaunch;
+        isFunction(onLaunch) && onLaunch.call(appInstance, options);
+      }
+    },
+    onShow: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        var _a;
+
+        Current.router = Object.assign({
+          params: options === null || options === void 0 ? void 0 : options.query
+        }, options);
+        var onShow = (_a = appInstance === null || appInstance === void 0 ? void 0 : appInstance.$options) === null || _a === void 0 ? void 0 : _a.onShow;
+        isFunction(onShow) && onShow.call(appInstance, options);
+      }
+    },
+    onHide: {
+      writable: true,
+      enumerable: true,
+      value: function value(options) {
+        var _a;
+
+        var onHide = (_a = appInstance === null || appInstance === void 0 ? void 0 : appInstance.$options) === null || _a === void 0 ? void 0 : _a.onHide;
+        isFunction(onHide) && onHide.call(appInstance, options);
+      }
+    }
+  });
+  Current.app = appConfig;
+  return Current.app;
+}
+
+var taroHooks = function taroHooks(lifecycle) {
+  return function (fn) {
+    var id = R.useContext(PageContext); // hold fn ref and keep up to date
+
+    var fnRef = R.useRef(fn);
+    if (fnRef.current !== fn) fnRef.current = fn;
+    R.useLayoutEffect(function () {
+      var inst = getPageInstance(id);
+      var first = false;
+
+      if (inst == null) {
+        first = true;
+        inst = Object.create(null);
+      }
+
+      inst = inst; // callback is immutable but inner function is up to date
+
+      var callback = function callback() {
+        return fnRef.current.apply(fnRef, arguments);
+      };
+
+      if (isFunction(inst[lifecycle])) {
+        inst[lifecycle] = [inst[lifecycle], callback];
+      } else {
+        inst[lifecycle] = [].concat(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(inst[lifecycle] || []), [callback]);
+      }
+
+      if (first) {
+        injectPageInstance(inst, id);
+      }
+
+      return function () {
+        var inst = getPageInstance(id);
+        var list = inst[lifecycle];
+
+        if (list === callback) {
+          inst[lifecycle] = undefined;
+        } else if (isArray(list)) {
+          inst[lifecycle] = list.filter(function (item) {
+            return item !== callback;
+          });
+        }
+      };
+    }, []);
+  };
+};
+
+var useDidShow = taroHooks('componentDidShow');
+var useDidHide = taroHooks('componentDidHide');
+var usePullDownRefresh = taroHooks('onPullDownRefresh');
+var useReachBottom = taroHooks('onReachBottom');
+var usePageScroll = taroHooks('onPageScroll');
+var useResize = taroHooks('onResize');
+var useShareAppMessage = taroHooks('onShareAppMessage');
+var useTabItemTap = taroHooks('onTabItemTap');
+var useTitleClick = taroHooks('onTitleClick');
+var useOptionMenuClick = taroHooks('onOptionMenuClick');
+var usePullIntercept = taroHooks('onPullIntercept');
+var useShareTimeline = taroHooks('onShareTimeline');
+var useAddToFavorites = taroHooks('onAddToFavorites');
+var useReady = taroHooks('onReady');
+
+var useRouter = function useRouter() {
+  var dynamic = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  return dynamic ? Current.router : R.useMemo(function () {
+    return Current.router;
+  }, []);
+};
+
+var useScope = function useScope() {
+  return undefined;
+};
+
+function removeLeadingSlash(path) {
+  if (path == null) {
+    return '';
+  }
+
+  return path.charAt(0) === '/' ? path.slice(1) : path;
+}
+
+var nextTick = function nextTick(cb, ctx) {
+  var _a, _b, _c;
+
+  var router = Current.router;
+
+  var timerFunc = function timerFunc() {
+    setTimeout(function () {
+      ctx ? cb.call(ctx) : cb();
+    }, 1);
+  };
+
+  if (router !== null) {
+    var pageElement = null;
+    var path = getPath(removeLeadingSlash(router.path), router.params);
+    pageElement = document$1.getElementById(path);
+
+    if (pageElement !== null) {
+      if (isBrowser) {
+        (_c = (_b = (_a = pageElement.firstChild) === null || _a === void 0 ? void 0 : _a['componentOnReady']) === null || _b === void 0 ? void 0 : _b.call(_a).then(function () {
+          timerFunc();
+        })) !== null && _c !== void 0 ? _c : timerFunc();
+      } else {
+        pageElement.enqueueUpdateCallbak(cb, ctx);
+      }
+    } else {
+      timerFunc();
+    }
+  } else {
+    timerFunc();
+  }
+};
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js")["document"], __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js")["window"], __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js")["requestAnimationFrame"], __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js")["cancelAnimationFrame"]))
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/mini-runner/node_modules/regenerator-runtime/runtime-module.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@tarojs/mini-runner/node_modules/regenerator-runtime/runtime-module.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = function () {
+  return this;
+}() || Function("return this")(); // Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+
+
+var hadRuntime = g.regeneratorRuntime && Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0; // Save the old regeneratorRuntime in case it needs to be restored later.
+
+var oldRuntime = hadRuntime && g.regeneratorRuntime; // Force reevalutation of runtime.js.
+
+g.regeneratorRuntime = undefined;
+module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/@tarojs/mini-runner/node_modules/regenerator-runtime/runtime.js");
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch (e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/mini-runner/node_modules/regenerator-runtime/runtime.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@tarojs/mini-runner/node_modules/regenerator-runtime/runtime.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var _typeof = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+!function (global) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+  var inModule = ( false ? undefined : _typeof(module)) === "object";
+  var runtime = global.regeneratorRuntime;
+
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    } // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+
+
+    return;
+  } // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+
+
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []); // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+    return generator;
+  }
+
+  runtime.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+
+  function tryCatch(fn, obj, arg) {
+    try {
+      return {
+        type: "normal",
+        arg: fn.call(obj, arg)
+      };
+    } catch (err) {
+      return {
+        type: "throw",
+        arg: err
+      };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed"; // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+
+  var ContinueSentinel = {}; // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+
+  function Generator() {}
+
+  function GeneratorFunction() {}
+
+  function GeneratorFunctionPrototype() {} // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+
+
+  var IteratorPrototype = {};
+
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+
+  if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction"; // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function (method) {
+      prototype[method] = function (arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  runtime.isGeneratorFunction = function (genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
+    // do is to check its .name property.
+    (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+  };
+
+  runtime.mark = function (genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  }; // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+
+
+  runtime.awrap = function (arg) {
+    return {
+      __await: arg
+    };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+
+        if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function (value) {
+            invoke("next", value, resolve, reject);
+          }, function (err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function (unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration. If the Promise is rejected, however, the
+          // result for this iteration will be rejected with the same
+          // reason. Note that rejections of yielded Promises are not
+          // thrown back into the generator function, as is the case
+          // when an awaited Promise is rejected. This difference in
+          // behavior between yield and await is important, because it
+          // allows the consumer to decide what to do with the yielded
+          // rejection (swallow it and continue, manually .throw it back
+          // into the generator, abandon iteration, whatever). With
+          // await, by contrast, there is no opportunity to examine the
+          // rejection reason outside the generator function, so the
+          // only option is to throw it from the await expression, and
+          // let the generator function handle the exception.
+          result.value = unwrapped;
+          resolve(result);
+        }, reject);
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function (resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise = // If enqueue has been called before, then we want to wait until
+      // all previous Promises have been resolved before calling invoke,
+      // so that results are always delivered in the correct order. If
+      // enqueue has not been called before, then it is important to
+      // call invoke immediately, without waiting on a callback to fire,
+      // so that the async generator function has the opportunity to do
+      // any necessary setup in a predictable way. This predictability
+      // is why the Promise constructor synchronously invokes its
+      // executor callback, and why async functions synchronously
+      // execute code before the first await. Since we implement simple
+      // async functions in terms of async generators, it is especially
+      // important to get this right, even though it requires care.
+      previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
+      // invocations of the iterator.
+      callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+    } // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+
+
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+
+  runtime.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+
+  runtime.async = function (innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
+    return runtime.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
+    : iter.next().then(function (result) {
+      return result.done ? result.value : iter.next();
+    });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        } // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+
+
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+        var record = tryCatch(innerFn, self, context);
+
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done ? GenStateCompleted : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+        } else if (record.type === "throw") {
+          state = GenStateCompleted; // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  } // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+
+
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        if (delegate.iterator.return) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError("The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (!info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value; // Resume execution at the desired location (see delegateYield).
+
+      context.next = delegate.nextLoc; // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    } // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+
+
+    context.delegate = null;
+    return ContinueSentinel;
+  } // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+
+
+  defineIteratorMethods(Gp);
+  Gp[toStringTagSymbol] = "Generator"; // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+
+  Gp[iteratorSymbol] = function () {
+    return this;
+  };
+
+  Gp.toString = function () {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = {
+      tryLoc: locs[0]
+    };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{
+      tryLoc: "root"
+    }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  runtime.keys = function (object) {
+    var keys = [];
+
+    for (var key in object) {
+      keys.push(key);
+    }
+
+    keys.reverse(); // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      } // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+
+
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1,
+            next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+          return next;
+        };
+
+        return next.next = next;
+      }
+    } // Return an iterator with no values.
+
+
+    return {
+      next: doneResult
+    };
+  }
+
+  runtime.values = values;
+
+  function doneResult() {
+    return {
+      value: undefined,
+      done: true
+    };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+    reset: function reset(skipTempReset) {
+      this.prev = 0;
+      this.next = 0; // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+      this.method = "next";
+      this.arg = undefined;
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+    stop: function stop() {
+      this.done = true;
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+    dispatchException: function dispatchException(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !!caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+    abrupt: function abrupt(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+
+        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+    complete: function complete(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" || record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+    finish: function finish(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+    "catch": function _catch(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+
+          return thrown;
+        }
+      } // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+
+
+      throw new Error("illegal catch attempt");
+    },
+    delegateYield: function delegateYield(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+}( // In sloppy mode, unbound `this` refers to the global object, fallback to
+// Function constructor if we're in global strict mode. That is sadly a form
+// of indirect eval which violates Content Security Policy.
+function () {
+  return this;
+}() || Function("return this")());
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/react/dist/react.esm.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@tarojs/react/dist/react.esm.js ***!
+  \******************************************************/
+/*! exports provided: default, createPortal, findDOMNode, render, unmountComponentAtNode, unstable_batchedUpdates */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export createPortal */
+/* unused harmony export findDOMNode */
+/* unused harmony export render */
+/* unused harmony export unmountComponentAtNode */
+/* unused harmony export unstable_batchedUpdates */
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var react_reconciler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reconciler */ "./node_modules/react-reconciler/cjs/react-reconciler.production.min.js");
+/* harmony import */ var react_reconciler__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reconciler__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var scheduler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! scheduler */ "./node_modules/scheduler/cjs/scheduler.production.min.js");
+/* harmony import */ var scheduler__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(scheduler__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/mini-runner/node_modules/@tarojs/runtime/dist/runtime.esm.js");
+
+
+
+
+
+
+
+function isString(o) {
+  return typeof o === 'string';
+}
+
+function isObject(o) {
+  return o !== null && Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(o) === 'object';
+}
+
+function isFunction(o) {
+  return typeof o === 'function';
+}
+
+function isNumber(o) {
+  return typeof o === 'number';
+}
+
+var touchEvents = {
+  bindTouchStart: '',
+  bindTouchMove: '',
+  bindTouchEnd: '',
+  bindTouchCancel: '',
+  bindLongTap: ''
+};
+
+function singleQuote(s) {
+  return "'".concat(s, "'");
+}
+
+var View = Object.assign({
+  'hover-class': singleQuote('none'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '50',
+  'hover-stay-time': '400',
+  animation: '',
+  bindAnimationStart: '',
+  bindAnimationIteration: '',
+  bindAnimationEnd: '',
+  bindTransitionEnd: ''
+}, touchEvents);
+var Icon = {
+  type: '',
+  size: '23',
+  color: ''
+};
+var Map$1 = Object.assign({
+  longitude: '',
+  latitude: '',
+  scale: '16',
+  markers: '[]',
+  covers: '',
+  polyline: '[]',
+  circles: '[]',
+  controls: '',
+  'include-points': '[]',
+  'show-location': '',
+  polygons: '',
+  subkey: '',
+  'layer-style': '1',
+  rotate: '0',
+  skew: 'skew',
+  'enable-3D': 'false',
+  'show-compass': 'false',
+  'show-scale': 'false',
+  'enable-overlooking': 'false',
+  'enable-zoom': 'true',
+  'enable-scroll': 'true',
+  'enable-rotate': 'false',
+  'enable-satellite': 'false',
+  'enable-traffic': 'false',
+  setting: '[]',
+  bindMarkerTap: '',
+  bindLabelTap: '',
+  bindControlTap: '',
+  bindCalloutTap: '',
+  bindUpdated: '',
+  bindRegionChange: '',
+  bindPoiTap: ''
+}, touchEvents);
+var Progress = {
+  percent: '',
+  'show-info': 'false',
+  'border-radius': '0',
+  'font-size': '16',
+  'stroke-width': '6',
+  color: singleQuote('#09BB07'),
+  activeColor: singleQuote('#09BB07'),
+  backgroundColor: singleQuote('#EBEBEB'),
+  active: 'false',
+  'active-mode': singleQuote('backwards'),
+  duration: '30',
+  bindActiveEnd: ''
+};
+var RichText = {
+  nodes: '[]',
+  space: ''
+};
+var Text = {
+  selectable: 'false',
+  space: '',
+  decode: 'false'
+};
+var Button = {
+  size: singleQuote('default'),
+  type: '',
+  plain: 'false',
+  disabled: '',
+  loading: 'false',
+  'form-type': '',
+  'open-type': '',
+  'hover-class': singleQuote('button-hover'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '20',
+  'hover-stay-time': '70',
+  lang: 'en',
+  'session-from': '',
+  'send-message-title': '',
+  'send-message-path': '',
+  'send-message-img': '',
+  'app-parameter': '',
+  'show-message-card': 'false',
+  bindGetUserInfo: '',
+  bindGetAuthorize: '',
+  bindContact: '',
+  bindGetPhoneNumber: '',
+  bindError: '',
+  bindOpenSetting: '',
+  bindLaunchApp: '',
+  scope: '',
+  name: ''
+};
+
+if (false) {}
+
+var Checkbox = {
+  value: '',
+  disabled: '',
+  checked: 'false',
+  color: singleQuote('#09BB07'),
+  name: ''
+};
+var CheckboxGroup = {
+  bindChange: '',
+  name: ''
+};
+var Editor = {
+  'read-only': 'false',
+  placeholder: '',
+  'show-img-size': 'false',
+  'show-img-toolbar': 'false',
+  'show-img-resize': 'false',
+  focus: 'false',
+  bindReady: '',
+  bindFocus: '',
+  bindBlur: '',
+  bindInput: '',
+  bindStatusChange: '',
+  name: ''
+};
+var Form = {
+  'report-submit': 'false',
+  'report-submit-timeout': '0',
+  bindSubmit: '',
+  bindReset: '',
+  name: ''
+};
+var Input = {
+  value: '',
+  type: singleQuote(''),
+  password: 'false',
+  placeholder: '',
+  'placeholder-style': '',
+  'placeholder-class': singleQuote('input-placeholder'),
+  disabled: '',
+  maxlength: '140',
+  'cursor-spacing': '0',
+  'auto-focus': 'false',
+  focus: 'false',
+  'confirm-type': singleQuote('done'),
+  'confirm-hold': 'false',
+  cursor: 'i.value.length',
+  'selection-start': '-1',
+  'selection-end': '-1',
+  'adjust-position': 'true',
+  'hold-keyboard': 'false',
+  bindInput: '',
+  bindFocus: '',
+  bindBlur: '',
+  bindConfirm: '',
+  bindKeyboardHeightChange: '',
+  name: ''
+};
+var Label = {
+  for: '',
+  name: ''
+};
+var Picker = {
+  mode: singleQuote('selector'),
+  disabled: '',
+  bindCancel: '',
+  range: '',
+  'range-key': '',
+  value: '',
+  bindChange: '',
+  bindColumnChange: '',
+  start: '',
+  end: '',
+  fields: singleQuote('day'),
+  'custom-item': '',
+  name: ''
+};
+var PickerView = {
+  value: '',
+  'indicator-style': '',
+  'indicator-class': '',
+  'mask-style': '',
+  'mask-class': '',
+  bindChange: '',
+  bindPickStart: '',
+  bindPickEnd: '',
+  name: ''
+};
+var PickerViewColumn = {
+  name: ''
+};
+var Radio = {
+  value: '',
+  checked: 'false',
+  disabled: '',
+  color: singleQuote('#09BB07'),
+  name: ''
+};
+var RadioGroup = {
+  bindChange: '',
+  name: ''
+};
+var Slider = {
+  min: '0',
+  max: '100',
+  step: '1',
+  disabled: '',
+  value: '0',
+  color: singleQuote('#e9e9e9'),
+  'selected-color': singleQuote('#1aad19'),
+  activeColor: singleQuote('#1aad19'),
+  backgroundColor: singleQuote('#e9e9e9'),
+  'block-size': '28',
+  'block-color': singleQuote('#ffffff'),
+  'show-value': 'false',
+  bindChange: '',
+  bindChanging: '',
+  name: ''
+};
+var Switch = {
+  checked: 'false',
+  disabled: '',
+  type: singleQuote('switch'),
+  color: singleQuote('#04BE02'),
+  bindChange: '',
+  name: ''
+};
+var CoverImage = {
+  src: '',
+  bindLoad: 'eh',
+  bindError: 'eh'
+};
+var Textarea = {
+  value: '',
+  placeholder: '',
+  'placeholder-style': '',
+  'placeholder-class': singleQuote('textarea-placeholder'),
+  disabled: '',
+  maxlength: '140',
+  'auto-focus': 'false',
+  focus: 'false',
+  'auto-height': 'false',
+  fixed: 'false',
+  'cursor-spacing': '0',
+  cursor: '-1',
+  'show-confirm-bar': 'true',
+  'selection-start': '-1',
+  'selection-end': '-1',
+  'adjust-position': 'true',
+  'hold-keyboard': 'false',
+  bindFocus: '',
+  bindBlur: '',
+  bindLineChange: '',
+  bindInput: '',
+  bindConfirm: '',
+  bindKeyboardHeightChange: '',
+  name: ''
+};
+var CoverView = Object.assign({
+  'scroll-top': 'false'
+}, touchEvents);
+var MatchMedia = {
+  'min-width': '',
+  'max-width': '',
+  width: '',
+  'min-height': '',
+  'max-height': '',
+  height: '',
+  orientation: ''
+};
+var MovableArea = {
+  'scale-area': 'false'
+};
+var MovableView = Object.assign({
+  direction: 'none',
+  inertia: 'false',
+  'out-of-bounds': 'false',
+  x: '',
+  y: '',
+  damping: '20',
+  friction: '2',
+  disabled: '',
+  scale: 'false',
+  'scale-min': '0.5',
+  'scale-max': '10',
+  'scale-value': '1',
+  animation: 'true',
+  bindAnimationEnd: '',
+  bindChange: '',
+  bindScale: '',
+  htouchmove: '',
+  vtouchmove: '',
+  width: singleQuote('10px'),
+  height: singleQuote('10px')
+}, touchEvents);
+var ScrollView = Object.assign({
+  'scroll-x': 'false',
+  'scroll-y': 'false',
+  'upper-threshold': '50',
+  'lower-threshold': '50',
+  'scroll-top': '',
+  'scroll-left': '',
+  'scroll-into-view': '',
+  'scroll-with-animation': 'false',
+  'enable-back-to-top': 'false',
+  'enable-flex': 'false',
+  'scroll-anchoring': 'false',
+  'refresher-enabled': 'false',
+  'refresher-threshold': '45',
+  'refresher-default-style': singleQuote('black'),
+  'refresher-background': singleQuote('#FFF'),
+  'refresher-triggered': 'false',
+  enhanced: 'false',
+  bounces: 'true',
+  'show-scrollbar': 'true',
+  'paging-enabled': 'false',
+  'fast-deceleration': 'false',
+  bindRefresherPulling: '',
+  bindRefresherRefresh: '',
+  bindRefresherRestore: '',
+  bindRefresherAbort: '',
+  bindScrollToUpper: '',
+  bindScrollToLower: '',
+  bindScroll: '',
+  animation: '',
+  bindTransitionEnd: '',
+  bindAnimationStart: '',
+  bindAnimationIteration: '',
+  bindAnimationEnd: '',
+  bindDragStart: '',
+  bindDragging: '',
+  bindDragEnd: ''
+}, touchEvents);
+var Swiper = Object.assign({
+  'indicator-dots': 'false',
+  'indicator-color': singleQuote('rgba(0, 0, 0, .3)'),
+  'indicator-active-color': singleQuote('#000000'),
+  autoplay: 'false',
+  current: '0',
+  interval: '5000',
+  duration: '500',
+  circular: 'false',
+  vertical: 'false',
+  'previous-margin': '\'0px\'',
+  'next-margin': '\'0px\'',
+  'display-multiple-items': '1',
+  'skip-hidden-item-layout': 'false',
+  'easing-function': singleQuote('default'),
+  bindChange: '',
+  bindTransition: '',
+  bindAnimationFinish: ''
+}, touchEvents);
+var SwiperItem = {
+  'item-id': ''
+};
+var FunctionalPageNavigator = {
+  version: singleQuote('release'),
+  name: '',
+  args: '',
+  bindSuccess: '',
+  bindFail: '',
+  bindCancel: ''
+};
+var Navigator = {
+  target: singleQuote('self'),
+  url: '',
+  'open-type': singleQuote('navigate'),
+  delta: '1',
+  'app-id': '',
+  path: '',
+  'extra-data': '',
+  version: singleQuote('version'),
+  'hover-class': singleQuote('navigator-hover'),
+  'hover-stop-propagation': 'false',
+  'hover-start-time': '50',
+  'hover-stay-time': '600',
+  bindSuccess: '',
+  bindFail: '',
+  bindComplete: ''
+};
+var Audio = {
+  id: '',
+  src: '',
+  loop: 'false',
+  controls: 'false',
+  poster: '',
+  name: '',
+  author: '',
+  bindError: '',
+  bindPlay: '',
+  bindPause: '',
+  bindTimeUpdate: '',
+  bindEnded: ''
+};
+var Camera = {
+  mode: singleQuote('normal'),
+  'device-position': singleQuote('back'),
+  flash: singleQuote('auto'),
+  'frame-size': singleQuote('medium'),
+  bindStop: '',
+  bindError: '',
+  bindInitDone: '',
+  bindScanCode: ''
+};
+var Image = Object.assign({
+  src: '',
+  mode: singleQuote('scaleToFill'),
+  webp: 'false',
+  'lazy-load': 'false',
+  'show-menu-by-longpress': 'false',
+  bindError: '',
+  bindLoad: ''
+}, touchEvents);
+var LivePlayer = {
+  src: '',
+  mode: singleQuote('live'),
+  autoplay: 'false',
+  muted: 'false',
+  orientation: singleQuote('vertical'),
+  'object-fit': singleQuote('contain'),
+  'background-mute': 'false',
+  'min-cache': '1',
+  'max-cache': '3',
+  'sound-mode': singleQuote('speaker'),
+  'auto-pause-if-navigate': 'true',
+  'auto-pause-if-open-native': 'true',
+  'picture-in-picture-mode': '[]',
+  animation: '',
+  bindStateChange: '',
+  bindFullScreenChange: '',
+  bindNetStatus: '',
+  bindAudioVolumeNotify: '',
+  bindEnterPictureInPicture: '',
+  bindLeavePictureInPicture: ''
+};
+var LivePusher = {
+  url: '',
+  mode: singleQuote('RTC'),
+  autopush: 'false',
+  muted: 'false',
+  'enable-camera': 'true',
+  'auto-focus': 'true',
+  orientation: singleQuote('vertical'),
+  beauty: '0',
+  whiteness: '0',
+  aspect: singleQuote('9:16'),
+  'min-bitrate': '200',
+  'max-bitrate': '1000',
+  'audio-quality': singleQuote('high'),
+  'waiting-image': '',
+  'waiting-image-hash': '',
+  zoom: 'false',
+  'device-position': singleQuote('front'),
+  'background-mute': 'false',
+  mirror: 'false',
+  'remote-mirror': 'false',
+  'local-mirror': 'false',
+  'audio-reverb-type': '0',
+  'enable-mic': 'true',
+  'enable-agc': 'false',
+  'enable-ans': 'false',
+  'audio-volume-type': singleQuote('voicecall'),
+  'video-width': '360',
+  'video-height': '640',
+  animation: '',
+  bindStateChange: '',
+  bindNetStatus: '',
+  bindBgmStart: '',
+  bindBgmProgress: '',
+  bindBgmComplete: ''
+};
+var Video = {
+  src: '',
+  duration: '',
+  controls: 'true',
+  'danmu-list': '',
+  'danmu-btn': '',
+  'enable-danmu': '',
+  autoplay: 'false',
+  loop: 'false',
+  muted: 'false',
+  'initial-time': '0',
+  'page-gesture': 'false',
+  direction: '',
+  'show-progress': 'true',
+  'show-fullscreen-btn': 'true',
+  'show-play-btn': 'true',
+  'show-center-play-btn': 'true',
+  'enable-progress-gesture': 'true',
+  'object-fit': singleQuote('contain'),
+  poster: '',
+  'show-mute-btn': 'false',
+  title: '',
+  'play-btn-position': singleQuote('bottom'),
+  'enable-play-gesture': 'false',
+  'auto-pause-if-navigate': 'true',
+  'auto-pause-if-open-native': 'true',
+  'vslide-gesture': 'false',
+  'vslide-gesture-in-fullscreen': 'true',
+  'ad-unit-id': '',
+  'poster-for-crawler': '',
+  'show-casting-button': 'false',
+  'picture-in-picture-mode': '[]',
+  // picture-in-picture-show-progress 属性先注释掉的原因如下：
+  // 该属性超过了 wxml 属性的长度限制，实际无法使用且导致编译报错。可等微信官方修复后再放开。
+  // 参考1：https://developers.weixin.qq.com/community/develop/doc/000a429beb87f0eac07acc0fc5b400
+  // 参考2: https://developers.weixin.qq.com/community/develop/doc/0006883619c48054286a4308258c00?_at=vyxqpllafi
+  // 'picture-in-picture-show-progress': 'false',
+  'enable-auto-rotation': 'false',
+  'show-screen-lock-button': 'false',
+  animation: '',
+  bindPlay: '',
+  bindPause: '',
+  bindEnded: '',
+  bindTimeUpdate: '',
+  bindFullScreenChange: '',
+  bindWaiting: '',
+  bindError: '',
+  bindProgress: '',
+  bindLoadedMetadata: '',
+  bindControlsToggle: '',
+  bindEnterPictureInPicture: '',
+  bindLeavePictureInPicture: '',
+  bindSeekComplete: ''
+};
+var Canvas = {
+  type: '',
+  'canvas-id': '',
+  'disable-scroll': 'false',
+  bindTouchStart: '',
+  bindTouchMove: '',
+  bindTouchEnd: '',
+  bindTouchCancel: '',
+  bindLongtap: '',
+  bindError: ''
+};
+var Ad = {
+  'unit-id': '',
+  'ad-intervals': '',
+  'ad-type': singleQuote('banner'),
+  'ad-theme': singleQuote('white'),
+  bindLoad: '',
+  bindError: '',
+  bindClose: ''
+};
+var OfficialAccount = {
+  bindLoad: '',
+  bindError: ''
+};
+var OpenData = {
+  type: '',
+  'open-gid': '',
+  lang: singleQuote('en'),
+  'default-text': '',
+  'default-avatar': '',
+  bindError: ''
+};
+var WebView = {
+  src: '',
+  bindMessage: '',
+  bindLoad: ''
+};
+var NavigationBar = {
+  title: '',
+  loading: 'false',
+  'front-color': '',
+  'background-color': '',
+  'color-animation-duration': '0',
+  'color-animation-timing-func': singleQuote('linear')
+};
+var PageMeta = {
+  'background-text-style': '',
+  'background-color': '',
+  'background-color-top': '',
+  'background-color-bottom': '',
+  'scroll-top': singleQuote(''),
+  'scroll-duration': '300',
+  'page-style': singleQuote(''),
+  'root-font-size': singleQuote(''),
+  bindResize: '',
+  bindScroll: '',
+  bindScrollDone: ''
+};
+var Block = {}; // For Vue，因为 slot 标签被 vue 占用了
+
+var SlotView = {
+  name: ''
+}; // For React
+// Slot 和 SlotView 最终都会编译成 <view slot={{ i.name }} />
+// 因为 <slot name="{{ i.name }}" /> 适用性没有前者高（无法添加类和样式）
+// 不给 View 直接加 slot 属性的原因是性能损耗
+
+var Slot = {
+  name: ''
+};
+var internalComponents = {
+  View: View,
+  Icon: Icon,
+  Progress: Progress,
+  RichText: RichText,
+  Text: Text,
+  Button: Button,
+  Checkbox: Checkbox,
+  CheckboxGroup: CheckboxGroup,
+  Editor: Editor,
+  Form: Form,
+  Input: Input,
+  Label: Label,
+  Picker: Picker,
+  PickerView: PickerView,
+  PickerViewColumn: PickerViewColumn,
+  Radio: Radio,
+  RadioGroup: RadioGroup,
+  Slider: Slider,
+  Switch: Switch,
+  CoverImage: CoverImage,
+  Textarea: Textarea,
+  CoverView: CoverView,
+  MatchMedia: MatchMedia,
+  MovableArea: MovableArea,
+  MovableView: MovableView,
+  ScrollView: ScrollView,
+  Swiper: Swiper,
+  SwiperItem: SwiperItem,
+  FunctionalPageNavigator: FunctionalPageNavigator,
+  Navigator: Navigator,
+  Audio: Audio,
+  Camera: Camera,
+  Image: Image,
+  LivePlayer: LivePlayer,
+  LivePusher: LivePusher,
+  Video: Video,
+  Canvas: Canvas,
+  Ad: Ad,
+  OfficialAccount: OfficialAccount,
+  OpenData: OpenData,
+  WebView: WebView,
+  NavigationBar: NavigationBar,
+  PageMeta: PageMeta,
+  Block: Block,
+  Map: Map$1,
+  Slot: Slot,
+  SlotView: SlotView
+};
+var EMPTY_ARR = [];
+
+var noop = function noop() {};
+
+function toCamelCase(s) {
+  var camel = '';
+  var nextCap = false;
+
+  for (var i = 0; i < s.length; i++) {
+    if (s[i] !== '-') {
+      camel += nextCap ? s[i].toUpperCase() : s[i];
+      nextCap = false;
+    } else {
+      nextCap = true;
+    }
+  }
+
+  return camel;
+}
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+var reportIssue = '如有疑问，请提交 issue 至：https://github.com/nervjs/taro/issues';
+/**
+ * ensure takes a condition and throw a error if the condition fails,
+ * like failure::ensure: https://docs.rs/failure/0.1.1/failure/macro.ensure.html
+ * @param condition condition.
+ * @param msg error message.
+ */
+
+function ensure(condition, msg) {
+  if (!condition) {
+    throw new Error(msg + '\n' + reportIssue);
+  }
+}
+
+function isEventName(s) {
+  return s[0] === 'o' && s[1] === 'n';
+}
+
+var IS_NON_DIMENSIONAL = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord/i;
+
+function updateProps(dom, oldProps, newProps) {
+  var i;
+
+  for (i in oldProps) {
+    if (!(i in newProps)) {
+      setProperty(dom, i, null, oldProps[i]);
+    }
+  }
+
+  var isFormElement = dom instanceof _tarojs_runtime__WEBPACK_IMPORTED_MODULE_5__["FormElement"];
+
+  for (i in newProps) {
+    if (oldProps[i] !== newProps[i] || isFormElement && i === 'value') {
+      setProperty(dom, i, newProps[i], oldProps[i]);
+    }
+  }
+}
+
+function eventProxy(e) {
+  var el = _tarojs_runtime__WEBPACK_IMPORTED_MODULE_5__["document"].getElementById(e.currentTarget.id);
+  var handlers = el.__handlers[e.type];
+  handlers[0](e);
+}
+
+function setEvent(dom, name, value, oldValue) {
+  var isCapture = name.endsWith('Capture');
+  var eventName = name.toLowerCase().slice(2);
+
+  if (isCapture) {
+    eventName = eventName.slice(0, -7);
+  }
+
+  var compName = capitalize(toCamelCase(dom.tagName.toLowerCase()));
+
+  if (eventName === 'click' && compName in internalComponents) {
+    eventName = 'tap';
+  }
+
+  if (isFunction(value)) {
+    if (!oldValue) {
+      dom.addEventListener(eventName, eventProxy, isCapture);
+    }
+
+    dom.__handlers[eventName][0] = value;
+  } else {
+    dom.removeEventListener(eventName, eventProxy);
+  }
+}
+
+function setStyle(style, key, value) {
+  if (key[0] === '-') {
+    style.setProperty(key, value.toString());
+  }
+
+  style[key] = isNumber(value) && IS_NON_DIMENSIONAL.test(key) === false ? value + 'px' : value == null ? '' : value;
+}
+
+function setProperty(dom, name, value, oldValue) {
+  var _a, _b, _c, _d;
+
+  name = name === 'className' ? 'class' : name;
+  if (name === 'key' || name === 'children' || name === 'ref') ;else if (name === 'style') {
+    var style = dom.style;
+
+    if (isString(value)) {
+      style.cssText = value;
+    } else {
+      if (isString(oldValue)) {
+        style.cssText = '';
+        oldValue = null;
+      }
+
+      if (isObject(oldValue)) {
+        for (var i in oldValue) {
+          if (!(value && i in value)) {
+            setStyle(style, i, '');
+          }
+        }
+      }
+
+      if (isObject(value)) {
+        for (var _i in value) {
+          if (!oldValue || value[_i] !== oldValue[_i]) {
+            setStyle(style, _i, value[_i]);
+          }
+        }
+      }
+    }
+  } else if (isEventName(name)) {
+    setEvent(dom, name, value, oldValue);
+  } else if (name === 'dangerouslySetInnerHTML') {
+    var newHtml = (_b = (_a = value) === null || _a === void 0 ? void 0 : _a.__html) !== null && _b !== void 0 ? _b : '';
+    var oldHtml = (_d = (_c = oldValue) === null || _c === void 0 ? void 0 : _c.__html) !== null && _d !== void 0 ? _d : '';
+
+    if (newHtml || oldHtml) {
+      if (oldHtml !== newHtml) {
+        dom.innerHTML = newHtml;
+      }
+    }
+  } else if (!isFunction(value)) {
+    if (value == null) {
+      dom.removeAttribute(name);
+    } else {
+      dom.setAttribute(name, value);
+    }
+  }
+}
+/* eslint-disable @typescript-eslint/indent */
+
+
+var scheduleDeferredCallback = scheduler__WEBPACK_IMPORTED_MODULE_4__["unstable_scheduleCallback"],
+    cancelDeferredCallback = scheduler__WEBPACK_IMPORTED_MODULE_4__["unstable_cancelCallback"],
+    now = scheduler__WEBPACK_IMPORTED_MODULE_4__["unstable_now"];
+
+function returnFalse() {
+  return false;
+}
+
+var hostConfig = {
+  createInstance: function createInstance(type) {
+    return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_5__["document"].createElement(type);
+  },
+  createTextInstance: function createTextInstance(text) {
+    return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_5__["document"].createTextNode(text);
+  },
+  getPublicInstance: function getPublicInstance(inst) {
+    return inst;
+  },
+  getRootHostContext: function getRootHostContext() {
+    return {};
+  },
+  getChildHostContext: function getChildHostContext() {
+    return {};
+  },
+  appendChild: function appendChild(parent, child) {
+    parent.appendChild(child);
+  },
+  appendInitialChild: function appendInitialChild(parent, child) {
+    parent.appendChild(child);
+  },
+  appendChildToContainer: function appendChildToContainer(parent, child) {
+    parent.appendChild(child);
+  },
+  removeChild: function removeChild(parent, child) {
+    parent.removeChild(child);
+  },
+  removeChildFromContainer: function removeChildFromContainer(parent, child) {
+    parent.removeChild(child);
+  },
+  insertBefore: function insertBefore(parent, child, refChild) {
+    parent.insertBefore(child, refChild);
+  },
+  insertInContainerBefore: function insertInContainerBefore(parent, child, refChild) {
+    parent.insertBefore(child, refChild);
+  },
+  commitTextUpdate: function commitTextUpdate(textInst, _, newText) {
+    textInst.nodeValue = newText;
+  },
+  finalizeInitialChildren: function finalizeInitialChildren(dom, _, props) {
+    updateProps(dom, {}, props);
+    return false;
+  },
+  prepareUpdate: function prepareUpdate() {
+    return EMPTY_ARR;
+  },
+  commitUpdate: function commitUpdate(dom, _payload, _type, oldProps, newProps) {
+    updateProps(dom, oldProps, newProps);
+  },
+  hideInstance: function hideInstance(instance) {
+    var style = instance.style;
+    style.setProperty('display', 'none');
+  },
+  unhideInstance: function unhideInstance(instance, props) {
+    var styleProp = props.style;
+    var display = (styleProp === null || styleProp === void 0 ? void 0 : styleProp.hasOwnProperty('display')) ? styleProp.display : null;
+    display = display == null || typeof display === 'boolean' || display === '' ? '' : ('' + display).trim(); // eslint-disable-next-line dot-notation
+
+    instance.style['display'] = display;
+  },
+  shouldSetTextContent: returnFalse,
+  shouldDeprioritizeSubtree: returnFalse,
+  prepareForCommit: noop,
+  resetAfterCommit: noop,
+  commitMount: noop,
+  now: now,
+  scheduleDeferredCallback: scheduleDeferredCallback,
+  cancelDeferredCallback: cancelDeferredCallback,
+  clearTimeout: clearTimeout,
+  setTimeout: setTimeout,
+  noTimeout: -1,
+  supportsMutation: true,
+  supportsPersistence: false,
+  isPrimaryRenderer: true,
+  supportsHydration: false
+};
+var TaroReconciler = react_reconciler__WEBPACK_IMPORTED_MODULE_3___default()(hostConfig);
+var ContainerMap = new WeakMap();
+
+var Root = /*#__PURE__*/function () {
+  function Root(renderer, domContainer) {
+    Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(this, Root);
+
+    this.renderer = renderer;
+    this.internalRoot = renderer.createContainer(domContainer, false, false);
+  }
+
+  Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(Root, [{
+    key: "render",
+    value: function render(children, cb) {
+      this.renderer.updateContainer(children, this.internalRoot, null, cb);
+      return this.renderer.getPublicRootInstance(this.internalRoot);
+    }
+  }, {
+    key: "unmount",
+    value: function unmount(cb) {
+      this.renderer.updateContainer(null, this.internalRoot, null, cb);
+    }
+  }]);
+
+  return Root;
+}();
+
+function render(element, domContainer, cb) {
+  var oldRoot = ContainerMap.get(domContainer);
+
+  if (oldRoot != null) {
+    return oldRoot.render(element, cb);
+  }
+
+  var root = new Root(TaroReconciler, domContainer);
+  ContainerMap.set(domContainer, root);
+  return root.render(element, cb);
+}
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+
+var unstable_batchedUpdates = TaroReconciler.batchedUpdates;
+
+function unmountComponentAtNode(dom) {
+  ensure(dom && [1, 8, 9, 11].includes(dom.nodeType), 'unmountComponentAtNode(...): Target container is not a DOM element.');
+  var root = ContainerMap.get(dom);
+  if (!root) return false;
+  unstable_batchedUpdates(function () {
+    root.unmount(function () {
+      ContainerMap.delete(dom);
+    });
+  });
+  return true;
+}
+
+function findDOMNode(comp) {
+  if (comp == null) {
+    return null;
+  }
+
+  var nodeType = comp.nodeType;
+
+  if (nodeType === 1 || nodeType === 3) {
+    return comp;
+  }
+
+  return TaroReconciler.findHostInstance(comp);
+}
+
+var portalType = typeof Symbol === 'function' && Symbol.for ? Symbol.for('react.portal') : 0xeaca;
+
+function createPortal(children, containerInfo, key) {
+  return {
+    $$typeof: portalType,
+    key: key == null ? null : String(key),
+    children: children,
+    containerInfo: containerInfo,
+    implementation: null
+  };
+}
+
+var index = {
+  render: render,
+  unstable_batchedUpdates: unstable_batchedUpdates,
+  unmountComponentAtNode: unmountComponentAtNode,
+  findDOMNode: findDOMNode,
+  createPortal: createPortal
+};
+/* harmony default export */ __webpack_exports__["a"] = (index);
+
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/taro/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/@tarojs/taro/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/*! exports used: default, getCurrentInstance, showShareMenu, useDidShow, usePullDownRefresh, useReachBottom, useShareAppMessage, useShareTimeline */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Taro = __webpack_require__(/*! @tarojs/api */ "./node_modules/@tarojs/api/dist/index.esm.js").default;
+
+var api; // bundler 可以自动移除不需要的 require
+
+if (false) {} else if (false) {} else if (false) {} else if (false) {} else if (false) {} else if (true) {
+  api = __webpack_require__(/*! ./lib/wx */ "./node_modules/@tarojs/taro/lib/wx.js");
+} // 兼容不同工具的 import 机制，如 Jest, rollup
+
+
+var initNativeAPI = api && api.default ? api.default : api; // 如果没有对应的 env type，那就啥也不干，例如 h5
+
+if (typeof initNativeAPI === 'function') {
+  initNativeAPI(Taro);
+}
+
+module.exports = Taro;
+module.exports.default = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/taro/lib/data-cache.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@tarojs/taro/lib/data-cache.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.cacheDataSet = cacheDataSet;
+exports.cacheDataGet = cacheDataGet;
+exports.cacheDataHas = cacheDataHas;
+var data = {};
+
+function cacheDataSet(key, val) {
+  data[key] = val;
+}
+
+function cacheDataGet(key, delelteAfterGet) {
+  var temp = data[key];
+  delelteAfterGet && delete data[key];
+  return temp;
+}
+
+function cacheDataHas(key) {
+  return key in data;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/taro/lib/utils.js":
+/*!************************************************!*\
+  !*** ./node_modules/@tarojs/taro/lib/utils.js ***!
+  \************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.queryToJson = queryToJson;
+exports.getUniqueKey = getUniqueKey;
+
+function queryToJson(str) {
+  var dec = decodeURIComponent;
+  var qp = str.split('&');
+  var ret = {};
+  var name;
+  var val;
+
+  for (var i = 0, l = qp.length, item; i < l; ++i) {
+    item = qp[i];
+
+    if (item.length) {
+      var s = item.indexOf('=');
+
+      if (s < 0) {
+        name = dec(item);
+        val = '';
+      } else {
+        name = dec(item.slice(0, s));
+        val = dec(item.slice(s + 1));
+      }
+
+      if (typeof ret[name] === 'string') {
+        // inline'd type check
+        ret[name] = [ret[name]];
+      }
+
+      if (Array.isArray(ret[name])) {
+        ret[name].push(val);
+      } else {
+        ret[name] = val;
+      }
+    }
+  }
+
+  return ret; // Object
+}
+
+var _i = 1;
+
+var _loadTime = new Date().getTime().toString();
+
+function getUniqueKey() {
+  return _loadTime + _i++;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@tarojs/taro/lib/wx.js":
+/*!*********************************************!*\
+  !*** ./node_modules/@tarojs/taro/lib/wx.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = initNativeApi;
+
+var _api = _interopRequireDefault(__webpack_require__(/*! @tarojs/api */ "./node_modules/@tarojs/api/dist/index.esm.js"));
+
+var _dataCache = __webpack_require__(/*! ./data-cache */ "./node_modules/@tarojs/taro/lib/data-cache.js");
+
+var _utils = __webpack_require__(/*! ./utils */ "./node_modules/@tarojs/taro/lib/utils.js");
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+var noPromiseApis = _api["default"].noPromiseApis,
+    onAndSyncApis = _api["default"].onAndSyncApis,
+    otherApis = _api["default"].otherApis,
+    initPxTransform = _api["default"].initPxTransform,
+    Link = _api["default"].Link;
+var RequestQueue = {
+  MAX_REQUEST: 5,
+  queue: [],
+  request: function request(options) {
+    this.push(options); // 返回request task
+
+    return this.run();
+  },
+  push: function push(options) {
+    this.queue.push(options);
+  },
+  run: function run() {
+    var _this = this;
+
+    if (!this.queue.length) {
+      return;
+    }
+
+    if (this.queue.length <= this.MAX_REQUEST) {
+      var options = this.queue.shift();
+      var completeFn = options.complete;
+
+      options.complete = function () {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        completeFn && completeFn.apply(options, args);
+
+        _this.run();
+      };
+
+      return wx.request(options);
+    }
+  }
+};
+
+function taroInterceptor(chain) {
+  return request(chain.requestParams);
+}
+
+var link = new Link(taroInterceptor);
+
+function request(options) {
+  options = options || {};
+
+  if (typeof options === 'string') {
+    options = {
+      url: options
+    };
+  }
+
+  var originSuccess = options.success;
+  var originFail = options.fail;
+  var originComplete = options.complete;
+  var requestTask;
+  var p = new Promise(function (resolve, reject) {
+    options.success = function (res) {
+      originSuccess && originSuccess(res);
+      resolve(res);
+    };
+
+    options.fail = function (res) {
+      originFail && originFail(res);
+      reject(res);
+    };
+
+    options.complete = function (res) {
+      originComplete && originComplete(res);
+    };
+
+    requestTask = RequestQueue.request(options);
+  });
+
+  p.abort = function (cb) {
+    cb && cb();
+
+    if (requestTask) {
+      requestTask.abort();
+    }
+
+    return p;
+  };
+
+  return p;
+}
+
+function processApis(taro) {
+  var weApis = Object.assign({}, onAndSyncApis, noPromiseApis, otherApis);
+  var useDataCacheApis = {
+    navigateTo: true,
+    redirectTo: true,
+    reLaunch: true
+  };
+  var routerParamsPrivateKey = '__key_';
+  var preloadPrivateKey = '__preload_';
+  var preloadInitedComponent = '$preloadComponent';
+  Object.keys(weApis).forEach(function (key) {
+    if (!(key in wx)) {
+      taro[key] = function () {
+        console.warn("\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F\u6682\u4E0D\u652F\u6301 ".concat(key));
+      };
+
+      return;
+    }
+
+    if (!onAndSyncApis[key] && !noPromiseApis[key]) {
+      taro[key] = function (options) {
+        for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+          args[_key2 - 1] = arguments[_key2];
+        }
+
+        options = options || {};
+        var task = null;
+        var obj = Object.assign({}, options);
+
+        if (typeof options === 'string') {
+          if (args.length) {
+            var _wx;
+
+            return (_wx = wx)[key].apply(_wx, [options].concat(args));
+          }
+
+          return wx[key](options);
+        }
+
+        if (key === 'navigateTo' || key === 'redirectTo' || key === 'switchTab') {
+          var url = obj.url ? obj.url.replace(/^\//, '') : '';
+          if (url.indexOf('?') > -1) url = url.split('?')[0];
+          var Component = (0, _dataCache.cacheDataGet)(url);
+
+          if (Component) {
+            var component = new Component();
+
+            if (component.componentWillPreload) {
+              var cacheKey = (0, _utils.getUniqueKey)();
+              var MarkIndex = obj.url.indexOf('?');
+              var hasMark = MarkIndex > -1;
+              var urlQueryStr = hasMark ? obj.url.substring(MarkIndex + 1, obj.url.length) : '';
+              var params = (0, _utils.queryToJson)(urlQueryStr);
+              obj.url += (hasMark ? '&' : '?') + "".concat(preloadPrivateKey, "=").concat(cacheKey);
+              (0, _dataCache.cacheDataSet)(cacheKey, component.componentWillPreload(params));
+              (0, _dataCache.cacheDataSet)(preloadInitedComponent, component);
+            }
+          }
+        }
+
+        if (useDataCacheApis[key]) {
+          var _url = obj.url = obj.url || '';
+
+          var _MarkIndex = _url.indexOf('?');
+
+          var _hasMark = _MarkIndex > -1;
+
+          var _urlQueryStr = _hasMark ? _url.substring(_MarkIndex + 1, _url.length) : '';
+
+          var _params = (0, _utils.queryToJson)(_urlQueryStr);
+
+          var _cacheKey = (0, _utils.getUniqueKey)();
+
+          obj.url += (_hasMark ? '&' : '?') + "".concat(routerParamsPrivateKey, "=").concat(_cacheKey);
+          (0, _dataCache.cacheDataSet)(_cacheKey, _params);
+        }
+
+        var p = new Promise(function (resolve, reject) {
+          ['fail', 'success', 'complete'].forEach(function (k) {
+            obj[k] = function (res) {
+              options[k] && options[k](res);
+
+              if (k === 'success') {
+                if (key === 'connectSocket') {
+                  resolve(Promise.resolve().then(function () {
+                    return Object.assign(task, res);
+                  }));
+                } else {
+                  resolve(res);
+                }
+              } else if (k === 'fail') {
+                reject(res);
+              }
+            };
+          });
+
+          if (args.length) {
+            var _wx2;
+
+            task = (_wx2 = wx)[key].apply(_wx2, [obj].concat(args));
+          } else {
+            task = wx[key](obj);
+          }
+        });
+
+        if (key === 'uploadFile' || key === 'downloadFile') {
+          p.progress = function (cb) {
+            if (task) {
+              task.onProgressUpdate(cb);
+            }
+
+            return p;
+          };
+
+          p.abort = function (cb) {
+            cb && cb();
+
+            if (task) {
+              task.abort();
+            }
+
+            return p;
+          };
+        }
+
+        return p;
+      };
+    } else {
+      taro[key] = function () {
+        for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          args[_key3] = arguments[_key3];
+        }
+
+        var argsLen = args.length;
+        var newArgs = args.concat();
+        var lastArg = newArgs[argsLen - 1];
+
+        if (lastArg && lastArg.isTaroComponent && lastArg.$scope) {
+          newArgs.splice(argsLen - 1, 1, lastArg.$scope);
+        }
+
+        return wx[key].apply(wx, newArgs);
+      };
+    }
+  });
+}
+
+function pxTransform(size) {
+  var _ref = this.config || {},
+      _ref$designWidth = _ref.designWidth,
+      designWidth = _ref$designWidth === void 0 ? 750 : _ref$designWidth,
+      _ref$deviceRatio = _ref.deviceRatio,
+      deviceRatio = _ref$deviceRatio === void 0 ? {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2
+  } : _ref$deviceRatio;
+
+  if (!(designWidth in deviceRatio)) {
+    throw new Error("deviceRatio \u914D\u7F6E\u4E2D\u4E0D\u5B58\u5728 ".concat(designWidth, " \u7684\u8BBE\u7F6E\uFF01"));
+  }
+
+  return parseInt(size, 10) * deviceRatio[designWidth] + 'rpx';
+}
+
+function canIUseWebp() {
+  var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
+      platform = _wx$getSystemInfoSync.platform;
+
+  var platformLower = platform.toLowerCase();
+
+  if (platformLower === 'android' || platformLower === 'devtools') {
+    return true;
+  }
+
+  return false;
+}
+
+function wxCloud(taro) {
+  var wxC = wx.cloud || {};
+  var wxcloud = {};
+  var apiList = ['init', 'database', 'uploadFile', 'downloadFile', 'getTempFileURL', 'deleteFile', 'callFunction', 'CloudID'];
+  apiList.forEach(function (v) {
+    wxcloud[v] = wxC[v];
+  });
+  taro.cloud = wxcloud;
+}
+
+function initNativeApi(taro) {
+  processApis(taro);
+  taro.request = link.request.bind(link);
+  taro.addInterceptor = link.addInterceptor.bind(link);
+  taro.cleanInterceptors = link.cleanInterceptors.bind(link);
+  taro.getCurrentPages = getCurrentPages;
+  taro.getApp = getApp;
+  taro.requirePlugin = requirePlugin;
+  taro.initPxTransform = initPxTransform.bind(taro);
+  taro.pxTransform = pxTransform.bind(taro);
+  taro.canIUseWebp = canIUseWebp;
+  wxCloud(taro);
+}
+
+/***/ })
+
+}]);
+//# sourceMappingURL=taro.js.map

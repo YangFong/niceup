@@ -41,7 +41,7 @@ export default function Index() {
   showShareMenu({ withShareTicket: true });
 
   useShareAppMessage(() => {
-    return { title: '享瘦厨房' };
+    return { title: '海诚纬业' };
   });
 
   if (!tags) return <View></View>;

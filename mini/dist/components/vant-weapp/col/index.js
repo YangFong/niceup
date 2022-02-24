@@ -1,1 +1,45 @@
-(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[27],{173:function(t,e,a){"use strict";a.r(e);var n=a(5);Object(n["a"])({relation:{name:"row",type:"ancestor",current:"col"},props:{span:Number,offset:Number},data:{viewStyle:""},methods:{setGutter:function(t){var e="".concat(t/2,"px"),a=t?"padding-left: ".concat(e,"; padding-right: ").concat(e,";"):"";a!==this.data.viewStyle&&this.setData({viewStyle:a})}}})}},[[173,0,1,2]]]);
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["components/vant-weapp/col/index"],{
+
+/***/ "./src/components/vant-weapp/col/index.js":
+/*!************************************************!*\
+  !*** ./src/components/vant-weapp/col/index.js ***!
+  \************************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/component */ "./src/components/vant-weapp/common/component.js");
+
+Object(_common_component__WEBPACK_IMPORTED_MODULE_0__[/* VantComponent */ "a"])({
+  relation: {
+    name: 'row',
+    type: 'ancestor',
+    current: 'col'
+  },
+  props: {
+    span: Number,
+    offset: Number
+  },
+  data: {
+    viewStyle: ''
+  },
+  methods: {
+    setGutter: function setGutter(gutter) {
+      var padding = "".concat(gutter / 2, "px");
+      var viewStyle = gutter ? "padding-left: ".concat(padding, "; padding-right: ").concat(padding, ";") : '';
+
+      if (viewStyle !== this.data.viewStyle) {
+        this.setData({
+          viewStyle: viewStyle
+        });
+      }
+    }
+  }
+});
+
+/***/ })
+
+},[["./src/components/vant-weapp/col/index.js","runtime","vendors","common"]]]);
+//# sourceMappingURL=index.js.map

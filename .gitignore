@@ -9,3 +9,4 @@ mini/.linaria-cache
 screenshot.sketch
 _init_tcb-env.js
 *.map
+.idea

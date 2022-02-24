@@ -1,1 +1,84 @@
-(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[103],{176:function(e,t,n){"use strict";n.r(t);var r=n(5);Object(r["a"])({relation:{name:"tabbar-item",type:"descendant",current:"tabbar",linked:function(e){e.parent=this,e.updateFromParent()},unlinked:function(){this.updateChildren()}},props:{active:{type:null,observer:"updateChildren"},activeColor:{type:String,observer:"updateChildren"},inactiveColor:{type:String,observer:"updateChildren"},fixed:{type:Boolean,value:!0},border:{type:Boolean,value:!0},zIndex:{type:Number,value:1},safeAreaInsetBottom:{type:Boolean,value:!0}},methods:{updateChildren:function(){var e=this.children;return Array.isArray(e)&&e.length?Promise.all(e.map((function(e){return e.updateFromParent()}))):Promise.resolve()},onChange:function(e){var t=this.children.indexOf(e),n=e.data.name||t;n!==this.data.active&&this.$emit("change",n)}}})}},[[176,0,1,2]]]);
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["components/vant-weapp/tabbar/index"],{
+
+/***/ "./src/components/vant-weapp/tabbar/index.js":
+/*!***************************************************!*\
+  !*** ./src/components/vant-weapp/tabbar/index.js ***!
+  \***************************************************/
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/component */ "./src/components/vant-weapp/common/component.js");
+
+Object(_common_component__WEBPACK_IMPORTED_MODULE_0__[/* VantComponent */ "a"])({
+  relation: {
+    name: 'tabbar-item',
+    type: 'descendant',
+    current: 'tabbar',
+    linked: function linked(target) {
+      target.parent = this;
+      target.updateFromParent();
+    },
+    unlinked: function unlinked() {
+      this.updateChildren();
+    }
+  },
+  props: {
+    active: {
+      type: null,
+      observer: 'updateChildren'
+    },
+    activeColor: {
+      type: String,
+      observer: 'updateChildren'
+    },
+    inactiveColor: {
+      type: String,
+      observer: 'updateChildren'
+    },
+    fixed: {
+      type: Boolean,
+      value: true
+    },
+    border: {
+      type: Boolean,
+      value: true
+    },
+    zIndex: {
+      type: Number,
+      value: 1
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
+  },
+  methods: {
+    updateChildren: function updateChildren() {
+      var children = this.children;
+
+      if (!Array.isArray(children) || !children.length) {
+        return Promise.resolve();
+      }
+
+      return Promise.all(children.map(function (child) {
+        return child.updateFromParent();
+      }));
+    },
+    onChange: function onChange(child) {
+      var index = this.children.indexOf(child);
+      var active = child.data.name || index;
+
+      if (active !== this.data.active) {
+        this.$emit('change', active);
+      }
+    }
+  }
+});
+
+/***/ })
+
+},[["./src/components/vant-weapp/tabbar/index.js","runtime","vendors","common"]]]);
+//# sourceMappingURL=index.js.map

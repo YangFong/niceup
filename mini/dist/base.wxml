@@ -5,44 +5,12 @@
   </block>
 </template>
 
-<template name="tmpl_0_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_0_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_0_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_0_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_0_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_0_text">
@@ -62,7 +30,7 @@
 </template>
 
 <template name="tmpl_0_swiper">
-  <swiper indicator-dots="{{xs.b(i.indicatorDots,false)}}" indicator-color="{{xs.b(i.indicatorColor,'rgba(0, 0, 0, .3)')}}" indicator-active-color="{{xs.b(i.indicatorActiveColor,'#000000')}}" autoplay="{{xs.b(i.autoplay,false)}}" current="{{xs.b(i.current,0)}}" interval="{{xs.b(i.interval,5000)}}" duration="{{xs.b(i.duration,500)}}" circular="{{xs.b(i.circular,false)}}" vertical="{{xs.b(i.vertical,false)}}" previous-margin="{{xs.b(i.previousMargin,'0px')}}" next-margin="{{xs.b(i.nextMargin,'0px')}}" snap-to-edge="{{xs.b(i.snapToEdge,false)}}" display-multiple-items="{{xs.b(i.displayMultipleItems,1)}}" skip-hidden-item-layout="{{xs.b(i.skipHiddenItemLayout,false)}}" easing-function="{{xs.b(i.easingFunction,'default')}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+  <swiper indicator-dots="{{xs.b(i.indicatorDots,false)}}" indicator-color="{{xs.b(i.indicatorColor,'rgba(0, 0, 0, .3)')}}" indicator-active-color="{{xs.b(i.indicatorActiveColor,'#000000')}}" autoplay="{{xs.b(i.autoplay,false)}}" current="{{xs.b(i.current,0)}}" interval="{{xs.b(i.interval,5000)}}" duration="{{xs.b(i.duration,500)}}" circular="{{xs.b(i.circular,false)}}" vertical="{{xs.b(i.vertical,false)}}" previous-margin="{{xs.b(i.previousMargin,'0px')}}" next-margin="{{xs.b(i.nextMargin,'0px')}}" display-multiple-items="{{xs.b(i.displayMultipleItems,1)}}" skip-hidden-item-layout="{{xs.b(i.skipHiddenItemLayout,false)}}" easing-function="{{xs.b(i.easingFunction,'default')}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
@@ -75,14 +43,6 @@
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </swiper-item>
-</template>
-
-<template name="tmpl_0_static-image">
-  <image src="{{i.src}}" mode="{{xs.b(i.mode,'scaleToFill')}}" webp="{{xs.b(i.webp,false)}}" lazy-load="{{xs.b(i.lazyLoad,false)}}" show-menu-by-longpress="{{xs.b(i.showMenuByLongpress,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </image>
 </template>
 
 <template name="tmpl_0_image">
@@ -114,7 +74,7 @@
 </template>
 
 <template name="tmpl_0_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_1_container" data="{{i:item,l:l}}" />
     </block>
@@ -317,44 +277,12 @@
   <template is="{{xs.a(0, i.nn, l)}}" data="{{i:i,cid:0,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_1_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_1_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_1_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_1_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_1_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_1_text">
@@ -373,22 +301,6 @@
   </scroll-view>
 </template>
 
-<template name="tmpl_1_swiper">
-  <swiper indicator-dots="{{xs.b(i.indicatorDots,false)}}" indicator-color="{{xs.b(i.indicatorColor,'rgba(0, 0, 0, .3)')}}" indicator-active-color="{{xs.b(i.indicatorActiveColor,'#000000')}}" autoplay="{{xs.b(i.autoplay,false)}}" current="{{xs.b(i.current,0)}}" interval="{{xs.b(i.interval,5000)}}" duration="{{xs.b(i.duration,500)}}" circular="{{xs.b(i.circular,false)}}" vertical="{{xs.b(i.vertical,false)}}" previous-margin="{{xs.b(i.previousMargin,'0px')}}" next-margin="{{xs.b(i.nextMargin,'0px')}}" snap-to-edge="{{xs.b(i.snapToEdge,false)}}" display-multiple-items="{{xs.b(i.displayMultipleItems,1)}}" skip-hidden-item-layout="{{xs.b(i.skipHiddenItemLayout,false)}}" easing-function="{{xs.b(i.easingFunction,'default')}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper>
-</template>
-
-<template name="tmpl_1_swiper-item">
-  <swiper-item item-id="{{i.itemId}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper-item>
-</template>
-
 <template name="tmpl_1_slot">
   <view slot="{{i.name}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -398,7 +310,7 @@
 </template>
 
 <template name="tmpl_1_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_2_container" data="{{i:item,l:l}}" />
     </block>
@@ -601,44 +513,12 @@
   <template is="{{xs.a(1, i.nn, l)}}" data="{{i:i,cid:1,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_2_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_2_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_2_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_2_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_2_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_2_text">
@@ -657,22 +537,6 @@
   </scroll-view>
 </template>
 
-<template name="tmpl_2_swiper">
-  <swiper indicator-dots="{{xs.b(i.indicatorDots,false)}}" indicator-color="{{xs.b(i.indicatorColor,'rgba(0, 0, 0, .3)')}}" indicator-active-color="{{xs.b(i.indicatorActiveColor,'#000000')}}" autoplay="{{xs.b(i.autoplay,false)}}" current="{{xs.b(i.current,0)}}" interval="{{xs.b(i.interval,5000)}}" duration="{{xs.b(i.duration,500)}}" circular="{{xs.b(i.circular,false)}}" vertical="{{xs.b(i.vertical,false)}}" previous-margin="{{xs.b(i.previousMargin,'0px')}}" next-margin="{{xs.b(i.nextMargin,'0px')}}" snap-to-edge="{{xs.b(i.snapToEdge,false)}}" display-multiple-items="{{xs.b(i.displayMultipleItems,1)}}" skip-hidden-item-layout="{{xs.b(i.skipHiddenItemLayout,false)}}" easing-function="{{xs.b(i.easingFunction,'default')}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper>
-</template>
-
-<template name="tmpl_2_swiper-item">
-  <swiper-item item-id="{{i.itemId}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper-item>
-</template>
-
 <template name="tmpl_2_slot">
   <view slot="{{i.name}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -682,7 +546,7 @@
 </template>
 
 <template name="tmpl_2_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_3_container" data="{{i:item,l:l}}" />
     </block>
@@ -885,44 +749,12 @@
   <template is="{{xs.a(2, i.nn, l)}}" data="{{i:i,cid:2,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_3_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_3_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_3_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_3_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_3_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_3_text">
@@ -941,22 +773,6 @@
   </scroll-view>
 </template>
 
-<template name="tmpl_3_swiper">
-  <swiper indicator-dots="{{xs.b(i.indicatorDots,false)}}" indicator-color="{{xs.b(i.indicatorColor,'rgba(0, 0, 0, .3)')}}" indicator-active-color="{{xs.b(i.indicatorActiveColor,'#000000')}}" autoplay="{{xs.b(i.autoplay,false)}}" current="{{xs.b(i.current,0)}}" interval="{{xs.b(i.interval,5000)}}" duration="{{xs.b(i.duration,500)}}" circular="{{xs.b(i.circular,false)}}" vertical="{{xs.b(i.vertical,false)}}" previous-margin="{{xs.b(i.previousMargin,'0px')}}" next-margin="{{xs.b(i.nextMargin,'0px')}}" snap-to-edge="{{xs.b(i.snapToEdge,false)}}" display-multiple-items="{{xs.b(i.displayMultipleItems,1)}}" skip-hidden-item-layout="{{xs.b(i.skipHiddenItemLayout,false)}}" easing-function="{{xs.b(i.easingFunction,'default')}}" bindchange="eh" bindtransition="eh" bindanimationfinish="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper>
-</template>
-
-<template name="tmpl_3_swiper-item">
-  <swiper-item item-id="{{i.itemId}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </swiper-item>
-</template>
-
 <template name="tmpl_3_slot">
   <view slot="{{i.name}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -966,7 +782,7 @@
 </template>
 
 <template name="tmpl_3_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_4_container" data="{{i:item,l:l}}" />
     </block>
@@ -1169,44 +985,12 @@
   <template is="{{xs.a(3, i.nn, l)}}" data="{{i:i,cid:3,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_4_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_4_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_4_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_4_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_4_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_4_text">
@@ -1226,7 +1010,7 @@
 </template>
 
 <template name="tmpl_4_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_5_container" data="{{i:item,l:l}}" />
     </block>
@@ -1429,44 +1213,12 @@
   <template is="{{xs.a(4, i.nn, l)}}" data="{{i:i,cid:4,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_5_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_5_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_5_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_5_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
-</template>
-
-<template name="tmpl_5_static-text">
-  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </text>
 </template>
 
 <template name="tmpl_5_text">
@@ -1486,7 +1238,7 @@
 </template>
 
 <template name="tmpl_5_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_6_container" data="{{i:item,l:l}}" />
     </block>
@@ -1689,36 +1441,20 @@
   <template is="{{xs.a(5, i.nn, l)}}" data="{{i:i,cid:5,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_6_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_6_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_6_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_6_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
+</template>
+
+<template name="tmpl_6_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
 </template>
 
 <template name="tmpl_6_slot">
@@ -1730,7 +1466,7 @@
 </template>
 
 <template name="tmpl_6_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_7_container" data="{{i:item,l:l}}" />
     </block>
@@ -1933,36 +1669,20 @@
   <template is="{{xs.a(6, i.nn, l)}}" data="{{i:i,cid:6,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_7_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_7_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_7_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_7_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
     </block>
   </view>
+</template>
+
+<template name="tmpl_7_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
 </template>
 
 <template name="tmpl_7_slot">
@@ -1974,7 +1694,7 @@
 </template>
 
 <template name="tmpl_7_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_8_container" data="{{i:item,l:l}}" />
     </block>
@@ -2177,30 +1897,6 @@
   <template is="{{xs.a(7, i.nn, l)}}" data="{{i:i,cid:7,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_8_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_8_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_8_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_8_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -2209,8 +1905,16 @@
   </view>
 </template>
 
+<template name="tmpl_8_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_8_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_9_container" data="{{i:item,l:l}}" />
     </block>
@@ -2413,30 +2117,6 @@
   <template is="{{xs.a(8, i.nn, l)}}" data="{{i:i,cid:8,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_9_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_9_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_9_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_9_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -2445,8 +2125,16 @@
   </view>
 </template>
 
+<template name="tmpl_9_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_9_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_10_container" data="{{i:item,l:l}}" />
     </block>
@@ -2649,30 +2337,6 @@
   <template is="{{xs.a(9, i.nn, l)}}" data="{{i:i,cid:9,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_10_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_10_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_10_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_10_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -2681,8 +2345,16 @@
   </view>
 </template>
 
+<template name="tmpl_10_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_10_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_11_container" data="{{i:item,l:l}}" />
     </block>
@@ -2885,30 +2557,6 @@
   <template is="{{xs.a(10, i.nn, l)}}" data="{{i:i,cid:10,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_11_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_11_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_11_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_11_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -2917,8 +2565,16 @@
   </view>
 </template>
 
+<template name="tmpl_11_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_11_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_12_container" data="{{i:item,l:l}}" />
     </block>
@@ -3121,30 +2777,6 @@
   <template is="{{xs.a(11, i.nn, l)}}" data="{{i:i,cid:11,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_12_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_12_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_12_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_12_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -3153,8 +2785,16 @@
   </view>
 </template>
 
+<template name="tmpl_12_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_12_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_13_container" data="{{i:item,l:l}}" />
     </block>
@@ -3357,30 +2997,6 @@
   <template is="{{xs.a(12, i.nn, l)}}" data="{{i:i,cid:12,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_13_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_13_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_13_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_13_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -3389,8 +3005,16 @@
   </view>
 </template>
 
+<template name="tmpl_13_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_13_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_14_container" data="{{i:item,l:l}}" />
     </block>
@@ -3593,30 +3217,6 @@
   <template is="{{xs.a(13, i.nn, l)}}" data="{{i:i,cid:13,l:xs.f(l,i.nn)}}" />
 </template>
 
-<template name="tmpl_14_catch-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh" catchtouchmove="eh"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_14_static-view">
-  <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
-<template name="tmpl_14_pure-view">
-  <view style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <block wx:for="{{i.cn}}" wx:key="uid">
-      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
-    </block>
-  </view>
-</template>
-
 <template name="tmpl_14_view">
   <view hover-class="{{xs.b(i.hoverClass,'none')}}" hover-stop-propagation="{{xs.b(i.hoverStopPropagation,false)}}" hover-start-time="{{xs.b(i.hoverStartTime,50)}}" hover-stay-time="{{xs.b(i.hoverStayTime,400)}}" animation="{{i.animation}}" bindanimationstart="eh" bindanimationiteration="eh" bindanimationend="eh" bindtransitionend="eh" bindtouchstart="eh" bindtouchmove="eh" bindtouchend="eh" bindtouchcancel="eh" bindlongpress="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
@@ -3625,8 +3225,16 @@
   </view>
 </template>
 
+<template name="tmpl_14_text">
+  <text selectable="{{xs.b(i.selectable,false)}}" space="{{i.space}}" decode="{{xs.b(i.decode,false)}}" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid}}">
+    <block wx:for="{{i.cn}}" wx:key="uid">
+      <template is="{{xs.e(cid+1)}}" data="{{i:item,l:l}}" />
+    </block>
+  </text>
+</template>
+
 <template name="tmpl_14_van-button">
-  <van-button icon="{{i.icon}}" bindclick="eh" round="{{i.round}}" type="{{i.type}}" className="{{i.className}}" loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" openType="{{i.openType}}" bind:get-user-info="eh" customClass="{{i.customClass}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
+  <van-button loading="{{i.loading}}" loadingText="{{i.loadingText}}" block="{{i.block}}" type="{{i.type}}" openType="{{i.openType}}" bindgetuserinfo="eh" bindclick="eh" customClass="{{i.customClass}}" icon="{{i.icon}}" round="{{i.round}}" className="{{i.className}}" size="{{i.size}}" customStyle="{{i.customStyle}}" color="{{i.color}}"  id="{{i.uid}}">
     <block wx:for="{{i.cn}}" wx:key="uid">
       <template is="tmpl_15_container" data="{{i:item,l:l}}" />
     </block>
@@ -3830,10 +3438,5 @@
 </template>
 
 <template name="tmpl_15_container">
-  <block wx:if="{{i.nn === '#text'}}">
-    <template is="tmpl_0_#text" data="{{i:i}}" />
-  </block>
-  <block wx:else>
-    <comp i="{{i}}" l="{{l}}" />
-  </block>
+  <comp i="{{i}}" l="{{l}}" />
 </template>

@@ -1,7 +1,7 @@
 module.exports = {
   a: function (l, n, s) {
-    var a = ["view","cover-view","catch-view","static-view","pure-view","block","text","static-text","slot","slot-view","label","form","scroll-view","swiper","swiper-item","van-button","van-toast","van-tab","van-tabs","van-sticky","van-row","van-col","van-tabbar","van-tabbar-item","van-goods-action","van-goods-action-icon","van-goods-action-button","van-cell","van-cell-group","van-icon","van-notice-bar","van-count-down","van-action-sheet","van-stepper","van-tag","van-image","van-submit-bar","van-empty","van-card","wemark"]
-    var b = ["text","static-text","slot","slot-view","label","form","scroll-view","swiper","swiper-item"]
+    var a = ["view","cover-view","block","text","slot","slot-view","label","form","scroll-view","van-button","van-toast","van-tab","van-tabs","van-sticky","van-row","van-col","van-tabbar","van-tabbar-item","van-goods-action","van-goods-action-icon","van-goods-action-button","van-cell","van-cell-group","van-icon","van-notice-bar","van-count-down","van-action-sheet","van-stepper","van-tag","van-image","van-submit-bar","van-empty","van-card","wemark"]
+    var b = ["slot","slot-view","label","form","scroll-view"]
     if (a.indexOf(n) === -1) {
       l = 0
     }
@@ -29,7 +29,7 @@ module.exports = {
     return 'tmpl_' + n + '_container'
   },
   f: function (l, n) {
-    var b = ["text","static-text","slot","slot-view","label","form","scroll-view","swiper","swiper-item"]
+    var b = ["slot","slot-view","label","form","scroll-view"]
     if (b.indexOf(n) > -1) {
       if (l) l += ','
       l += n
