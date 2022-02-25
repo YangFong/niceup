@@ -4,6 +4,7 @@ import { QueryCache, ReactQueryCacheProvider } from 'react-query';
 const queryCache = new QueryCache();
 
 import './app.less';
+import './assets/bg4.jpg'
 
 class App extends Component {
   componentDidMount() {

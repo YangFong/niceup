@@ -10,23 +10,25 @@
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Detail; });
-/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/components/mini/index.js");
-/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash.find */ "./node_modules/lodash.find/index.js");
-/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_vant_weapp_toast_toast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/vant-weapp/toast/toast */ "./src/components/vant-weapp/toast/toast.js");
-/* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/hero */ "./src/components/hero/index.tsx");
-/* harmony import */ var _components_specs_sheet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/specs-sheet */ "./src/components/specs-sheet/index.tsx");
-/* harmony import */ var _hooks_useProducts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/useProducts */ "./src/hooks/useProducts.ts");
-/* harmony import */ var _hooks_useBag__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/useBag */ "./src/hooks/useBag.ts");
-/* harmony import */ var _hooks_useConfirm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/useConfirm */ "./src/hooks/useConfirm.ts");
-/* harmony import */ var _detail_less__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./detail.less */ "./src/pages/detail/detail.less");
-/* harmony import */ var _detail_less__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_detail_less__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _hooks_useNotice__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../hooks/useNotice */ "./src/hooks/useNotice.ts");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/components/mini/index.js");
+/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash.find */ "./node_modules/lodash.find/index.js");
+/* harmony import */ var lodash_find__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_find__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_vant_weapp_toast_toast__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/vant-weapp/toast/toast */ "./src/components/vant-weapp/toast/toast.js");
+/* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/hero */ "./src/components/hero/index.tsx");
+/* harmony import */ var _components_specs_sheet__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/specs-sheet */ "./src/components/specs-sheet/index.tsx");
+/* harmony import */ var _hooks_useProducts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/useProducts */ "./src/hooks/useProducts.ts");
+/* harmony import */ var _hooks_useBag__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../hooks/useBag */ "./src/hooks/useBag.ts");
+/* harmony import */ var _hooks_useConfirm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../hooks/useConfirm */ "./src/hooks/useConfirm.ts");
+/* harmony import */ var _detail_less__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./detail.less */ "./src/pages/detail/detail.less");
+/* harmony import */ var _detail_less__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_detail_less__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _hooks_useNotice__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../hooks/useNotice */ "./src/hooks/useNotice.ts");
+
 
 
 
@@ -46,63 +48,63 @@ function Detail() {
   // const time = 60 * 60 * 1000
 
 
-  var _useNotice = Object(_hooks_useNotice__WEBPACK_IMPORTED_MODULE_12__[/* useNotice */ "a"])('detail'),
+  var _useNotice = Object(_hooks_useNotice__WEBPACK_IMPORTED_MODULE_13__[/* useNotice */ "a"])('detail'),
       notices = _useNotice.data;
 
-  var _useConfirm = Object(_hooks_useConfirm__WEBPACK_IMPORTED_MODULE_10__[/* useConfirm */ "a"])(),
+  var _useConfirm = Object(_hooks_useConfirm__WEBPACK_IMPORTED_MODULE_11__[/* useConfirm */ "a"])(),
       addConfirm = _useConfirm.addConfirm;
 
-  var params = (_getCurrentInstance$r = Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_2__["getCurrentInstance"])().router) === null || _getCurrentInstance$r === void 0 ? void 0 : _getCurrentInstance$r.params;
+  var params = (_getCurrentInstance$r = Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__["getCurrentInstance"])().router) === null || _getCurrentInstance$r === void 0 ? void 0 : _getCurrentInstance$r.params;
   var id = params.id;
 
-  var _useProduct = Object(_hooks_useProducts__WEBPACK_IMPORTED_MODULE_8__[/* useProduct */ "a"])(id),
+  var _useProduct = Object(_hooks_useProducts__WEBPACK_IMPORTED_MODULE_9__[/* useProduct */ "a"])(id),
       data = _useProduct.data;
 
-  var _useBag = Object(_hooks_useBag__WEBPACK_IMPORTED_MODULE_9__[/* useBag */ "a"])(),
-      _useBag2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useBag, 2),
+  var _useBag = Object(_hooks_useBag__WEBPACK_IMPORTED_MODULE_10__[/* useBag */ "a"])(),
+      _useBag2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_useBag, 2),
       bag = _useBag2[0],
       addProdct = _useBag2[1].addProdct;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-      _useState2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+      _useState2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_useState, 2),
       show = _useState2[0],
       setShow = _useState2[1];
 
-  var addFlag = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(false);
+  var addFlag = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(false);
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
     num: 1,
     specId: null
   }),
-      _useState4 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState3, 2),
+      _useState4 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_useState3, 2),
       selectObj = _useState4[0],
       setSelectObj = _useState4[1];
 
-  var selectSpec = data ? lodash_find__WEBPACK_IMPORTED_MODULE_4___default()(data.specs, function (o) {
+  var selectSpec = data ? lodash_find__WEBPACK_IMPORTED_MODULE_5___default()(data.specs, function (o) {
     return o._id == selectObj.specId;
   }) : null;
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     if (addFlag.current && selectSpec) {
       doAdd();
       addFlag.current = false;
     }
   }, [selectSpec]);
-  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_2__["useShareTimeline"])(function () {
+  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__["useShareTimeline"])(function () {
     return {
       title: data === null || data === void 0 ? void 0 : data.title
     };
   });
-  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_2__["useShareAppMessage"])(function () {
+  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__["useShareAppMessage"])(function () {
     return {
       title: data === null || data === void 0 ? void 0 : data.title
     };
   });
-  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_2__["showShareMenu"])({
+  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__["showShareMenu"])({
     withShareTicket: true
   });
 
   if (!data) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], null);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], null);
   }
 
   var endTime = data.end;
@@ -127,7 +129,7 @@ function Detail() {
   };
 
   var doAdd = function doAdd() {
-    _components_vant_weapp_toast_toast__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"].success('加入成功~');
+    _components_vant_weapp_toast_toast__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"].success('加入成功~');
     addProdct(data, selectSpec, selectObj.num);
   };
 
@@ -145,19 +147,38 @@ function Detail() {
         num: selectObj.num
       };
       addConfirm([psn]);
-      _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.navigateTo({
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default.a.navigateTo({
         url: '/pages/bag/confirm/confirm'
       });
     } else {
       setShow(true);
     }
-  };
+  }; // 计算最大值与最小值
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+
+  var maxSpec = -Infinity;
+  var minSpec = Infinity;
+
+  var _iterator = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(data.specs),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var price = _step.value.price;
+      maxSpec = Math.max(maxSpec, price);
+      minSpec = Math.min(minSpec, price);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "detail"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_hero__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_hero__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], {
     kv: data.kv
-  }), notices && (notices === null || notices === void 0 ? void 0 : notices.length) > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-notice-bar", {
+  }), notices && (notices === null || notices === void 0 ? void 0 : notices.length) > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-notice-bar", {
     "left-icon": notices[0].icon,
     color: notices[0].color,
     background: notices[0].background,
@@ -165,7 +186,7 @@ function Detail() {
     text: notices[0].message,
     onClick: function onClick() {
       if (notices[0].needFeedback) {
-        _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.navigateToMiniProgram({
+        _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default.a.navigateToMiniProgram({
           appId: 'wx8abaf00ee8c3202e',
           extraData: {
             id: '296232'
@@ -173,15 +194,15 @@ function Detail() {
         });
       }
     }
-  }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+  }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "info"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "price"
-  }, "\uFFE5", data.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+  }, "\uFFE5", minSpec < maxSpec ? "".concat(minSpec, " ~ ").concat(maxSpec) : data.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "title"
-  }, data.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-cell-group", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+  }, data.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-cell-group", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "border__bottom"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-cell", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-cell", {
     title: "\u9009\u62E9\u89C4\u683C",
     value: selectObj.specId ? "".concat(selectSpec.title, " x ").concat(selectObj.num) : ' ',
     isLink: true,
@@ -189,42 +210,42 @@ function Detail() {
       addFlag.current = true;
       setShow(true);
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-cell", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-cell", {
     title: isEnd ? '已结束' : '距离结束'
-  }, !isEnd && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-count-down", {
+  }, !isEnd && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-count-down", {
     time: time,
     format: "DD \u5929 HH \u65F6 mm \u5206 ss \u79D2"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_3__[/* View */ "f"], {
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__[/* View */ "f"], {
     className: "markdown"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("wemark", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("wemark", {
     md: data.info,
     link: true,
     highlight: true,
     type: "wemark"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-toast", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-toast", {
     id: "van-toast"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_specs_sheet__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_specs_sheet__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"], {
     show: show,
     onClose: handleClose,
     num: selectObj.num,
     specs: data.specs,
     specId: selectObj.specId,
     onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-goods-action", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-goods-action-icon", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-goods-action", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-goods-action-icon", {
     onClick: function onClick() {
-      _tarojs_taro__WEBPACK_IMPORTED_MODULE_2___default.a.switchTab({
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default.a.switchTab({
         url: '/pages/bag/bag'
       });
     },
     icon: "shopping-cart-o",
     text: "\u8D2D\u7269\u8F66",
     info: bag.length > 0 ? bag.length : null
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-goods-action-button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-goods-action-button", {
     color: "#6DCFD0",
     text: "\u52A0\u5165\u8D2D\u7269\u8F66",
     type: "warning",
     onClick: handleAddBag
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("van-goods-action-button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("van-goods-action-button", {
     color: "#0e9a9c",
     text: "\u7ACB\u5373\u8D2D\u4E70",
     onClick: handleBay

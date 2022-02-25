@@ -65,4 +65,18 @@
   font-size: 30rpx;
   margin-bottom: 10rpx;
 }
+.van-button__text {
+  background: initial;
+}
+.icon-index--van-goods-action-icon {
+  background: #c9e1fd !important;
+}
+.b4u3by4,
+.van-sticky,
+.van-sticky-wrap {
+  background: #0000;
+}
+.van-icon.van-icon-arrow-left {
+  background: initial;
+}
 

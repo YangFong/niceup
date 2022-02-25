@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "PORT=8080 PUBLIC_URL=./ react-app-rewired start",
+    "start-pc": "set PORT=8080 && react-scripts start",
     "build": "yarn clean && PUBLIC_URL=./ react-app-rewired build",
     "clean": "rimraf build"
   },
@@ -37,7 +38,7 @@
     "store": "^2.0.12",
     "styled-components": "^5.2.1",
     "swr": "^0.3.8",
-    "typescript": "^4.0.3",
+    "typescript": "4.0.5",
     "web-vitals": "^0.2.4"
   },
   "prettier": "@ss-fe/prettier-config",

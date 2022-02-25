@@ -249,17 +249,18 @@ __webpack_require__(/*! ../../../.linaria-cache/src/components/kv/index.linaria.
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductList; });
 /* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
 /* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
-/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var linaria_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! linaria/react */ "./node_modules/linaria/esm/react/index.js");
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/components/mini/index.js");
-/* harmony import */ var _hooks_useProducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/useProducts */ "./src/hooks/useProducts.ts");
-/* harmony import */ var lodash_uniqby__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash.uniqby */ "./node_modules/lodash.uniqby/index.js");
-/* harmony import */ var lodash_uniqby__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(lodash_uniqby__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.less */ "./src/components/product-list/index.less");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/cjs/react.production.min.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var linaria_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! linaria/react */ "./node_modules/linaria/esm/react/index.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/components/mini/index.js");
+/* harmony import */ var _hooks_useProducts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/useProducts */ "./src/hooks/useProducts.ts");
+/* harmony import */ var lodash_uniqby__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash.uniqby */ "./node_modules/lodash.uniqby/index.js");
+/* harmony import */ var lodash_uniqby__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash_uniqby__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.less */ "./src/components/product-list/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -269,7 +270,8 @@ __webpack_require__(/*! ../../../.linaria-cache/src/components/kv/index.linaria.
 
 
 
-var Slogan = /*#__PURE__*/Object(linaria_react__WEBPACK_IMPORTED_MODULE_4__[/* styled */ "a"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"])({
+
+var Slogan = /*#__PURE__*/Object(linaria_react__WEBPACK_IMPORTED_MODULE_5__[/* styled */ "a"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"])({
   name: "Slogan",
   class: "s1lu60a1",
   vars: {
@@ -282,32 +284,54 @@ function ProductCard(props) {
   var data = props.data;
 
   var handleClick = function handleClick() {
-    _tarojs_taro__WEBPACK_IMPORTED_MODULE_3___default.a.navigateTo({
+    _tarojs_taro__WEBPACK_IMPORTED_MODULE_4___default.a.navigateTo({
       url: "/pages/detail/detail?id=".concat(data._id)
     });
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("van-col", {
+  var res = Object(_hooks_useProducts__WEBPACK_IMPORTED_MODULE_7__[/* useProduct */ "a"])(data._id); // 计算最大值与最小值
+
+  var maxSpec = -Infinity;
+  var minSpec = Infinity;
+
+  var _iterator = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])((res.data || {
+    specs: []
+  }).specs),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var price = _step.value.price;
+      maxSpec = Math.max(maxSpec, price);
+      minSpec = Math.min(minSpec, price);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("van-col", {
     span: "12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "product-wapper",
     onClick: handleClick
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "image"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* Image */ "a"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* Image */ "a"], {
     src: data.thumb,
     mode: "aspectFill"
-  }), data.desc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](Slogan, {
+  }), data.desc && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](Slogan, {
     color: data.color
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "txt"
-  }, data.desc))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, data.desc))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "title"
-  }, data.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, data.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "price"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
-    className: "curr"
-  }, "\uFFE5", data.price), data.price_o != 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
+    className: "price"
+  }, "\uFFE5", minSpec < maxSpec ? "".concat(minSpec, " ~ ").concat(maxSpec) : data.price), data.price_o != 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     className: "ori"
   }, data.price_o))));
 }
@@ -315,41 +339,41 @@ function ProductList(props) {
   var curr = props.curr,
       tag = props.tag;
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"]([]),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_3__["useState"]([]),
       _React$useState2 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_React$useState, 2),
       data = _React$useState2[0],
       setData = _React$useState2[1];
 
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](0),
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_3__["useState"](0),
       _React$useState4 = Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_React$useState3, 2),
       page = _React$useState4[0],
       setPage = _React$useState4[1];
 
-  var _useProducts = Object(_hooks_useProducts__WEBPACK_IMPORTED_MODULE_6__[/* useProducts */ "b"])(page, tag),
+  var _useProducts = Object(_hooks_useProducts__WEBPACK_IMPORTED_MODULE_7__[/* useProducts */ "b"])(page, tag),
       resolvedData = _useProducts.data;
 
-  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_3__["useReachBottom"])(function () {
+  Object(_tarojs_taro__WEBPACK_IMPORTED_MODULE_4__["useReachBottom"])(function () {
     if (curr == tag) {
       setPage(function (old) {
         return !resolvedData || !resolvedData['hasMore'] ? old : old + 1;
       });
     }
   });
-  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+  react__WEBPACK_IMPORTED_MODULE_3__["useEffect"](function () {
     if (resolvedData === null || resolvedData === void 0 ? void 0 : resolvedData.data) {
       setData(function (old) {
-        return lodash_uniqby__WEBPACK_IMPORTED_MODULE_7___default()([].concat(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(old), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(resolvedData.data)), '_id');
+        return lodash_uniqby__WEBPACK_IMPORTED_MODULE_8___default()([].concat(Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(old), Object(C_Users_YuanQi_Documents_GitHub_niceup_mini_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(resolvedData.data)), '_id');
       });
     }
   }, [resolvedData]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_5__[/* View */ "f"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_tarojs_components__WEBPACK_IMPORTED_MODULE_6__[/* View */ "f"], {
     style: {
       padding: '9PX'
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("van-row", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"]("van-row", {
     gutter: "10"
   }, data.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](ProductCard, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](ProductCard, {
       data: item
     });
   })));
@@ -480,7 +504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_tarojs_mini_runner_node_modules_babel_loader_lib_index_js_node_modules_linaria_loader_js_ref_9_1_index_tsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/@tarojs/mini-runner/node_modules/babel-loader/lib!../../../node_modules/linaria/loader.js??ref--9-1!./index.tsx */ "./node_modules/@tarojs/mini-runner/node_modules/babel-loader/lib/index.js!./node_modules/linaria/loader.js?!./src/pages/index/index.tsx");
 
 
-var config = {"navigationBarTitleText":"NICEUP","enableShareAppMessage":true,"usingComponents":{}};
+var config = {"navigationBarTitleText":"海诚纬业","enableShareAppMessage":true,"usingComponents":{}};
 
 _node_modules_tarojs_mini_runner_node_modules_babel_loader_lib_index_js_node_modules_linaria_loader_js_ref_9_1_index_tsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].enableShareAppMessage = true
 var inst = Page(Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_node_modules_tarojs_mini_runner_node_modules_babel_loader_lib_index_js_node_modules_linaria_loader_js_ref_9_1_index_tsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'pages/index/index', {}, config || {}))

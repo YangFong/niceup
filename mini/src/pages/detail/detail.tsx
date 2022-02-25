@@ -112,6 +112,14 @@ export default function Detail() {
     }
   };
 
+  // 计算最大值与最小值
+  let maxSpec = -Infinity;
+  let minSpec = Infinity;
+  for (const {price} of data.specs) {
+    maxSpec = Math.max(maxSpec, price);
+    minSpec = Math.min(minSpec, price);
+  }
+
   return (
     <View className="detail">
       <Hero kv={data.kv} />
@@ -136,7 +144,7 @@ export default function Detail() {
         ''
       )}
       <View className="info">
-        <View className="price">￥{data.price}</View>
+        <View className="price">￥{minSpec < maxSpec ? `${minSpec} ~ ${maxSpec}` : data.price }</View>
         <View className="title">{data.title}</View>
       </View>
       <van-cell-group>

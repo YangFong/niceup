@@ -2,7 +2,7 @@ import * as React from 'react';
 import Taro, { useReachBottom } from '@tarojs/taro';
 import { styled } from 'linaria/react';
 import { View, Text, Swiper, SwiperItem, Image } from '@tarojs/components';
-import { useProducts } from '../../hooks/useProducts';
+import {useProduct, useProducts} from '../../hooks/useProducts';
 import uniqby from 'lodash.uniqby';
 
 import './index.less';
@@ -36,6 +36,16 @@ export function ProductCard(props: IProductCardProps) {
       url: `/pages/detail/detail?id=${data._id}`,
     });
   };
+
+  const res = useProduct(data._id);
+  // 计算最大值与最小值
+  let maxSpec = -Infinity;
+  let minSpec = Infinity;
+  for (const {price} of (res.data || {specs:[]}).specs) {
+    maxSpec = Math.max(maxSpec, price);
+    minSpec = Math.min(minSpec, price);
+  }
+
   return (
     <van-col span="12">
       <View className="product-wapper" onClick={handleClick}>
@@ -49,7 +59,9 @@ export function ProductCard(props: IProductCardProps) {
         </View>
         <View className="title">{data.title}</View>
         <View className="price">
-          <View className="curr">￥{data.price}</View>
+          {/*<View className="curr">￥{data.price}</View>*/}
+          {/*<View className="curr">￥{data.price}</View>*/}
+          <View className="price">￥{minSpec < maxSpec ? `${minSpec} ~ ${maxSpec}` : data.price }</View>
           {data.price_o != 0 && <View className="ori">{data.price_o}</View>}
         </View>
       </View>
